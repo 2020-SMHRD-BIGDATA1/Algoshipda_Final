@@ -1,17 +1,28 @@
-/*
- * package com.model;
- * 
- * public class FileDTO { String fileName; String filereal;
- * 
- * 
- * public String getFileName() { return fileName; } public void
- * setFileName(String fileName) { this.fileName = fileName; } public String
- * getFilereal() { return filereal; } public void setFilereal(String filereal) {
- * this.filereal = filereal; }
- * 
- * 
- * public FileDTO(String fileName, String filereal) { super(); this.fileName =
- * fileName; this.filereal = filereal; }
- * 
- * }
- */
+
+package com.model;
+
+public class FileDTO {
+	String fileName;
+	String fileRealName;
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public String getFileRealName() {
+		return fileRealName;
+	}
+	public void setFileRealName(String fileRealName) {
+		this.fileRealName = fileRealName;
+	}
+	public FileDTO(String fileName, String fileRealName) {
+		super();
+		this.fileName = fileName;
+		this.fileRealName = fileRealName;
+	}
+	
+	
+	
+
+}

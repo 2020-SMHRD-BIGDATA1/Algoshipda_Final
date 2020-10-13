@@ -3,7 +3,7 @@
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,8 +95,8 @@
 						<li><a href="./main.jsp" title="">Home</a></li>
 
 						<li><a href="./board_cat.jsp" title="">Board</a></li>
-						
-					
+
+
 						<%
 							if (info == null) {
 						%>
@@ -136,15 +136,20 @@
 							<h1>
 								그 곳이 알고싶다<br> <span id="typed-strings"> <span>안녕
 										이지!</span> <span>이지차는 티볼리</span> <span>최고가 나의목표</span>
-								</span>
-								<span id="typed"></span><br>
-								<tr class="form-group">
-						<td class="joinTag">풍경사진</td>
-						<td><input type="file" id="image" name="imgfile"
-							accept="image/*" onchange="setThumbnail(event);" value="올리기" /></td>
-								</tr>							
+								</span> <span id="typed"></span><br>
+								<form method="post" enctype="multipart/form-data"
+									action="UploadService">
+
+									<input type="file" id="file" name="file"><img
+										id="image_section" src="#" alt="your image" /><input
+										type="submit" value="업로드" ><br>
+
+								</form>
+
+
+
 							</h1>
-							
+
 						</div>
 					
 						
@@ -160,17 +165,29 @@
 			type();
 			movingBackgroundImage();
 		});
-		function setThumbnail(event) {
-			var reader = new FileReader();
-			reader.onload = function(event) {
-				var img = document.createElement("img");
-				img.setAttribute("src", event.target.result);
-				img.setAttribute("style", "max-width: 100%; height: auto;");
-				document.querySelector("div#image_container").appendChild(img);
-			};
-			reader.readAsDataURL(event.target.files[0]);
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload = function(e) {
+					$('#image_section').attr('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
+			}
 		}
+
+		// 이벤트를 바인딩해서 input에 파일이 올라올때 위의 함수를 this context로 실행합니다.
+		$("#file").change(function() {
+			readURL(this);
+		});
+	
+		
 	</script>
+
+
+
+
 
 
 	<script type="text/javascript" src="./main.70a66962.js"></script>
