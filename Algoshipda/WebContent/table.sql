@@ -25,3 +25,11 @@ create table BBS(
 CREATE SEQUENCE bbsId START WITH 1 INCREMENT BY 1;
 
 select * from BBS;
+
+
+create table files(
+fileName varchar(200),
+filereal varchar(200)
+
+);
+select * from files;

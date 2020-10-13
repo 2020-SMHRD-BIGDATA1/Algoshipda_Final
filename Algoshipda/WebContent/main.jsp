@@ -106,7 +106,7 @@
 						%>
 
 						<li><a href="LogoutService">Logout</a></li>
-						<li><a href="form_mypage.jsp">MyPage</a></li>
+						<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
 
 						<%
 							}
@@ -129,8 +129,14 @@
 								그 곳이 알고싶다<br> <span id="typed-strings"> <span>안녕
 										이지!</span> <span>이지차는 티볼리</span> <span>최고가 나의목표</span>
 								</span>
-								<span id="typed"></span>
+								<span id="typed"></span><br>
+								<tr class="form-group">
+						<td class="joinTag">풍경사진</td>
+						<td><input type="file" id="image" name="imgfile"
+							accept="image/*" onchange="setThumbnail(event);" value="올리기" /></td>
+								</tr>							
 							</h1>
+							
 						</div>
 					</div>
 				</div>
@@ -143,6 +149,16 @@
 			type();
 			movingBackgroundImage();
 		});
+		function setThumbnail(event) {
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				var img = document.createElement("img");
+				img.setAttribute("src", event.target.result);
+				img.setAttribute("style", "max-width: 100%; height: auto;");
+				document.querySelector("div#image_container").appendChild(img);
+			};
+			reader.readAsDataURL(event.target.files[0]);
+		}
 	</script>
 
 
