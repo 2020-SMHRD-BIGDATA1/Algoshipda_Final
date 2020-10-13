@@ -1,5 +1,5 @@
 drop table Members;
-
+drop table files;
 
 create table  Members(
 	member_id varchar2(30) primary key,	
@@ -29,7 +29,7 @@ select * from BBS;
 
 create table files(
 fileName varchar(200),
-filereal varchar(200)
+fileRealName varchar(200)
 
 );
 select * from files;

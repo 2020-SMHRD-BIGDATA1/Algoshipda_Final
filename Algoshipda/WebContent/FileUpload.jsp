@@ -1,15 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>JSP íŒŒì¼ ì—…ë¡œë“œ</title>
-</head>
-<body>
-	<form action="uploadAction.jsp" method="post" enctype="Multipart/form-data">
-	íŒŒì¼: <input type="file" name="flie"><br>
-	<input type="submit" value="ì—…ë¡œë“œ"><br>
-	</form>
-</body>
-</html>
+<%@page import="com.model.FileDTO"%>
+<%@page import="com.model.FileDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" 
+pageEncoding="EUC-KR"%> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR"> 
+<title>Insert title here</title> 
+</head> 
+<form method="post" enctype="multipart/form-data" action="uploadAction.jsp"> 
+ÆÄÀÏ:<input type="file" name="file"><br>
+<input type="submit" value="¾÷·Îµå"><br> 
+</form> 
+
+
+
+
+
+<body> 
+</body> 
+</html> 
