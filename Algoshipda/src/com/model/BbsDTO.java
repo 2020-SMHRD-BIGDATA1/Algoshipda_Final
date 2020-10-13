@@ -3,13 +3,12 @@ package com.model;
 import java.sql.Timestamp;
 
 public class BbsDTO {
-
-	private int bbsId = 1, bbsHit = 0;
-	private String bbsTitle, bbsContent, member_id;
+	private int bbsId;
+	private int bbsHit = 0;
+	private String bbsTitle;
+	private String bbsContent; 
+	private String member_id;
 	private Timestamp bbsDate;
-	
-	
-
 	public int getBbsId() {
 		return bbsId;
 	}
@@ -46,12 +45,11 @@ public class BbsDTO {
 	public void setBbsDate(Timestamp bbsDate) {
 		this.bbsDate = bbsDate;
 	}
+
 	
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("BbsDto [bbsId=").append(bbsId).append(", bbsHit=").append(bbsHit).append(", bbsTitle=")
-				.append(bbsTitle).append(", bbsContent=").append(bbsContent).append(", bbsDate=").append(bbsDate).append(", member_id=").append(member_id).append("]");
-		return builder.toString();
+	
 	}
-}
+
+
+	
+

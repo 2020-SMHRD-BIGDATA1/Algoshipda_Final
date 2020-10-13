@@ -1,6 +1,10 @@
-<%@page import="bbs.Bbs"%>
+
+<%@page import="java.sql.Timestamp"%>
+<%@page import="com.model.MemberDTO"%>
+<%@page import="com.model.BbsDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.model.BbsDAO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="bbs.BbsDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,12 +29,14 @@
 
 <body class="">
 
-<!-- 
-<div id="site-border-left"></div>
-<div id="site-border-right"></div>
-<div id="site-border-top"></div>
-<div id="site-border-bottom"></div> -->
- <!-- Add your content of header -->
+		<%
+			BbsDAO bbsDao = BbsDAO.getInstance();
+			
+			
+			MemberDTO info = (MemberDTO)session.getAttribute("info");
+		%>
+		
+		
 <header>
   <nav class="navbar  navbar-fixed-top navbar-default">
     <div class="container">
@@ -68,32 +74,42 @@
 
       <div class="col-md-12">
      
-
+		 
+		
         <!-- Carousel items -->
         <div class="carousel-inner">
             <div class="item active">
                 <div class="row">
+                
+                <% List<BbsDTO> list = bbsDao.selectList(); %>
+						 
+						 <%for (int i = 0; i < list.size(); i++) {%>
+						 
+						 <% int num=list.get(i).getBbsId(); %>
+                
+                
                     <div class="col-sm-4">
-                      <a href="./board_info.jsp" title="">
-                        <img src="./assets/images/work01-hover.jpg" alt="" class="img-responsive">
+                    
+                       <a href="board_info.jsp?num=<%=num%>" class="image featured"> <img src="./assets/images/work01-hover.jpg" alt="" class="img-responsive">
                       </a>
-                      
+                     
                       <div class="card-container card-container-lg">
-                      	<h4 style="float:left; ">번호</h4>
-                        <h4 style="float:right;">작성자</h4>
-                        <h3>제목</h3>
-                        <p>작성일</p>
+                      	
+                        <h4 style="float:right;"><%=list.get(i).getMember_id()%></h4>
+                        <h3><%=list.get(i).getBbsId() %>.<%=list.get(i).getBbsTitle() %></h3>
+                        <p><%=list.get(i).getBbsDate() %></p>
                         <a href="./board_info.jsp" title="" class="btn btn-default">더보기</a>
                       </div>
+                     
                     </div>
-                 
-                    
-                </div>
+                  <%} %>
+                   
+                </div> 
                 <!--/row-->
             </div>
         </div>
 
-
+					
     <!--/myCarousel-->
     </div>
 

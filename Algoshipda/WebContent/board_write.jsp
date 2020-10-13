@@ -81,7 +81,7 @@
 
 									<div class="container">
 										<div class="row">
-											<form method="post" action="WriteService" style="width: 100%; padding: 50px;" enctype="multipart/form-data">
+											<form method="post" action="WriteService" style="width: 100%; padding: 50px;" >
 												<table class="table table-striped"
 													style="text-align: center; border: 10px solid #dddddd; width: 100%;">
 													<thead>

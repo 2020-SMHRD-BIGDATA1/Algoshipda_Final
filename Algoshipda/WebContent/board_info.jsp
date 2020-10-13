@@ -1,3 +1,10 @@
+<%@page import="java.sql.Timestamp"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.model.MemberDTO"%>
+<%@page import="com.model.BbsDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.model.BbsDAO"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,18 +25,20 @@
 	href="./assets/apple-icon-180x180.png">
 <link href="./assets/favicon.ico" rel="icon">
 
-<title>Title page</title>
+<title>${board_info.bbsTitle } - 게시판</title>
 
 <link href="./main.3f6952e4.css" rel="stylesheet">
 </head>
 
 <body class="">
-<!-- 
-	<div id="site-border-left"></div>
-	<div id="site-border-right"></div>
-	<div id="site-border-top"></div>
-	<div id="site-border-bottom"></div> -->
-	<!-- Add your content of header -->
+
+				<%
+					MemberDTO info = (MemberDTO)session.getAttribute("info");
+				%>
+
+
+
+	<div id="bbsTitle">
 	<header>
 		<nav class="navbar  navbar-fixed-top navbar-default">
 			<div class="container">
@@ -52,22 +61,37 @@
 			</div>
 		</nav>
 	</header>
+	
 	<div class="section-container">
+	
 		<div class="container">
 			<div class="row">
+			
+			
 				<div class="col-xs-12">
 					<img src="./assets/images/work001-01.jpg" class="img-responsive"
 						alt="">
+						
+						<% String num=request.getParameter("num"); %>
+								<% BbsDAO bbsDao = BbsDAO.getInstance();		
+								System.out.println(bbsDao);
+									BbsDTO infoo = bbsDao.selectById(num);
+									%>
+						
+						
+						
 					<div class="card-container">
+					
+					
 						<div class="text-center">
-							<h1 class="h2">게시물 제목</h1>
+							<h1 class="h2"><%= infoo.getBbsTitle() %></h1>
 						</div>
 						<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 							Integer posuere erat a ante."</p>
-						<small class="pull-right">작성자</small>
+						<small class="pull-right"><%= infoo.getMember_id() %></small>
 
-					</div>
-				</div>
+					
+				
 
 
 				<div class="col-md-8 col-md-offset-2 section-container-spacer">
@@ -75,19 +99,20 @@
 					<div class="row">
 						<div class="col-xs-12 col-md-6">
 
-							<img src="./assets/images/work001-02.jpg" class="img-responsive"
-								alt="">
-							<h3>게시물 내용내용</h3>
+						
+							<h3><%= infoo.getBbsContent() %></h3>
 
-
+</div>
 						</div>
 
 					</div>
-			
+					
+			</div>
 				</div>
 
 			</div>
 		</div>
+			
 	</div>
 
 
@@ -128,6 +153,7 @@
 
 -->
 	<script type="text/javascript" src="./main.70a66962.js"></script>
+	</div>
 </body>
 
 </html>

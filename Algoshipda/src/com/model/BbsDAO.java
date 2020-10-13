@@ -122,7 +122,46 @@ public class BbsDAO {
 			return list;
 		}
 	   
+	   public int hitUpdate(String bbsId) {
+			getConn();
+			String sql = "UPDATE bbs SET bbsHit = bbsHit + 1 WHERE bbsId = ?";
+			
+			try {
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, bbsId);
+				result = psmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return result;
+		}
 	   
-	   
-	   
+	   public BbsDTO selectById(String bbsId) {
+			BbsDTO bbsDto = new BbsDTO();
+			getConn();
+			String sql = "SELECT * FROM bbs WHERE bbsId = ?";
+			
+			try {
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, bbsId);
+				rs = psmt.executeQuery();
+				
+				while (rs.next()) {
+					bbsDto.setBbsId(rs.getInt("bbsId"));
+					bbsDto.setBbsTitle(rs.getString("bbstitle"));
+					bbsDto.setBbsContent(rs.getString("bbscontent"));
+					bbsDto.setBbsDate(rs.getTimestamp("bbsdate"));
+					bbsDto.setBbsHit(rs.getInt("bbshit"));
+					bbsDto.setMember_id(rs.getString("member_id"));
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return bbsDto;
+		}
 }

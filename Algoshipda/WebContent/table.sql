@@ -22,4 +22,6 @@ create table BBS(
 	constraint bbsid_pk primary key(bbsID)
 );
 
+CREATE SEQUENCE bbsId START WITH 1 INCREMENT BY 1;
+
 select * from BBS;
