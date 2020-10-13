@@ -23,3 +23,12 @@ create table BBS(
 );
 
 select * from BBS;
+
+
+
+create table files(
+fileName varchar(200),
+filereal varchar(200)
+
+);
+select * from files;
