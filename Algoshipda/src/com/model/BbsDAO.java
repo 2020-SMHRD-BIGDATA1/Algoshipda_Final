@@ -77,14 +77,15 @@ public class BbsDAO {
 			getConn();
 			StringBuffer query = new StringBuffer();
 			query.append("INSERT INTO bbs ");
-			query.append("(bbsId, bbsTitle, bbsContent, bbsDate, bbsHit, member_id) ");
-			query.append("VALUES (?, ?, ?, sysdate, 0, ?)");
+			query.append("(bbsId, bbsTitle, bbsContent, bbsDate, bbsHit, member_id, bbsImg) ");
+			query.append("VALUES (?, ?, ?, sysdate, 0, ?,?)");
 			try {
 				psmt = conn.prepareStatement(query.toString());
 				psmt.setInt(1, bbsDto.getBbsId());
 				psmt.setString(2, bbsDto.getBbsTitle());
 				psmt.setString(3, bbsDto.getBbsContent());
 				psmt.setString(4, bbsDto.getMember_id());
+				psmt.setString(5, bbsDto.getBbsImg());
 				result = psmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -111,6 +112,7 @@ public class BbsDAO {
 					bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
 					bbsDto.setBbsHit(rs.getInt("bbsHit"));
 					bbsDto.setMember_id(rs.getString("member_id"));
+					bbsDto.setBbsImg(rs.getString("bbsImg"));
 					list.add(bbsDto);
 				}
 				
@@ -155,6 +157,7 @@ public class BbsDAO {
 					bbsDto.setBbsDate(rs.getTimestamp("bbsdate"));
 					bbsDto.setBbsHit(rs.getInt("bbshit"));
 					bbsDto.setMember_id(rs.getString("member_id"));
+					bbsDto.setBbsImg(rs.getString("bbsImg"));
 				}
 				
 			} catch (SQLException e) {

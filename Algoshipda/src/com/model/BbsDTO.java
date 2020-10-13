@@ -9,6 +9,7 @@ public class BbsDTO {
 	private String bbsContent; 
 	private String member_id;
 	private Timestamp bbsDate;
+	private String bbsImg;
 	public int getBbsId() {
 		return bbsId;
 	}
@@ -44,6 +45,12 @@ public class BbsDTO {
 	}
 	public void setBbsDate(Timestamp bbsDate) {
 		this.bbsDate = bbsDate;
+	}
+	public String getBbsImg() {
+		return bbsImg;
+	}
+	public void setBbsImg(String bbsImg) {
+		this.bbsImg = bbsImg;
 	}
 
 	

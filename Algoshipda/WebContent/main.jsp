@@ -68,6 +68,7 @@
 .half {
 	background-color: yellow
 }
+
 </style>
 </head>
 
@@ -121,10 +122,17 @@
 		class="hero-full-container background-image-container white-text-container"
 		style="background-image: url('./assets/images/')">
 		<div class="container">
+	
 			<div class="row">
+				
 				<div class="col-xs-12">
 					<div class="hero-full-wrapper">
 						<div class="text-content">
+						
+						
+						<img src="./images/Pink-pointing-up.png">
+						
+						
 							<h1>
 								그 곳이 알고싶다<br> <span id="typed-strings"> <span>안녕
 										이지!</span> <span>이지차는 티볼리</span> <span>최고가 나의목표</span>
@@ -138,8 +146,11 @@
 							</h1>
 							
 						</div>
+					
+						
 					</div>
 				</div>
+					
 			</div>
 		</div>
 	</div>

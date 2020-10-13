@@ -25,7 +25,11 @@
 
   <title>Title page</title>  
 
-<link href="./main.3f6952e4.css" rel="stylesheet"></head>
+<link href="./main.3f6952e4.css" rel="stylesheet">
+<style>
+
+</style>
+</head>
 
 <body class="">
 
@@ -67,7 +71,6 @@
       <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
         <div class="text-center">
           <h1 class="h2">자유게시판</h1>
-          <p>Nulla facilisi. Vivamus vestibulum, elit in sce sapien in nisi. uere, venenatis dapibus urna.</p>
           <p><a href="./board_write.jsp" class="btn btn-default">작성하기</a></p>
         </div>
       </div>
@@ -90,7 +93,7 @@
                 
                     <div class="col-sm-4">
                     
-                       <a href="board_info.jsp?num=<%=num%>" class="image featured"> <img src="./assets/images/work01-hover.jpg" alt="" class="img-responsive">
+                       <a href="board_info.jsp?num=<%=num%>" class="image featured"> <img src="./bbsimage/<%=list.get(i).getBbsImg() %>" alt="" class="img-responsive">
                       </a>
                      
                       <div class="card-container card-container-lg">

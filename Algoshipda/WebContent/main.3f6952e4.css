@@ -299,8 +299,8 @@ img {
 
 .img-responsive {
 	display: block;
-	max-width: 100%;
-	height: auto
+	width: 359px;
+    height: 300px;
 }
 
 .img-rounded {
@@ -317,8 +317,8 @@ img {
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 	display: inline-block;
-	max-width: 100%;
-	height: auto
+	max-width: 359px;
+	height: 300px;
 }
 
 .img-circle {
@@ -4253,8 +4253,8 @@ button.close {
 
 .carousel-inner>.item>a>img, .carousel-inner>.item>img {
 	display: block;
-	max-width: 100%;
-	height: auto;
+	max-width: 359px;
+	height: 300px;
 	line-height: 1
 }
 
@@ -5015,7 +5015,7 @@ textarea {
 
 .card-container {
 	background-color: #fff;
-	padding: 2rem 5rem;
+	padding: 1rem 1rem;
 	position: relative;
 	width: 80%;
 	margin: -10em auto 20px

@@ -19,6 +19,7 @@ create table BBS(
 	bbsDate date,
 	bbsHit number,
 	member_id varchar2(20),
+	bbsImg varchar2(100),
 	constraint bbsid_pk primary key(bbsID)
 );
 

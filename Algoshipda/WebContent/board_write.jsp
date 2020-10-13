@@ -81,7 +81,7 @@
 
 									<div class="container">
 										<div class="row">
-											<form method="post" action="WriteService" style="width: 100%; padding: 50px;" >
+											<form method="post" action="WriteService" enctype="multipart/form-data" style="width: 100%; padding: 50px;" >
 												<table class="table table-striped"
 													style="text-align: center; border: 10px solid #dddddd; width: 100%;">
 													<thead>
@@ -93,11 +93,10 @@
 														<tr>
 															<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
 														</tr>
-														<!--  
+													 
 														<tr>
-															<td><input type="file" class="form-control"
-																placeholder="롸" name="bbsFileName"></td>
-														</tr>-->
+															<td><input type="file" class="form-control" placeholder="파일업로드" name="bbsImg"></td>
+														</tr>
 														<tr>
 															<td><textarea type="text" class="form-control" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
 														</tr>
@@ -107,8 +106,10 @@
 												<input type="submit" class="btn btn-primary pull-right" value="글쓰기"> 
 												<input type="reset" value="내용 초기화" class="button">
 											</form>
+										
 										</div>
 									</div>
+								
 								</section>
 								<!-- / -->
 

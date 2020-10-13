@@ -25,120 +25,127 @@
 	href="./assets/apple-icon-180x180.png">
 <link href="./assets/favicon.ico" rel="icon">
 
-<title>${board_info.bbsTitle } - 게시판</title>
+<title>${board_info.bbsTitle }-게시판</title>
 
 <link href="./main.3f6952e4.css" rel="stylesheet">
+<style>
+img {
+	max-width: 359px;
+	height: 300px;
+}
+</style>
 </head>
 
 <body class="">
 
-				<%
-					MemberDTO info = (MemberDTO)session.getAttribute("info");
-				%>
+	<%
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
 
 
 
 	<div id="bbsTitle">
-	<header>
-		<nav class="navbar  navbar-fixed-top navbar-default">
-			<div class="container">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar-collapse"
-					aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
+		<header>
+			<nav class="navbar  navbar-fixed-top navbar-default">
+				<div class="container">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#navbar-collapse"
+						aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
 
-				<div class="collapse navbar-collapse" id="navbar-collapse">
-					<ul class="nav navbar-nav ">
-						<li><a href="./main.jsp" title="">Home</a></li>
-						<li><a href="./board_cat.jsp" title="">Board</a></li>
+					<div class="collapse navbar-collapse" id="navbar-collapse">
+						<ul class="nav navbar-nav ">
+							<li><a href="./main.jsp" title="">Home</a></li>
+							<li><a href="./board_cat.jsp" title="">Board</a></li>
 
-					</ul>
-
-				</div>
-			</div>
-		</nav>
-	</header>
-	
-	<div class="section-container">
-	
-		<div class="container">
-			<div class="row">
-			
-			
-				<div class="col-xs-12">
-					<img src="./assets/images/work001-01.jpg" class="img-responsive"
-						alt="">
-						
-						<% String num=request.getParameter("num"); %>
-								<% BbsDAO bbsDao = BbsDAO.getInstance();		
-								System.out.println(bbsDao);
-									BbsDTO infoo = bbsDao.selectById(num);
-									%>
-						
-						
-						
-					<div class="card-container">
-					
-					
-						<div class="text-center">
-							<h1 class="h2"><%= infoo.getBbsTitle() %></h1>
-						</div>
-						<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Integer posuere erat a ante."</p>
-						<small class="pull-right"><%= infoo.getMember_id() %></small>
-
-					
-				
-
-
-				<div class="col-md-8 col-md-offset-2 section-container-spacer">
-					
-					<div class="row">
-						<div class="col-xs-12 col-md-6">
-
-						
-							<h3><%= infoo.getBbsContent() %></h3>
-
-</div>
-						</div>
+						</ul>
 
 					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="section-container">
+
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+
+						<%
+							String num = request.getParameter("num");
+						%>
+						<%
+							BbsDAO bbsDao = BbsDAO.getInstance();
+						System.out.println(bbsDao);
+						BbsDTO infoo = bbsDao.selectById(num);
+						%>
+
+
+						<div class="text-center">
+							<h1 class="h2"><%=infoo.getBbsTitle()%></h1>
+
+						</div>
+					</div>
+
+
 					
-			</div>
+
+
+					<div class="col-md-8 col-md-offset-2 section-container-spacer">
+						<h3 class="pull-right"><%=infoo.getMember_id()%></h3>
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+
+
+
+								<img src="./bbsimage/<%=infoo.getBbsImg()%>">
+
+								<h3><%=infoo.getBbsContent()%></h3>
+
+							</div>
+
+						</div>
+						
+					</div>
+
 				</div>
 
+				<p>
+					<center><a href="./board_cat.jsp" class="btn btn-default">목록으로</a></center>
+				</p>
+
 			</div>
+
 		</div>
-			
-	</div>
 
 
-	<footer class="footer-container text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<p>
-						© UNTITLED | Website created with <a
-							href="http://www.mashup-template.com/"
-							title="Create website with free html template">Mashup
-							Template</a>/<a href="https://www.unsplash.com/"
-							title="Beautiful Free Images">Unsplash</a>
-					</p>
+		<footer class="footer-container text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<p>
+							© UNTITLED | Website created with <a
+								href="http://www.mashup-template.com/"
+								title="Create website with free html template">Mashup
+								Template</a>/<a href="https://www.unsplash.com/"
+								title="Beautiful Free Images">Unsplash</a>
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 
-	<script>
-		document.addEventListener("DOMContentLoaded", function(event) {
-			navActivePage();
-		});
-	</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event) {
+				navActivePage();
+			});
+		</script>
 
-	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
 
 <script>
   (function (i, s, o, g, r, a, m) {
@@ -152,7 +159,7 @@
 </script>
 
 -->
-	<script type="text/javascript" src="./main.70a66962.js"></script>
+		<script type="text/javascript" src="./main.70a66962.js"></script>
 	</div>
 </body>
 
