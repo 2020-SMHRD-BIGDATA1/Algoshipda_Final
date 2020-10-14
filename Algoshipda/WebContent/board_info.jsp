@@ -5,7 +5,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.model.BbsDAO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,7 @@
 	href="./assets/apple-icon-180x180.png">
 <link href="./assets/favicon.ico" rel="icon">
 
-<title>${board_info.bbsTitle }-게시판</title>
+<title>게시판</title>
 
 <link href="./main.3f6952e4.css" rel="stylesheet">
 <style>
@@ -79,7 +79,7 @@ img {
 							String num = request.getParameter("num");
 						%>
 						<%
-							BbsDAO bbsDao = BbsDAO.getInstance();
+							BbsDAO bbsDao = new BbsDAO();
 						System.out.println(bbsDao);
 						BbsDTO infoo = bbsDao.selectById(num);
 						%>
@@ -91,7 +91,7 @@ img {
 						</div>
 					</div>
 
-
+	
 					
 
 
@@ -105,7 +105,7 @@ img {
 								<img src="./bbsimage/<%=infoo.getBbsImg()%>">
 
 								<h3><%=infoo.getBbsContent()%></h3>
-
+								
 							</div>
 
 						</div>
@@ -115,6 +115,10 @@ img {
 				</div>
 
 				<p>
+					<a href = "DeleteService?bbsTitlef=<%=infoo.getBbsTitle()%>">
+					<button class="button" >삭제</button>
+					</a>
+					 <p><a href="./board_update.jsp" class="btn btn-default">수정</a></p>
 					<center><a href="./board_cat.jsp" class="btn btn-default">목록으로</a></center>
 				</p>
 

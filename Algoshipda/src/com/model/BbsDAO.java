@@ -10,18 +10,14 @@ import java.util.List;
 
 public class BbsDAO {
 
-	private static BbsDAO bbsDao = new BbsDAO();
+	
 	private Connection conn;
 	private ResultSet rs;
 	private PreparedStatement psmt;
 	private int result = 0;
 	
-	private BbsDAO() {
-		super();
-	}
-	public static BbsDAO getInstance() {
-		return bbsDao;
-	}
+	
+	
 	
 	private void getConn() {
 	      try {
@@ -167,4 +163,46 @@ public class BbsDAO {
 			}
 			return bbsDto;
 		}
+	   
+	   public int update(BbsDTO bbsDto) {
+		   
+		    getConn();
+			String SQL = "UPDATE BBS SET bbsTitle = ?, bbsContent = ?, bbsImg = ? WHERE bbsId = ?";
+
+			try {
+
+				PreparedStatement psmt = conn.prepareStatement(SQL);
+				psmt.setString(1, bbsDto.getBbsTitle());
+				psmt.setString(2, bbsDto.getBbsContent());
+				psmt.setString(3, bbsDto.getBbsImg());
+				psmt.setInt(4, bbsDto.getBbsId());
+				return psmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return -1; // 데이터베이스 오류
+		}
+	   
+	   public int del(String bbsTitle) {
+		   
+		    
+			getConn();
+			int cnt=0;
+			String sql = "DELETE FROM BBS WHERE bbsTitle = ?";
+			try {
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, bbsTitle);
+				cnt = psmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return cnt;
+		}
+
+
+
+	   
+	   
 }

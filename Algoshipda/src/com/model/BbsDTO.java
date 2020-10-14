@@ -10,6 +10,8 @@ public class BbsDTO {
 	private String member_id;
 	private Timestamp bbsDate;
 	private String bbsImg;
+	
+
 	public int getBbsId() {
 		return bbsId;
 	}

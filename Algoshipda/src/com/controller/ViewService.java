@@ -30,7 +30,7 @@ public class ViewService extends HttpServlet {
 	private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String bbsId = request.getParameter("bbsId");
-		BbsDAO bbsDao = BbsDAO.getInstance();
+		BbsDAO bbsDao = new BbsDAO();
 		BbsDTO bbsDto = new BbsDTO();
 		bbsDao.hitUpdate(bbsId);
 		bbsDto = bbsDao.selectById(bbsId);

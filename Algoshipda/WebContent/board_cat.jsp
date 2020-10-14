@@ -5,7 +5,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.model.BbsDAO"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -34,7 +34,7 @@
 <body class="">
 
 		<%
-			BbsDAO bbsDao = BbsDAO.getInstance();
+			BbsDAO bbsDao = new BbsDAO();
 			
 			
 			MemberDTO info = (MemberDTO)session.getAttribute("info");
@@ -101,7 +101,7 @@
                         <h4 style="float:right;"><%=list.get(i).getMember_id()%></h4>
                         <h3><%=list.get(i).getBbsId() %>.<%=list.get(i).getBbsTitle() %></h3>
                         <p><%=list.get(i).getBbsDate() %></p>
-                        <a href="./board_info.jsp" title="" class="btn btn-default">더보기</a>
+                        <a href="board_info.jsp?num=<%=num%>" title="" class="btn btn-default">더보기</a>
                       </div>
                      
                     </div>

@@ -34,3 +34,7 @@ fileRealName varchar(200)
 
 );
 select * from files;
+
+
+DELETE FROM BBS WHERE bbsTitle = '나는 문요한';
+select bbsImg from bbs;
