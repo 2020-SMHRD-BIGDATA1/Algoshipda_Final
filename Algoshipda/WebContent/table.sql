@@ -29,12 +29,20 @@ select * from BBS;
 
 
 create table files(
+picture_index number,
 fileName varchar(200),
-fileRealName varchar(200)
-
+fileRealName varchar(200),
+filetime date 
 );
 select * from files;
 
 
 DELETE FROM BBS WHERE bbsTitle = '나는 문요한';
 select bbsImg from bbs;
+
+
+create sequence picture_index
+increment by 1
+start with 1;
+
+drop sequence picture_index;

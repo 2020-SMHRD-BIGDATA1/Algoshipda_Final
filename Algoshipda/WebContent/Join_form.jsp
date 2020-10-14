@@ -68,7 +68,9 @@
             </tr>
              <tr>
             	<td colspan='2' align='center'><input type="submit" value="회원가입"></td>
-            	<td colspan='2' align='center'><input type="submit" value="취소"></td>
+            	
+            	<td colspan='2' align='center'><input type="button" id="button1" onclick="button_click();" value="취소" ></td>
+            	
         	</tr>
         </table>
     </form>
@@ -82,7 +84,9 @@
 
 <script type="text/javascript">
 
-
+function button_click() {
+	location.href='main.jsp'
+}
 
 
  function idCheck() {
