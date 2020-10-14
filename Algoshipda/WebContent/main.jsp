@@ -135,11 +135,11 @@
 						
 							<h1>
 								그 곳이 알고싶다<br> <span id="typed-strings"> <span>안녕
+									
 										이지!</span> <span>이지차는 티볼리</span> <span>최고가 나의목표</span>
 								</span> <span id="typed"></span><br>
 								<form method="post" enctype="multipart/form-data"
 									action="UploadService">
-
 									<input type="file" id="file" name="file"><img
 										id="image_section" src="#" alt="your image" /><input
 										type="submit" value="업로드" ><br>

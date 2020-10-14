@@ -29,8 +29,15 @@ select * from BBS;
 
 
 create table files(
+picture_index number,
 fileName varchar(200),
-fileRealName varchar(200)
-
+fileRealName varchar(200),
+filetime date 
 );
 select * from files;
+
+create sequence picture_index
+increment by 1
+start with 1;
+
+drop sequence picture_index;
