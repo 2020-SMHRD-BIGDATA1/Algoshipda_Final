@@ -56,9 +56,8 @@
 <style>
 img {
 	display: inline-block;
-	width: 150px;
-	max-width: 100%;
-	height: 150px;
+	max-width: 359px;
+	height: 300px;
 }
 
 #pp {
@@ -73,7 +72,43 @@ img {
 }
 
 .half {
-	background-color: yellow
+	background-color: yellow;
+}
+
+.back {
+	background-color: #f5f5f5;
+	padding: 10%;
+	margin:10%
+}
+
+#file {
+	display: none;
+}
+
+.img_upload:hover {
+	cursor: pointer;
+	transform: scale(1.05); 
+	-o-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	transition: transform .35s;
+	-o-transition: transform .35s;
+	-moz-transition: transform .35s;
+	-webkit-transition: transform .35s;
+}
+.btn_ej {
+	width: 100px;
+	background-color: gray;
+	border: none;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px;
+	cursor: pointer;
+	 text-decoration:none
 }
 </style>
 </head>
@@ -107,11 +142,11 @@ img {
 							} else {
 						%>
 						<li><a href="LogoutService">Logout</a></li>
-						<li><a href="MyPage_form.jsp">킹겨찾기</a></li> 
+						<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
 
 						<%
- 	}
- %>
+							}
+						%>
 					</ul>
 				</div>
 			</div>
@@ -124,31 +159,18 @@ img {
 		<div class="section-container">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
 						<div class="row">
 
 							<div class="col-xs-12 col-md-6">
 								<div class="hero-full-wrapper">
 									<div class="text-content">
-													<!-- 				<img src="./assets/images/Pink-pointing-up.png">
-							<h1>
-								그 곳이 알고싶다<br> <span id="typed-strings"> <span>안녕
 
-										이지!</span> <span>이지차는 티볼리</span> <span>최고가 나의목표</span>
-								</span> <span id="typed"></span><br>
-								
-								<form method="post" enctype="multipart/form-data"
-									action="UploadService">
-									
-									<input type="file" id="file" name="file">
-									
-									<img id="image_section" src="./assets/images/Pink-pointing-up.png" alt="your image"/><input
-										type="submit" value="업로드"><br> 
 										<h1>
-											<span id="typed-strings"> <span>그 곳이 알고 싶다.</span></span> <span
-												id="typed"></span><br> -->
+											<span id="typed-strings"> <span>그 곳이 알고 싶다.</span>
+											</span> <span id="typed"></span><br>
 
-										<!-- </h1> -->
+
+										</h1>
 
 									</div>
 								</div>
@@ -156,26 +178,26 @@ img {
 							<div class="col-xs-12 col-md-6">
 								<div class="hero-full-wrapper">
 									<div class="text-content">
-										<form method="post" enctype="multipart/form-data"
-											action="UploadService">
+										<div class="back" >
+											<form method="post" enctype="multipart/form-data"
+												action="UploadService">
 
-											<img id="image_section" src="./assets/images/up.PNG"
-												alt="your image" style="max-width: 359px; height: 300px;" /></label>
-											<input class="btn btn-default" type="file" id="file"
-												name="file"> <input class="btn btn-default"
-												type="submit" value="업로드"><br>
+												<label for="file"><img class="img_upload"
+													id="image_section" src="./assets/images/upup.PNG"
+													style="max-width: 359px; height: 300px;" /></label> <input
+													class="btn btn-default" type="file" id="file" name="file">
+												<center><input class="btn_ej" type="submit" value="업로드"  style="margin-top:10%"><br></center>
 
-										</form>
+											</form>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					
 				</div>
 			</div>
 
-			>>>>>>> branch 'master' of
-			https://github.com/2020-SMHRD-BIGDATA1/Algoshipda_Final.git
 		</div>
 	</div>
 	<script>
@@ -190,7 +212,7 @@ img {
 				reader.onload = function(e) {
 					$('#image_section').attr('src', e.target.result);
 				}
-				
+
 				reader.readAsDataURL(input.files[0]);
 			}
 		}

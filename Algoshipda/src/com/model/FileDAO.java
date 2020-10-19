@@ -95,7 +95,6 @@ public class FileDAO {
 			list.add(s);
 		}
 	} catch (SQLException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}finally {
 		close();
