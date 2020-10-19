@@ -48,20 +48,38 @@
 </script>
 <style>
 img {
-	display: inline-block;
+	display: inline-block; <<<<<<<
+	HEAD max-width: 359px;
+	height: 300px; =======
 	width: 300px;
 	max-width: 100%;
 	height: 150px;
+	>>>>>>>
+	branch
+	'master'
+	of
+	https
+	:
+	/
+	/
+	github.com
+	/
+	2020-SMHRD-BIGDATA1
+	/
+	Algoshipda_Final.git
 }
+
 #pp {
 	margin-left: 121px;
 	margin-top: 1px;
 	width: 84px;
 	height: 45px;
 }
+
 .nav navbar-nav {
 	
 }
+
 .half {
 	background-color: yellow
 }
@@ -96,10 +114,12 @@ img {
 							} else {
 						%>
 						<li><a href="LogoutService">Logout</a></li>
-						<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
+						<li><a href="MyPage_form.jsp">킹겨찾기</a></li> <<<<<<< HEAD =======
+						>>>>>>> branch 'master' of
+						https://github.com/2020-SMHRD-BIGDATA1/Algoshipda_Final.git
 						<%
-							}
-						%>
+ 	}
+ %>
 					</ul>
 				</div>
 			</div>
@@ -117,19 +137,11 @@ img {
 							<div class="col-xs-12 col-md-6">
 								<div class="hero-full-wrapper">
 									<div class="text-content">
-										<img src="./assets/images/Pink-pointing-up.png">
 										<h1>
-											그 곳이 알고싶다<br> <span id="typed-strings"> <span>안녕
-													이지!</span> <span>이지차는 티볼리</span> <span>최고가 나의목표</span>
-											</span> <span id="typed"></span><br>
+											<span id="typed-strings"> <span>그 곳이 알고싶다!</span>
+											</span> <span id="typed"></span>
 										</h1>
-										<!--	<input type="file" id="file" name="file">
-									<img id="image_section" src="./assets/images/Pink-pointing-up.png" alt="your image"/><input
-										type="submit" value="업로드"><br> 
-										<h1>
-											<span id="typed-strings"> <span>그 곳이 알고 싶다.</span></span> <span
-												id="typed"></span><br> -->
-										<!-- </h1> -->
+
 									</div>
 								</div>
 							</div>

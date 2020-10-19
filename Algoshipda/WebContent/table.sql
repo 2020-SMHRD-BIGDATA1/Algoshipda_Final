@@ -58,7 +58,6 @@ picture_text varchar2(1000),
 picture_web varchar2(100),
 imageName varchar2(200)
 );
-
 create table SimilarPicture(
 picture_index number,
 picturetitle varchar2(200),
@@ -75,6 +74,7 @@ insert into similarPicture values(similar_index.nextVal, '가평에델바이스','경기�
 create sequence similar_index start with 1 increment by 1;
 
 select * from SimilarPicture;
+select * from Picturelocation;
 
 
 create table information(
@@ -86,4 +86,3 @@ insert into information values(information_index.nextVal,'한국의 산토리니','이곳
 create sequence information_index start with 1 increment by 1;
 
 select * from information;
-

@@ -67,6 +67,7 @@ div.card-container card-container-lg {
 			infoDAO dao2 = new infoDAO();
 		%>
 
+
 		<%
 			FileDAO dao = new FileDAO();
 		%>
@@ -114,6 +115,7 @@ div.card-container card-container-lg {
 	<div class="section-container">
 		<div class="container">
 			<div class="row">
+
 				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 					<div class="text-center">
 						<h1 class="h2">여기가 어디인가유</h1>
@@ -132,9 +134,17 @@ div.card-container card-container-lg {
 						</p>
 					</div>
 				</div>
-
-
-
+						<nav class="navbar  navbar-fixed-top navbar-default">
+					<div class="container">
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse" data-target="#navbar-collapse"
+							aria-expanded="false">
+							<span class="sr-only"> </span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span>
+						</button>
+					</div>
+				</nav>
+				</header>
 				<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
 				<div class="col-md-12">
 					<div id="myCarousel" class="carousel slide projects-carousel">
@@ -152,7 +162,6 @@ div.card-container card-container-lg {
 										<p><%=list2.get(0).getInfor_addr()%></p>
 										<a href="./detail.jsp" title="" class="btn btn-default">정보
 											보기</a>
-
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
@@ -164,7 +173,6 @@ div.card-container card-container-lg {
 										<p><%=list2.get(0).getInfor_addr()%></p>
 										<a href="./detail.jsp" title="" class="btn btn-default">정보
 											보기</a>
-
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
@@ -178,20 +186,29 @@ div.card-container card-container-lg {
 											보기</a>
 									</div>
 								</div>
-								<!--/row-->
 							</div>
-							<!--/item-->
-							<div class="item">
-								<div class="row"></div>
-							</div>
-							<!--/row-->
+							<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
 						</div>
-						<!--/item-->
 					</div>
 				</div>
-				<!--/myCarousel-->
 			</div>
 		</div>
+		<!--/row-->
+	</div>
+	<!--/item-->
+	<div class="item">
+		<div class="row"></div>
+	</div>
+	<!--/row-->
+	</div>
+	<!--/item-->
+	</div>
+	<!--/carousel-inner-->
+
+	</div>
+	<!--/myCarousel-->
+	</div>
+	</div>
 	</div>
 	</div>
 
