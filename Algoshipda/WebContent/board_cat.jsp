@@ -1,4 +1,5 @@
 
+<%@page import="java.io.PrintWriter"%>
 <%@page import="java.sql.Timestamp"%>
 <%@page import="com.model.MemberDTO"%>
 <%@page import="com.model.BbsDTO"%>
@@ -71,6 +72,7 @@
       <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
         <div class="text-center">
           <h1 class="h2">자유게시판</h1>
+            
           <p><a href="./board_write.jsp" class="btn btn-default">작성하기</a></p>
         </div>
       </div>
