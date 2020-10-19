@@ -35,7 +35,7 @@
 				p1 = document.getElementById("p1");
 				if (data == 'true') {
 					p1.innerHTML = "사용할 수 없는 아이디입니다.";
-				} else {
+				} else {0
 					p1.innerHTML = "사용할 수 있는 아이디입니다.";
 				}
 			},
@@ -48,25 +48,12 @@
 </script>
 <style>
 img {
-	display: inline-block; <<<<<<<
-	HEAD max-width: 359px;
-	height: 300px; =======
+	display: inline-block; 
+	 max-width: 359px;
+	height: 300px; 
 	width: 300px;
 	max-width: 100%;
 	height: 150px;
-	>>>>>>>
-	branch
-	'master'
-	of
-	https
-	:
-	/
-	/
-	github.com
-	/
-	2020-SMHRD-BIGDATA1
-	/
-	Algoshipda_Final.git
 }
 
 #pp {
@@ -114,9 +101,6 @@ img {
 							} else {
 						%>
 						<li><a href="LogoutService">Logout</a></li>
-						<li><a href="MyPage_form.jsp">킹겨찾기</a></li> <<<<<<< HEAD =======
-						>>>>>>> branch 'master' of
-						https://github.com/2020-SMHRD-BIGDATA1/Algoshipda_Final.git
 						<%
  	}
  %>
