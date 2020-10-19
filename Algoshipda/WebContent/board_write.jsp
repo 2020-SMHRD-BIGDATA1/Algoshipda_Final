@@ -1,3 +1,5 @@
+<%@page import="com.model.MemberDTO"%>
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,12 +29,17 @@
 
 <body class="">
 
-	<!--  
-<div id="site-border-left"></div>
-<div id="site-border-right"></div>
-<div id="site-border-top"></div>
-<div id="site-border-bottom"></div>-->
-	<!-- Add your content of header -->
+		<%
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
+			%>
+	    <% if (info == null) {
+        PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('로그인을 하세요.')");
+		script.println("location.href = 'Login_form.jsp'");
+		script.println("</script>");
+		}else { %>
+
 	<header>
 		<nav class="navbar  navbar-fixed-top navbar-default">
 			<div class="container">
@@ -78,7 +85,7 @@
 
 								<!-- 게시판시작 -->
 								<section class="blog_area section-padding">
-
+								
 									<div class="container">
 										<div class="row">
 											<form method="post" action="WriteService" enctype="multipart/form-data" style="width: 100%; padding: 50px;" >
@@ -119,7 +126,7 @@
 
 					</div>
 
-
+						<%} %>
 					<!--/myCarousel-->
 				</div>
 
@@ -167,6 +174,7 @@
 
 -->
 	<script type="text/javascript" src="./main.70a66962.js"></script>
+
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="java.sql.Timestamp"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.model.MemberDTO"%>
@@ -115,10 +116,16 @@ img {
 				</div>
 
 				<p>
+				
 					<a href = "DeleteService?bbsTitlef=<%=infoo.getBbsTitle()%>">
-					<button class="button" >삭제</button>
-					</a>
-					 <p><a href="./board_update.jsp" class="btn btn-default">수정</a></p>
+					
+					    <% if (info.getMember_id().equals(infoo.getMember_id())) {%>
+					    	<button class="btn btn-default" >삭제</button>
+							</a>
+							 <p><a href="UpdateService?bbsId=<%=infoo.getBbsId() %>" class="btn btn-default">수정</a></p>
+							<% } %>										    
+					
+					 					 
 					<center><a href="./board_cat.jsp" class="btn btn-default">목록으로</a></center>
 				</p>
 

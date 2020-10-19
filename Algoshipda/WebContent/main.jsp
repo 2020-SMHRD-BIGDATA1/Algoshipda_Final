@@ -1,14 +1,14 @@
 <%@page import="java.net.URLEncoder"%>
 <%@page import="javax.print.URIException"%>
 <%@page import="com.model.MemberDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="description" name="description">
@@ -31,24 +31,24 @@
 		id = document.getElementById("in_id");
 
 		$.ajax({
-			type : "get", //get or post¹æ½Ä
-			//QueryString ¹æ½ÄÀ¸·Î Àü¼Û : ?(½ÃÀÛ) member_id(ÀÌ¸§°ª) + member_id.value(½ÇÁ¦ º¯¼ö°ª)
-			url : "idCheck?member_id=" + member_id.value, //¼­¹ö ÆäÀÌÁöÀÇ ÁÖ¼Ò
-			dataType : "text", //ÁÖ°í¹ŞÀ» µ¥ÀÌÅÍÀÇ À¯Çü
+			type : "get", //get or postë°©ì‹
+			//QueryString ë°©ì‹ìœ¼ë¡œ ì „ì†¡ : ?(ì‹œì‘) member_id(ì´ë¦„ê°’) + member_id.value(ì‹¤ì œ ë³€ìˆ˜ê°’)
+			url : "idCheck?member_id=" + member_id.value, //ì„œë²„ í˜ì´ì§€ì˜ ì£¼ì†Œ
+			dataType : "text", //ì£¼ê³ ë°›ì„ ë°ì´í„°ì˜ ìœ í˜•
 			success : function(data) {
 
 				p1 = document.getElementById("p1");
 
 				if (data == 'true') {
-					p1.innerHTML = "»ç¿ëÇÒ ¼ö ¾ø´Â ¾ÆÀÌµğÀÔ´Ï´Ù.";
+					p1.innerHTML = "ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” ì•„ì´ë””ì…ë‹ˆë‹¤.";
 				} else {
-					p1.innerHTML = "»ç¿ëÇÒ ¼ö ÀÖ´Â ¾ÆÀÌµğÀÔ´Ï´Ù.";
+					p1.innerHTML = "ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” ì•„ì´ë””ì…ë‹ˆë‹¤.";
 				}
 
 			},
 			error : function() {
-				//¼­¹ö¿Í Åë½ÅÀÌ ½ÇÆĞÇßÀ» ¶§ ÈÄ Ã³¸®
-				alert("È£Ãâ½ÇÆĞ");
+				//ì„œë²„ì™€ í†µì‹ ì´ ì‹¤íŒ¨í–ˆì„ ë•Œ í›„ ì²˜ë¦¬
+				alert("í˜¸ì¶œì‹¤íŒ¨");
 			}
 		});
 	}
@@ -68,6 +68,7 @@
 .half {
 	background-color: yellow
 }
+
 </style>
 </head>
 
@@ -106,7 +107,7 @@
 						%>
 
 						<li><a href="LogoutService">Logout</a></li>
-						<li><a href="MyPage_form.jsp">Å·°ÜÃ£±â</a></li>
+						<li><a href="MyPage_form.jsp">í‚¹ê²¨ì°¾ê¸°</a></li>
 
 						<%
 							}
@@ -117,44 +118,43 @@
 		</nav>
 	</header>
 	<!-- Add your site or app content here -->
-	<div
-		class="hero-full-container background-image-container white-text-container"
+	<div 	class="hero-full-container background-image-container white-text-container"
 		style="background-image: url('./assets/images/')">
+		<div class="section-container">
 		<div class="container">
-
-			<div class="row">
-
-				<div class="col-xs-12">
+			<div class="row">		
+			 <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+				
+				<div class="col-xs-12 col-md-6">
 					<div class="hero-full-wrapper">
 						<div class="text-content">
-
-
-							<img src="./assets/images/Pink-pointing-up.png">
-
-
-							<h1>
-								±× °÷ÀÌ ¾Ë°í½Í´Ù<br> <span id="typed-strings"> <span>¾È³ç
-
-										ÀÌÁö!</span> <span>ÀÌÁöÂ÷´Â Æ¼º¼¸®</span> <span>ÃÖ°í°¡ ³ªÀÇ¸ñÇ¥</span>
-								</span> <span id="typed"></span><br>
-								<form method="post" enctype="multipart/form-data"
-									action="UploadService">
-									<input type="file" id="file" name="file">
-									<img id="image_section" src="./assets/images/Pink-pointing-up.png" alt="your image"/><input
-										type="submit" value="¾÷·Îµå"><br>
+							<h1><span id="typed-strings">
+								  <span>ê·¸ ê³³ì´ ì•Œê³  ì‹¶ë‹¤.</span></span> <span id="typed"></span><br>
+								  
+								</h1>	
+								
+								  	</div>
+								  	</div>								  	
+										</div>						
+					<div class="col-xs-12 col-md-6">
+					<div class="hero-full-wrapper">
+					<div class="text-content">
+								<form method="post" enctype="multipart/form-data" action="UploadService">
+									
+									<img id="image_section" src="./assets/images/up.PNG" alt="your image" style="max-width: 359px;height: 300px;"/></label>							
+									<input class="btn btn-default" type="file" id="file" name="file">
+									<input class="btn btn-default" type="submit" value="ì—…ë¡œë“œ"><br>
 
 								</form>
+							</div>
+							</div>
+							</div>
+</div>
+</div>
+</div>
+</div>
 
-
-							</h1>
-
-						</div>
-
-
-					</div>
-				</div>
-
-			</div>
 		</div>
 	</div>
 
@@ -175,7 +175,7 @@
 			}
 		}
 
-		// ÀÌº¥Æ®¸¦ ¹ÙÀÎµùÇØ¼­ input¿¡ ÆÄÀÏÀÌ ¿Ã¶ó¿Ã¶§ À§ÀÇ ÇÔ¼ö¸¦ this context·Î ½ÇÇàÇÕ´Ï´Ù.
+		// ì´ë²¤íŠ¸ë¥¼ ë°”ì¸ë”©í•´ì„œ inputì— íŒŒì¼ì´ ì˜¬ë¼ì˜¬ë•Œ ìœ„ì˜ í•¨ìˆ˜ë¥¼ this contextë¡œ ì‹¤í–‰í•©ë‹ˆë‹¤.
 		$("#file").change(function() {
 			readURL(this);
 		});
