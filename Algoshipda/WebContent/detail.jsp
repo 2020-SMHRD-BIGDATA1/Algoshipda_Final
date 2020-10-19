@@ -32,25 +32,17 @@
 <link href="./main.3f6952e4.css" rel="stylesheet">
 </head>
 <style>
-/* img {
+img {
 	display: inline-block;
-	width: 250px;
+	width: 350px;
 	max-width: 250%;
 	height: auto;
 }
- */
+
 div.card-container card-container-lg {
 	width: 250px;
 	max-width: 250%;
 	height: 100px;
-}
-
-.row1 {
-	margin-top: 100px;
-}
-
-#pad {
-	margin-right: 100px;
 }
 </style>
 <body class="">
@@ -62,21 +54,6 @@ div.card-container card-container-lg {
 	<header>
 		<%
 			MemberDTO info = (MemberDTO) session.getAttribute("info");
-		%>
-		<%
-			infoDAO dao2 = new infoDAO();
-		%>
-
-
-		<%
-			FileDAO dao = new FileDAO();
-		%>
-
-		<%
-			ArrayList<SimilarPicture> list = dao.rec_select();
-		%>
-		<%
-			ArrayList<infoDTO> list2 = dao2.infomation_select();
 		%>
 		<nav class="navbar  navbar-fixed-top navbar-inverse">
 			<div class="collapse navbar-collapse" id="navbar-collapse">
@@ -112,104 +89,75 @@ div.card-container card-container-lg {
 		</nav>
 	</header>
 
-	<div class="section-container">
-		<div class="container">
-			<div class="row">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+			<div class="text-center">
+				<h1 class="h2">그곳을 알려드림</h1>
+				<br>
+				<p>클릭해주셔서 감사합니다</p>
+			</div>
+		</div>
+	</div>
 
-				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-					<div class="text-center">
-						<h1 class="h2">여기가 어디인가유</h1>
-						<br> <br> <br> <br> <img id="pad" align="left"
-							width="400px" height="350px"
-							src="upload/<%=request.getParameter("fileName")%>">
-						<p>
-							찾는 곳 이름:
-							<%=list.get(0).getPicturetitle()%>
-							<br> <br> 찾는 곳 주소:
-							<%=list.get(0).getPicture_addr()%>
-							<br> <br> 찾는곳 간략한 설명:
-							<%=list.get(0).getPicture_text()%>
-							<br> <br> <a href="http://www.swissthemepark.com/">공식
-								웹사이트 : <%=list.get(0).getPicture_web()%></a>
-						</p>
-					</div>
-				</div>
-						<nav class="navbar  navbar-fixed-top navbar-default">
-					<div class="container">
-						<button type="button" class="navbar-toggle collapsed"
-							data-toggle="collapse" data-target="#navbar-collapse"
-							aria-expanded="false">
-							<span class="sr-only"> </span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span> <span class="icon-bar"></span>
-						</button>
-					</div>
-				</nav>
-				</header>
-				<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
-				<div class="col-md-12">
-					<div id="myCarousel" class="carousel slide projects-carousel">
-						<!-- Carousel items -->
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="row1">
-									<div class="col-sm-4">
-										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/<%=list.get(0).getImageName()%>"
-											alt="class="img-responsive">
-										</a>
-										<p><%=list2.get(0).getInfor_title()%></p>
-										<br>
-										<p><%=list2.get(0).getInfor_addr()%></p>
-										<a href="./detail.jsp" title="" class="btn btn-default">정보
-											보기</a>
-									</div>
-									<div class="col-sm-4">
-										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/<%=list.get(0).getImageName()%>"
-											alt="class="img-responsive">
-										</a>
-										<p><%=list2.get(0).getInfor_title()%></p>
-										<br>
-										<p><%=list2.get(0).getInfor_addr()%></p>
-										<a href="./detail.jsp" title="" class="btn btn-default">정보
-											보기</a>
-									</div>
-									<div class="col-sm-4">
-										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/<%=list.get(1).getImageName()%>"
-											alt="class="img-responsive">
-										</a>
-										<p><%=list2.get(0).getInfor_title()%></p>
-										<br>
-										<p><%=list2.get(0).getInfor_addr()%></p>
-										<a href="./detail.jsp" title="" class="btn btn-default">정보
-											보기</a>
-									</div>
-								</div>
-							</div>
-							<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
+	<div class="container">
+		<div class="row">
+			<%
+				infoDAO dao2 = new infoDAO();
+			%>
+
+			<%
+				FileDAO dao = new FileDAO();
+			%>
+
+			<%
+				ArrayList<SimilarPicture> list = dao.rec_select();
+			%>
+			<%
+				ArrayList<infoDTO> list2 = dao2.infomation_select();
+			%>
+			<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
+		</div>
+
+
+
+		<div class="col-md-12">
+
+			<div id="myCarousel" class="carousel slide projects-carousel">
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="row" align="center">
+
+							<img align="left"
+								src="SimilarPicture/<%=list.get(0).getImageName()%>"
+								alt="class="img-responsive">
+							<p>
+								찾는 곳 이름:
+								<%=list.get(0).getPicturetitle()%>
+								<br> <br> 찾는 곳 주소:
+								<%=list.get(0).getPicture_addr()%>
+								<br> <br> 찾는곳 간략한 설명:
+								<%=list.get(0).getPicture_text()%>
+								<br> <br> 찾는곳 주변 관광지:
+								<%=list.get(0).getPicture_tour()%>
+								<br> <br> 공식 웹사이트 :
+								<%=list.get(0).getPicture_web()%>
+							</p>
+							<!--/row-->
 						</div>
+
+
+						<!--/item-->
+						<div class="item">
+							<div class="row"></div>
+						</div>
+						<!--/row-->
 					</div>
+					<!--/item-->
+					<!--/myCarousel-->
 				</div>
 			</div>
 		</div>
-		<!--/row-->
-	</div>
-	<!--/item-->
-	<div class="item">
-		<div class="row"></div>
-	</div>
-	<!--/row-->
-	</div>
-	<!--/item-->
-	</div>
-	<!--/carousel-inner-->
-
-	</div>
-	<!--/myCarousel-->
-	</div>
-	</div>
-	</div>
 	</div>
 
 
@@ -217,7 +165,8 @@ div.card-container card-container-lg {
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<p>여기에도 뭘 쓸깐</p>
+					<br> <br>
+					<p>여기를 가보자</p>
 				</div>
 			</div>
 		</div>

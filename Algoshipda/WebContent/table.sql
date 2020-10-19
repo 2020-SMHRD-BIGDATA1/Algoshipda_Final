@@ -1,5 +1,8 @@
 drop table Members;
 drop table files;
+drop table SimilarPicture;
+drop table information;
+drop table Picturelocation
 
 create table  Members(
 	member_id varchar2(30) primary key,	
@@ -49,18 +52,37 @@ drop sequence picture_index;
 
 create table Picturelocation(
 picture_index number,
-Picturewhere varchar(200),
-fileName varchar(200)
+picturetitle varchar2(200),
+picture_addr varchar2(100),
+picture_text varchar2(1000),
+picture_web varchar2(100),
+imageName varchar2(200)
 );
-
 create table SimilarPicture(
 picture_index number,
-Picturewhere varchar(200),
-fileName varchar(200)
+picturetitle varchar2(200),
+picture_addr varchar2(100),
+picture_text varchar2(1000),
+picture_web varchar2(100),
+picture_tour varchar2(100),
+imageName varchar2(200)
 );
 
-insert into similarPicture values(similar_index.nextVal, '멋쟁이 미술관','testValue.jpg')
-
+insert into similarPicture values(similar_index.nextVal, '가평에델바이스','경기도 가평군 설악면 다락재로 226-57','스위스의 작은 마을 축제를 주제로 만들어 진 테마파크 에델바이스는 스위스에서 보고 느낀 아름다운 숲과 마을, 따뜻하고 친절한 사람들의 미소를 경기도 가평의 아름다운 자연환경 속에서 스위스풍의 건축물과 다양한 테마공원을 통해 재현하였습니다.',
+'http://www.swissthemepark.com/','인터렉티브 아트뮤지엄, 제이드가든 수목원, 나인포레스트 이화원','testValue4.jpg');
+.
 create sequence similar_index start with 1 increment by 1;
 
 select * from SimilarPicture;
+select * from Picturelocation;
+
+
+create table information(
+information_index number,
+infor_title varchar(100),
+infor_addr varchar(100)
+);
+insert into information values(information_index.nextVal,'한국의 산토리니','이곳의 위치는 가평 산토리니 펜션입니다.')
+create sequence information_index start with 1 increment by 1;
+
+select * from information;
