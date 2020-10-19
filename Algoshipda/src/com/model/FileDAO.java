@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.List;
+import java.util.ArrayList;
 
 public class FileDAO {
 
@@ -73,4 +74,36 @@ public class FileDAO {
 
    }
 
+   public ArrayList<SimilarPicture> rec_select(){
+	   
+	   getConn();
+	   
+	   ArrayList<SimilarPicture> list = new ArrayList<SimilarPicture>();
+	   
+	   String sql = "select * from SimilarPicture";
+	   
+	   try {
+		psmt = conn.prepareStatement(sql);
+		rs = psmt.executeQuery();
+		while(rs.next()) {
+			
+			
+			int picture_index = rs.getInt(1);
+			String picturewhere = rs.getString(2);
+			String fileName = rs.getString(3);
+			SimilarPicture s = new SimilarPicture(picture_index, picturewhere, fileName);
+			list.add(s);
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}finally {
+		close();
+	}
+	   return list;
+	   
+   }
+   
+   
+  
 }

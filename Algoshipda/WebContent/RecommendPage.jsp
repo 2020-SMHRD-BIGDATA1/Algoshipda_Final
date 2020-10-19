@@ -1,3 +1,4 @@
+<%@page import="com.model.SimilarPicture"%>
 <%@page import="com.model.FileDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -22,10 +23,23 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
   <link href="./assets/favicon.ico" rel="icon">
 
-  <title>Title page</title>  
+  <title>유사 여행지 추천</title>  
 
 <link href="./main.3f6952e4.css" rel="stylesheet"></head>
-
+<style>
+img {
+	display:inline-block;
+	width: 250px;
+	max-width: 250%;
+	height: auto;
+}
+div.card-container card-container-lg {
+	
+width: 250px;
+	max-width: 250%;
+	height: 100px;
+}
+</style>
 <body class="">
 <div id="site-border-left"></div>
 <div id="site-border-right"></div>
@@ -56,21 +70,23 @@
       
       <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
         <div class="text-center">
-          <h1 class="h2"></h1>
+          <h1 class="h2">여기가 어디인가유</h1><br>
           <img src = "upload/<%=request.getParameter("fileName")%>">
-          <p>나와랏!</p>
+          <p>이곳은 마이 스위트홈</p>
         </div>
       </div>
-	  <%--  <%
-			FileDTO info = (FileDTO) session.getAttribute("info");
+          
+
+
+	    <%
 	   		FileDAO dao = new FileDAO();
 		%>
 	
-	
-		<% ArrayList<String> list = dao.select(info.getFileName());%>
-		<img src="upload/<%= list.get(0)%>">  --%>
-	 
-	  
+		<% 
+			ArrayList<SimilarPicture> list = dao.rec_select();%>
+		<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
+	 	
+	   
       <div class="col-md-12">
      
       <div id="myCarousel" class="carousel slide projects-carousel">
@@ -79,11 +95,11 @@
             <div class="item active">
                 <div class="row">
                     <div class="col-sm-4">
-
                       <a href="./work.html" title="" class="black-image-project-hover">
-                        <img src="./assets/images/work01-hover.jpg" alt="" class="img-responsive">
+                        <img src="SimilarPicture/<%= list.get(0).getFileName()%>"alt=" class="img-responsive">
                       </a>
-                      <div class="card-container card-container-lg">
+                      
+                      <div style="width: 150px; height: 120px;" class="card-container card-container-lg">
                         <h4>1/6</h4>
                         <h3>부적합</h3>
                         <p>디스코보리</p>
@@ -92,7 +108,7 @@
                     </div>
                     <div class="col-sm-4">
                       <a href="./work.html" title="" class="black-image-project-hover">
-                        <img src="./assets/images/work02-hover.jpg" alt="" class="img-responsive">
+                        <img src="SimilarPicture/<%= list.get(0).getFileName()%>"alt=" class="img-responsive">
                       </a>
                       <div class="card-container card-container-lg">
                         <h4>002/006</h4>
@@ -103,7 +119,7 @@
                     </div>
                     <div class="col-sm-4">
                       <a href="./work.html" title="" class="black-image-project-hover">
-                        <img src="./assets/images/work03-hover.jpg" alt="" class="img-responsive">
+                        <img src="SimilarPicture/<%= list.get(0).getFileName()%>"alt=" class="img-responsive">
                       </a>
                       <div class="card-container card-container-lg">
                         <h4>003/006</h4>
@@ -179,7 +195,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <p>© UNTITLED | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+        <p>여기에도 뭘 쓸깐</p>
       </div>
     </div>
   </div>

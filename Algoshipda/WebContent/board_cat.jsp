@@ -93,7 +93,7 @@
                 
                     <div class="col-sm-4">
                     
-                       <a href="board_info.jsp?num=<%=num%>" class="image featured"> <img src="./bbsimage/<%=list.get(i).getBbsImg() %>" alt="" class="img-responsive">
+                       <a href="board_info.jsp?num=<%=num%>" class="image featured"> <img src="./upload/<%=list.get(i).getBbsImg() %>" alt="" class="img-responsive">
                       </a>
                      
                       <div class="card-container card-container-lg">

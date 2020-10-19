@@ -46,3 +46,21 @@ increment by 1
 start with 1;
 
 drop sequence picture_index;
+
+create table Picturelocation(
+picture_index number,
+Picturewhere varchar(200),
+fileName varchar(200)
+);
+
+create table SimilarPicture(
+picture_index number,
+Picturewhere varchar(200),
+fileName varchar(200)
+);
+
+insert into similarPicture values(similar_index.nextVal, '¸ÚÀïÀÌ ¹Ì¼ú°ü','testValue.jpg')
+
+create sequence similar_index start with 1 increment by 1;
+
+select * from SimilarPicture;
