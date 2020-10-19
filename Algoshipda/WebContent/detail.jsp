@@ -87,18 +87,19 @@ div.card-container card-container-lg {
 			</div>
 		</nav>
 	</header>
-
 	<div class="section-container">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 					<div class="text-center">
-						<h1 class="h2">여기가 어디인가유</h1>
-						<br> <img src="upload/<%=request.getParameter("fileName")%>">
-						<p>이곳은 마이 스위트홈</p>
+						<h1 class="h2">그곳을 알려드림</h1>
+						<br> 
+						<p>클릭해주셔서 감사합니다</p>
 					</div>
 				</div>
-
+	<div class="section-container">
+		<div class="container">
+			<div class="row">
 				<%
 					infoDAO dao2 = new infoDAO();
 				%>
@@ -114,79 +115,44 @@ div.card-container card-container-lg {
 					ArrayList<infoDTO> list2 = dao2.infomation_select();
 				%>
 				<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
+			</div>
+		</div>
 
 
-				<div class="col-md-12">
+		<div class="col-md-12">
 
-					<div id="myCarousel" class="carousel slide projects-carousel">
-						<!-- Carousel items -->
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="row">
-									<div class="col-sm-4">
-										<a href="./work.html" title=""> <img
-											src="SimilarPicture/<%=list.get(0).getImageName()%>"
+			<div id="myCarousel" class="carousel slide projects-carousel">
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="row">
+							<div class="col-sm-4">
+								<a href="./work.html" title="">
+									<img src="SimilarPicture/<%=list.get(0).getImageName()%>"
 									alt=" class="img-responsive">
-										</a>
+								</a>
 
-										<div style="width: 150px; height: 120px;"
-											class="card-container card-container-lg">
-											<h4>1/6</h4>
-											<h3><%=list2.get(0).getInfor_title()%></h3>
+								
+									
+									<h3><%=list2.get(0).getInfor_title()%></h3>
 
-											<p><%=list2.get(0).getInfor_addr()%></p>
-											<a href="./detail.jsp" title="" class="btn btn-default">정보
-												보기</a>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<a href="./work.html" title=""> <img
-											src="SimilarPicture/<%=list.get(0).getPicturetitle()%>"
-											alt=" class="img-responsive">
-										</a>
-										<div class="card-container card-container-lg">
-											<h4>002/006</h4>
-											<h3>Nulla scelerisque</h3>
-											<p>Proin pharetra metus id iaculis dignissim. In aliquet
-												lorem ut ex ullamcorper.</p>
-											<a href="" title="" class="btn btn-default">Discover</a>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<a href="./work.html" title=""
-											class="black-image-project-hover"> <img
-											src="SimilarPicture/<%=list.get(0).getPicturetitle()%>"
-											alt=" class="img-responsive">
-										</a>
-										<div class="card-container card-container-lg">
-											<h4>003/006</h4>
-											<h3>Vivamus vestibulum</h3>
-											<p>Fusce sed hendrerit augue, a rhoncus velit. In non
-												lorem mattis, tempor sem sit amet.</p>
-											<a href="" title="" class="btn btn-default">Discover</a>
-										</div>
-									</div>
-
-								</div>
-								<!--/row-->
-							</div>
-							<!--/item-->
-							<div class="item">
-								<div class="row"></div>
+									<p><%=list2.get(0).getInfor_addr()%></p>
+									
+								
 							</div>
 							<!--/row-->
 						</div>
 						<!--/item-->
+						<div class="item">
+							<div class="row"></div>
+						</div>
+						<!--/row-->
 					</div>
-					<!--/carousel-inner-->
-					<a class="left carousel-control" href="#myCarousel"
-						data-slide="prev">‹</a> <a class="right carousel-control"
-						href="#myCarousel" data-slide="next">›</a>
+					<!--/item-->
+					<!--/myCarousel-->
 				</div>
-				<!--/myCarousel-->
 			</div>
 		</div>
-	</div>
 	</div>
 
 
@@ -194,7 +160,7 @@ div.card-container card-container-lg {
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<p>여기에도 뭘 쓸깐</p>
+					<h1>나도 여행이 가고 싶다</h1>
 				</div>
 			</div>
 		</div>

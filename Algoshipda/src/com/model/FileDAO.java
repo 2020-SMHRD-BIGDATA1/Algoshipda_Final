@@ -87,11 +87,14 @@ public class FileDAO {
 		rs = psmt.executeQuery();
 		while(rs.next()) {
 			
-			
 			int picture_index = rs.getInt(1);
-			String picturewhere = rs.getString(2);
-			String fileName = rs.getString(3);
-			SimilarPicture s = new SimilarPicture(picture_index, picturewhere, fileName);
+			String picturetitle = rs.getString(2);
+			String picture_addr = rs.getString(3);
+			String picture_text = rs.getString(4);
+			String picture_web = rs.getString(5);
+			String imageName = rs.getString(6);
+			
+			SimilarPicture s = new SimilarPicture(picture_index, picturetitle, picture_addr, picture_text, picture_web, imageName);
 			list.add(s);
 		}
 	} catch (SQLException e) {
