@@ -139,7 +139,7 @@ img {
 										<form method="post" enctype="multipart/form-data"
 											action="UploadService">
 											<img id="image_section" src="./assets/images/up.PNG"
-												alt="your image" style="max-width: 359px; height: 300px;" /></label>
+												alt="your image" style="max-width: 359px; height: 300px;" />
 											<input class="btn btn-default" type="file" id="file"
 												name="file"> <input class="btn btn-default"
 												type="submit" value="업로드"><br>

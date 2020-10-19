@@ -32,17 +32,25 @@
 <link href="./main.3f6952e4.css" rel="stylesheet">
 </head>
 <style>
-img {
+/* img {
 	display: inline-block;
 	width: 250px;
 	max-width: 250%;
 	height: auto;
 }
-
+ */
 div.card-container card-container-lg {
 	width: 250px;
 	max-width: 250%;
 	height: 100px;
+}
+
+.row1 {
+	margin-top: 100px;
+}
+
+#pad {
+	margin-right: 100px;
 }
 </style>
 <body class="">
@@ -55,26 +63,41 @@ div.card-container card-container-lg {
 		<%
 			MemberDTO info = (MemberDTO) session.getAttribute("info");
 		%>
-		<div class="collapse navbar-collapse" id="navbar-collapse">
-			<ul class="nav navbar-nav ">
-				<li><a href="./main.jsp" title="">Home</a></li>
-				<li><a href="./board_cat.jsp" title="">Board</a></li>
-				<%
-					if (info == null) {
-				%>
-				<li><a href="./Login_form.jsp" title="">Login</a></li>
-				<li><a href="./Join_form.jsp" title="">Join</a></li>
-				<%
-					} else {
-				%>
-				<li><a href="LogoutService">Logout</a></li>
-				<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
-				<%
-					}
-				%>
-			</ul>
-		</div>
+		<%
+			infoDAO dao2 = new infoDAO();
+		%>
 
+		<%
+			FileDAO dao = new FileDAO();
+		%>
+
+		<%
+			ArrayList<SimilarPicture> list = dao.rec_select();
+		%>
+		<%
+			ArrayList<infoDTO> list2 = dao2.infomation_select();
+		%>
+		<nav class="navbar  navbar-fixed-top navbar-inverse">
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav ">
+					<li><a href="./main.jsp" title="">Home</a></li>
+					<li><a href="./board_cat.jsp" title="">Board</a></li>
+					<%
+						if (info == null) {
+					%>
+					<li><a href="./Login_form.jsp" title="">Login</a></li>
+					<li><a href="./Join_form.jsp" title="">Join</a></li>
+					<%
+						} else {
+					%>
+					<li><a href="LogoutService">Logout</a></li>
+					<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
+					<%
+						}
+					%>
+				</ul>
+			</div>
+		</nav>
 
 		<nav class="navbar  navbar-fixed-top navbar-default">
 			<div class="container">
@@ -94,79 +117,66 @@ div.card-container card-container-lg {
 				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 					<div class="text-center">
 						<h1 class="h2">여기가 어디인가유</h1>
-						<br> <img src="upload/<%=request.getParameter("fileName")%>">
-						<p>이곳은 마이 스위트홈</p>
+						<br> <br> <br> <br> <img id="pad" align="left"
+							width="400px" height="350px"
+							src="upload/<%=request.getParameter("fileName")%>">
+						<p>
+							찾는 곳 이름:
+							<%=list.get(0).getPicturetitle()%>
+							<br> <br> 찾는 곳 주소:
+							<%=list.get(0).getPicture_addr()%>
+							<br> <br> 찾는곳 간략한 설명:
+							<%=list.get(0).getPicture_text()%>
+							<br> <br> <a href="http://www.swissthemepark.com/">공식
+								웹사이트 : <%=list.get(0).getPicture_web()%></a>
+						</p>
 					</div>
 				</div>
 
-				<%
-					infoDAO dao2 = new infoDAO();
-				%>
 
-				<%
-					FileDAO dao = new FileDAO();
-				%>
 
-				<%
-					ArrayList<SimilarPicture> list = dao.rec_select();
-				%>
-				<%
-					ArrayList<infoDTO> list2 = dao2.infomation_select();
-				%>
 				<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
-
-
 				<div class="col-md-12">
-
 					<div id="myCarousel" class="carousel slide projects-carousel">
 						<!-- Carousel items -->
 						<div class="carousel-inner">
 							<div class="item active">
-								<div class="row">
+								<div class="row1">
 									<div class="col-sm-4">
-										<a href="./work.html" title=""> <img
+										<a href="./detail.jsp" title=""> <img
 											src="SimilarPicture/<%=list.get(0).getImageName()%>"
-									alt=" class="img-responsive">
+											alt="class="img-responsive">
 										</a>
+										<p><%=list2.get(0).getInfor_title()%></p>
+										<br>
+										<p><%=list2.get(0).getInfor_addr()%></p>
+										<a href="./detail.jsp" title="" class="btn btn-default">정보
+											보기</a>
 
-										<div style="width: 150px; height: 120px;"
-											class="card-container card-container-lg">
-											<h4>1/6</h4>
-											<h3><%=list2.get(0).getInfor_title()%></h3>
-
-											<p><%=list2.get(0).getInfor_addr()%></p>
-											<a href="./detail.jsp" title="" class="btn btn-default">정보
-												보기</a>
-										</div>
 									</div>
 									<div class="col-sm-4">
-										<a href="./work.html" title=""> <img
-											src="SimilarPicture/<%=list.get(0).getPicturetitle()%>"
-											alt=" class="img-responsive">
+										<a href="./detail.jsp" title=""> <img
+											src="SimilarPicture/<%=list.get(0).getImageName()%>"
+											alt="class="img-responsive">
 										</a>
-										<div class="card-container card-container-lg">
-											<h4>002/006</h4>
-											<h3>Nulla scelerisque</h3>
-											<p>Proin pharetra metus id iaculis dignissim. In aliquet
-												lorem ut ex ullamcorper.</p>
-											<a href="" title="" class="btn btn-default">Discover</a>
-										</div>
+										<p><%=list2.get(0).getInfor_title()%></p>
+										<br>
+										<p><%=list2.get(0).getInfor_addr()%></p>
+										<a href="./detail.jsp" title="" class="btn btn-default">정보
+											보기</a>
+
 									</div>
 									<div class="col-sm-4">
-										<a href="./work.html" title=""
-											class="black-image-project-hover"> <img
-											src="SimilarPicture/<%=list.get(0).getPicturetitle()%>"
-											alt=" class="img-responsive">
+										<a href="./detail.jsp" title=""> <img
+											src="SimilarPicture/<%=list.get(1).getImageName()%>"
+											alt="class="img-responsive">
 										</a>
-										<div class="card-container card-container-lg">
-											<h4>003/006</h4>
-											<h3>Vivamus vestibulum</h3>
-											<p>Fusce sed hendrerit augue, a rhoncus velit. In non
-												lorem mattis, tempor sem sit amet.</p>
-											<a href="" title="" class="btn btn-default">Discover</a>
-										</div>
+										<p><%=list2.get(0).getInfor_title()%></p>
+										<br>
+										<p><%=list2.get(0).getInfor_addr()%></p>
+										<a href="./detail.jsp" title="" class="btn btn-default">정보
+											보기</a>
 									</div>
-
 								</div>
 								<!--/row-->
 							</div>
@@ -178,10 +188,6 @@ div.card-container card-container-lg {
 						</div>
 						<!--/item-->
 					</div>
-					<!--/carousel-inner-->
-					<a class="left carousel-control" href="#myCarousel"
-						data-slide="prev">‹</a> <a class="right carousel-control"
-						href="#myCarousel" data-slide="next">›</a>
 				</div>
 				<!--/myCarousel-->
 			</div>

@@ -92,9 +92,9 @@ public class FileDAO {
 			String picture_addr = rs.getString(3);
 			String picture_text = rs.getString(4);
 			String picture_web = rs.getString(5);
-			String imageName = rs.getString(6);
-			
-			SimilarPicture s = new SimilarPicture(picture_index, picturetitle, picture_addr, picture_text, picture_web, imageName);
+			String picture_tour = rs.getString(6);
+			String imageName = rs.getString(7);
+			SimilarPicture s = new SimilarPicture(picture_index, picturetitle, picture_addr, picture_text, picture_web, imageName, picture_tour);
 			list.add(s);
 		}
 	} catch (SQLException e) {
