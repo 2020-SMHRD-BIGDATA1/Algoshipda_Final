@@ -1,5 +1,8 @@
 drop table Members;
 drop table files;
+drop table SimilarPicture;
+drop table information;
+drop table Picturelocation
 
 create table  Members(
 	member_id varchar2(30) primary key,	
@@ -49,18 +52,36 @@ drop sequence picture_index;
 
 create table Picturelocation(
 picture_index number,
-Picturewhere varchar(200),
-fileName varchar(200)
+picturetitle varchar2(200),
+picture_addr varchar2(100),
+picture_text varchar2(1000),
+picture_web varchar2(100),
+imageName varchar2(200)
 );
 create table SimilarPicture(
 picture_index number,
-Picturewhere varchar(200),
-fileName varchar(200)
+picturetitle varchar2(200),
+picture_addr varchar2(100),
+picture_text varchar2(1000),
+picture_web varchar2(100),
+imageName varchar2(200)
 );
 
-insert into similarPicture values(similar_index.nextVal, '멋쟁이 미술관','aa.jpg')
+insert into similarPicture values(similar_index.nextVal, '산토리니','그리스야','이곳은 그리스의 대표관광지야',
+'www.snato.com','testValue3.jpg');
 
 create sequence similar_index start with 1 increment by 1;
 
 select * from SimilarPicture;
 select * from Picturelocation;
+
+
+create table information(
+information_index number,
+infor_title varchar(100),
+infor_addr varchar(100)
+);
+insert into information values(information_index.nextVal,'한국의 산토리니','이곳의 위치는 가평 산토리니 펜션입니다.')
+create sequence information_index start with 1 increment by 1;
+
+select * from information;

@@ -1,3 +1,5 @@
+<%@page import="com.model.infoDTO"%>
+<%@page import="com.model.infoDAO"%>
 <%@page import="com.model.SimilarPicture"%>
 <%@page import="com.model.FileDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -76,8 +78,41 @@ div.card-container card-container-lg {
 						<p>이곳은 마이 스위트홈</p>
 					</div>
 				</div>
+				<%
+					MemberDTO info = (MemberDTO) session.getAttribute("info");
+				%>
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav ">
+						<li><a href="./main.jsp" title="">Home</a></li>
+						<li><a href="./board_cat.jsp" title="">Board</a></li>
+						<%
+							if (info == null) {
+						%>
+						<li><a href="./Login_form.jsp" title="">Login</a></li>
+						<li><a href="./Join_form.jsp" title="">Join</a></li>
+						<%
+							} else {
+						%>
+						<li><a href="LogoutService">Logout</a></li>
+						<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
+						<%
+							}
+						%>
+					</ul>
+				</div>
 
 
+				<nav class="navbar  navbar-fixed-top navbar-default">
+					<div class="container">
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse" data-target="#navbar-collapse"
+							aria-expanded="false">
+							<span class="sr-only"> </span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span>
+						</button>
+					</div>
+				</nav>
+				</header>
 
 				<%
 					FileDAO dao = new FileDAO();
@@ -86,125 +121,199 @@ div.card-container card-container-lg {
 				<%
 					ArrayList<SimilarPicture> list = dao.rec_select();
 				%>
-				<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
-
-
-				<div class="col-md-12">
-
-					<div id="myCarousel" class="carousel slide projects-carousel">
-						<!-- Carousel items -->
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="row">
-									<div class="col-sm-4">
-										<a href="./work.html" title=""
-											class="black-image-project-hover"> <img
-											src="SimilarPicture/<%=list.get(0).getFileName()%>"
-											alt=" class="img-responsive">
-										</a>
-
-										<div style="width: 150px; height: 120px;"
-											class="card-container card-container-lg">
-											<h4>1/6</h4>
-											<h3>부적합</h3>
-											<p>디스코보리</p>
-											<a href="./work.html" title="" class="btn btn-default">여기야</a>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<a href="./work.html" title=""
-											class="black-image-project-hover"> <img
-											src="SimilarPicture/<%=list.get(0).getFileName()%>"
-											alt=" class="img-responsive">
-										</a>
-										<div class="card-container card-container-lg">
-											<h4>002/006</h4>
-											<h3>Nulla scelerisque</h3>
-											<p>Proin pharetra metus id iaculis dignissim. In aliquet
-												lorem ut ex ullamcorper.</p>
-											<a href="./work.html" title="" class="btn btn-default">Discover</a>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<a href="./work.html" title=""
-											class="black-image-project-hover"> <img
-											src="SimilarPicture/<%=list.get(0).getFileName()%>"
-											alt=" class="img-responsive">
-										</a>
-										<div class="card-container card-container-lg">
-											<h4>003/006</h4>
-											<h3>Vivamus vestibulum</h3>
-											<p>Fusce sed hendrerit augue, a rhoncus velit. In non
-												lorem mattis, tempor sem sit amet.</p>
-											<a href="./work.html" title="" class="btn btn-default">Discover</a>
-										</div>
-									</div>
-
+				<div class="section-container">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+								<div class="text-center">
+									<h1 class="h2">여기가 어디인가유</h1>
+									<br> <img
+										src="upload/<%=request.getParameter("fileName")%>">
+									<p>이곳은 마이 스위트홈</p>
 								</div>
-								<!--/row-->
-							</div>
-							<!--/item-->
-							<div class="item">
-								<div class="row">
-									<div class="col-sm-4">
-										<a href="./work.html" class="black-image-project-hover"> <img
-											src="./assets/images/work02-hover.jpg" alt="Image"
-											class="img-responsive">
-										</a>
-										<div class="card-container">
-											<h4>004/006</h4>
-											<h3>Nulla scelerisque</h3>
-											<p>Proin pharetra metus id iaculis dignissim. In aliquet
-												lorem ut ex ullamcorper.</p>
-											<a href="./work.html" class="btn btn-default">Discover</a>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<a href="./work.html" class="black-image-project-hover"> <img
-											src="./assets/images/work01-hover.jpg" alt="Image"
-											class="img-responsive">
-										</a>
-										<div class="card-container">
-											<h4>005/006</h4>
-											<h3>Fringilla sit amet</h3>
-											<p>Nulla facilisi. Vivamus vestibulum, elit in
-												scelerisque ultricies.</p>
-											<a href="./work.html" class="btn btn-default">Discover</a>
-										</div>
-									</div>
-
-									<div class="col-sm-4">
-										<a href="./work.html" class="black-image-project-hover"> <img
-											src="./assets/images/work03-hover.jpg" alt="Image"
-											class="img-responsive">
-										</a>
-										<div class="card-container">
-											<h4>006/006</h4>
-											<h3>Vivamus vestibulum</h3>
-											<p>Fusce sed hendrerit augue, a rhoncus velit. In non
-												lorem mattis, tempor sem sit amet.</p>
-											<a href="./work.html" class="btn btn-default">Discover</a>
-										</div>
-									</div>
-
-								</div>
-								<!--/row-->
 							</div>
 
-							<!--/item-->
+							<%
+								infoDAO dao2 = new infoDAO();
+							%>
+
+							<%
+								ArrayList<infoDTO> list2 = dao2.infomation_select();
+							%>
+							<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
+
+
+							<div class="col-md-12">
+
+								<div id="myCarousel" class="carousel slide projects-carousel">
+									<!-- Carousel items -->
+									<div class="carousel-inner">
+										<div class="item active">
+											<div class="row">
+												<div class="col-sm-4">
+													<a href="./work.html" title=""
+														class="black-image-project-hover"> <img
+														src="SimilarPicture/<%=list.get(0).getImageName()%>"
+														alt=" class="img-responsive"><a href="./work.html"
+														title=""> <img
+															src="SimilarPicture/<%=list.get(0).getImageName()%>"
+															alt=" class="img-responsive">
+													</a>
+
+														<div style="width: 150px; height: 120px;"
+															class="card-container card-container-lg">
+															<h4>1/6</h4>
+															<h3>부적합</h3>
+															<p>디스코보리</p>
+															<a href="./work.html" title="" class="btn btn-default">여기야</a>
+														</div>
+												</div>
+												<div class="col-sm-4">
+													<a href="./work.html" title=""
+														class="black-image-project-hover"> <img
+														src="SimilarPicture/<%=list.get(0).getImageName()%>"
+														alt=" class="img-responsive">
+													</a>
+													<div class="card-container card-container-lg">
+														<h4>002/006</h4>
+														<h3>Nulla scelerisque</h3>
+														<p>Proin pharetra metus id iaculis dignissim. In
+															aliquet lorem ut ex ullamcorper.</p>
+														<a href="./work.html" title="" class="btn btn-default">Discover</a>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<a href="./work.html" title=""
+														class="black-image-project-hover"> <img
+														src="SimilarPicture/<%=list.get(0).getImageName()%>"
+														alt=" class="img-responsive">
+													</a>
+													<div class="card-container card-container-lg">
+														<h4>003/006</h4>
+														<h3>Vivamus vestibulum</h3>
+														<p>Fusce sed hendrerit augue, a rhoncus velit. In non
+															lorem mattis, tempor sem sit amet.</p>
+														<a href="./work.html" title="" class="btn btn-default">Discover</a>
+													</div>
+												</div>
+
+											</div>
+											<!--/row-->
+										</div>
+										<!--/item-->
+										<div class="item">
+											<div class="row">
+												<div class="col-sm-4">
+													<a href="./work.html" class="black-image-project-hover">
+														<img src="./assets/images/work02-hover.jpg" alt="Image"
+														class="img-responsive">
+													</a>
+													<div class="card-container">
+														<h4>004/006</h4>
+														<h3>Nulla scelerisque</h3>
+														<p>Proin pharetra metus id iaculis dignissim. In
+															aliquet lorem ut ex ullamcorper.</p>
+														<a href="./work.html" class="btn btn-default">Discover</a>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<a href="./work.html" class="black-image-project-hover">
+														<img src="./assets/images/work01-hover.jpg" alt="Image"
+														class="img-responsive">
+													</a>
+													<div class="card-container">
+														<h4>005/006</h4>
+														<h3>Fringilla sit amet</h3>
+														<p>Nulla facilisi. Vivamus vestibulum, elit in
+															scelerisque ultricies.</p>
+														<a href="./work.html" class="btn btn-default">Discover</a>
+													</div>
+												</div>
+
+												<div class="col-sm-4">
+													<a href="./work.html" class="black-image-project-hover">
+														<img src="./assets/images/work03-hover.jpg" alt="Image"
+														class="img-responsive">
+													</a>
+													<div class="card-container">
+														<h4>006/006</h4>
+														<h3>Vivamus vestibulum</h3>
+														<p>Fusce sed hendrerit augue, a rhoncus velit. In non
+															lorem mattis, tempor sem sit amet.</p>
+														<a href="./work.html" class="btn btn-default">Discover</a>
+													</div>
+												</div>
+
+											</div>
+											<!--/row-->
+										</div>
+
+										<!--/item-->
+									</div>
+									<!--/carousel-inner-->
+									<a class="left carousel-control" href="#myCarousel"
+										data-slide="prev">‹</a> <a class="right carousel-control"
+										href="#myCarousel" data-slide="next">›</a>
+								</div>
+
+
+
+								<!--/myCarousel-->
+							</div>
 						</div>
-						<!--/carousel-inner-->
-						<a class="left carousel-control" href="#myCarousel"
-							data-slide="prev">‹</a> <a class="right carousel-control"
-							href="#myCarousel" data-slide="next">›</a>
 					</div>
+					<h3><%=list2.get(0).getInfor_title()%></h3>
 
-
-
-					<!--/myCarousel-->
+					<p><%=list2.get(0).getInfor_addr()%></p>
+					<a href="./detail.jsp" title="" class="btn btn-default">정보 보기</a>
 				</div>
 			</div>
+			<div class="col-sm-4">
+				<a href="./work.html" title=""> <img
+					src="SimilarPicture/<%=list.get(0).getPicturetitle()%>"
+					alt=" class="img-responsive">
+				</a>
+				<div class="card-container card-container-lg">
+					<h4>002/006</h4>
+					<h3>Nulla scelerisque</h3>
+					<p>Proin pharetra metus id iaculis dignissim. In aliquet lorem
+						ut ex ullamcorper.</p>
+					<a href="" title="" class="btn btn-default">Discover</a>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<a href="./work.html" title="" class="black-image-project-hover">
+					<img src="SimilarPicture/<%=list.get(0).getPicturetitle()%>"
+					alt=" class="img-responsive">
+				</a>
+				<div class="card-container card-container-lg">
+					<h4>003/006</h4>
+					<h3>Vivamus vestibulum</h3>
+					<p>Fusce sed hendrerit augue, a rhoncus velit. In non lorem
+						mattis, tempor sem sit amet.</p>
+					<a href="" title="" class="btn btn-default">Discover</a>
+				</div>
+			</div>
+
 		</div>
+		<!--/row-->
+	</div>
+	<!--/item-->
+	<div class="item">
+		<div class="row"></div>
+	</div>
+	<!--/row-->
+	</div>
+	<!--/item-->
+	</div>
+	<!--/carousel-inner-->
+	<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+	<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+	</div>
+	<!--/myCarousel-->
+	</div>
+	</div>
+	</div>
 	</div>
 
 
