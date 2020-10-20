@@ -1,5 +1,7 @@
 <%@page import="com.model.MemberDTO"%>
 <%@page import="java.io.PrintWriter"%>
+<%@page import="javax.print.URIException"%>
+<%@page import="java.net.URLEncoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,24 +23,57 @@
 <link href="./assets/favicon.ico" rel="icon">
 
 <title>Title page</title>
-
+<script src="jquery-3.5.1.min.js"></script>
 <link href="./main.3f6952e4.css" rel="stylesheet">
 <style>
+.form-con {
+	width: 520px;
+	padding: 8px 14px;
+	margin: 8px;
+	background-color: white;
+}
+
+.table_con {
+	text-align: center;
+	width: 100%;
+	background-color: #f5f5f5;
+}
+
+th {
+	width: 520px;
+}
+
+.btn_ej {
+	width: 100px;
+	background-color: gray;
+	border: none;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px;
+	cursor: pointer;
+	text-decoration: none
+}
 </style>
 </head>
 
 <body class="">
 
-		<%
+	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
-			%>
-	    <% if (info == null) {
-        PrintWriter script = response.getWriter();
+	%>
+	<%
+		if (info == null) {
+		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('로그인을 하세요.')");
 		script.println("location.href = 'Login_form.jsp'");
 		script.println("</script>");
-		}else { %>
+	} else {
+	%>
 
 	<header>
 		<nav class="navbar  navbar-fixed-top navbar-default">
@@ -85,38 +120,52 @@
 
 								<!-- 게시판시작 -->
 								<section class="blog_area section-padding">
-								
+
 									<div class="container">
 										<div class="row">
-											<form method="post" action="WriteService" enctype="multipart/form-data" style="width: 100%; padding: 50px;" >
-												<table class="table table-striped"
-													style="text-align: center; border: 10px solid #dddddd; width: 100%;">
-													<thead>
-														<tr>
-															<th colspan="2"	style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
-														</tr>
-													</thead>
+											<form method="post" action="WriteService"
+												enctype="multipart/form-data"
+												style="width: 100%; padding: 50px;">
+												<table class="table_con"
+													style="text-align: center; border: 10px solid #f5f5f5; width: 100%;">
 													<tbody>
 														<tr>
-															<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
+
+															<th><input type="text" class="form-con"
+																placeholder="글 제목" name="bbsTitle" maxlength="50" style="border: 1px solid lightgray;"></th>
+
+
+															<td rowspan="3">
+															
+															<label for="file"><img class="img_upload"
+															id="image_section" src="./assets/images/upup.PNG"
+															style="max-width: 359px; height: 300px;" /> </label></td>
+
 														</tr>
-													 
+
 														<tr>
-															<td><input type="file" class="form-control" placeholder="파일업로드" name="bbsImg"></td>
+															<th><input type="file" class="form-con"
+															id="file" name="bbsImg" style="border: 1px solid lightgray;"></th>
 														</tr>
 														<tr>
-															<td><textarea type="text" class="form-control" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
+															<th><textarea type="text" class="form-con"
+																	name="bbsContent" maxlength="2048" placeholder="글 내용"
+																	style="height: 350px;border: 1px solid lightgray;"></textarea></th>
 														</tr>
 													</tbody>
 
 												</table>
-												<input type="submit" class="btn btn-primary pull-right" value="글쓰기"> 
-												<input type="reset" value="내용 초기화" class="button">
+												<center>
+													
+													<input class="btn_ej" type="submit" value="글쓰기">
+													
+													
+												</center>
 											</form>
-										
+
 										</div>
 									</div>
-								
+
 								</section>
 								<!-- / -->
 
@@ -126,7 +175,9 @@
 
 					</div>
 
-						<%} %>
+					<%
+						}
+					%>
 					<!--/myCarousel-->
 				</div>
 
@@ -153,28 +204,31 @@
 		</div>
 	</footer>
 
+
 	<script>
-		document.addEventListener("DOMContentLoaded", function(event) {
-			navActivePage();
-		});
+	document.addEventListener("DOMContentLoaded", function(event) {
+		type();
+		movingBackgroundImage();
+	});
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function(e) {
+				$('#image_section').attr('src', e.target.result);
+			}
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	// 이벤트를 바인딩해서 input에 파일이 올라올때 위의 함수를 this context로 실행합니다.
+	$("#file").change(function() {
+		readURL(this);
+	});
 	</script>
-
-	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
-
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', 'pageview');
-</script>
-
--->
 	<script type="text/javascript" src="./main.70a66962.js"></script>
-
+	<div class="half"></div>
 </body>
 
 </html>

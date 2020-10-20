@@ -7,6 +7,14 @@ public class SimilarPicture {
 	private String picture_text;
 	private String picture_web;
 	private String imageName;
+	private String picture_tour;
+	
+	public String getPicture_tour() {
+		return picture_tour;
+	}
+	public void setPicture_tour(String picture_tour) {
+		this.picture_tour = picture_tour;
+	}
 	public int getPicture_index() {
 		return picture_index;
 	}
@@ -44,7 +52,7 @@ public class SimilarPicture {
 		this.imageName = imageName;
 	}
 	public SimilarPicture(int picture_index, String picturetitle, String picture_addr, String picture_text,
-			String picture_web, String imageName) {
+			String picture_web, String imageName, String picture_tour) {
 		super();
 		this.picture_index = picture_index;
 		this.picturetitle = picturetitle;
@@ -52,7 +60,9 @@ public class SimilarPicture {
 		this.picture_text = picture_text;
 		this.picture_web = picture_web;
 		this.imageName = imageName;
-	} 
+		this.picture_tour = picture_tour;
+	}
+
 	
 	
 

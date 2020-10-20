@@ -67,12 +67,13 @@ picturetitle varchar2(200),
 picture_addr varchar2(100),
 picture_text varchar2(1000),
 picture_web varchar2(100),
+picture_tour varchar2(100),
 imageName varchar2(200)
 );
 
-insert into similarPicture values(similar_index.nextVal, '산토리니','그리스야','이곳은 그리스의 대표관광지야',
-'www.snato.com','testValue3.jpg');
-
+insert into similarPicture values(similar_index.nextVal, '가평에델바이스','경기도 가평군 설악면 다락재로 226-57','스위스의 작은 마을 축제를 주제로 만들어 진 테마파크 에델바이스는 스위스에서 보고 느낀 아름다운 숲과 마을, 따뜻하고 친절한 사람들의 미소를 경기도 가평의 아름다운 자연환경 속에서 스위스풍의 건축물과 다양한 테마공원을 통해 재현하였습니다.',
+'http://www.swissthemepark.com/','인터렉티브 아트뮤지엄, 제이드가든 수목원, 나인포레스트 이화원','testValue4.jpg');
+.
 create sequence similar_index start with 1 increment by 1;
 
 select * from SimilarPicture;

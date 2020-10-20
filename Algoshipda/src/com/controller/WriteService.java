@@ -27,7 +27,7 @@ public class WriteService extends HttpServlet {
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 		
-		final String saveFolder = "C:\\Users\\SMHRD\\Desktop\\Algo2\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Algo\\upload"; 
+		final String saveFolder = "C:\\Users\\SMHRD\\Desktop\\Algo_final\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Algo\\bbsimage";
 		final String encoding = "UTF-8"; 
 		final int maxSize = 10*350*350; //10mb
 		

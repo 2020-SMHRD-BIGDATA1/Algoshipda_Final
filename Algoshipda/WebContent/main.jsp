@@ -122,9 +122,7 @@ img {
       %>
       <nav class="navbar  navbar-fixed-top navbar-inverse">
          <div class="container">
-            <button type="button" class="navbar-toggle collapsed"
-               data-toggle="collapse" data-target="#navbar-collapse"
-               aria-expanded="false">
+            
                <span class="sr-only">Toggle navigation</span> <span
                   class="icon-bar"></span> <span class="icon-bar"></span> <span
                   class="icon-bar"></span>
@@ -155,7 +153,7 @@ img {
    <!-- Add your site or app content here -->
    <div
       class="hero-full-container background-image-container white-text-container"
-      style="background-image: url('./assets/images/')">
+      style="background-color:">
       <div class="section-container">
          <div class="container">
             <div class="row">
@@ -181,13 +179,11 @@ img {
                               <div class="back" >
                                  <form method="post" enctype="multipart/form-data"
                                     action="UploadService">
-
                                     <label for="file"><img class="img_upload"
                                        id="image_section" src="./assets/images/upup.PNG"
                                        style="max-width: 359px; height: 300px;" /></label> <input
                                        class="btn btn-default" type="file" id="file" name="file">
                                     <center><input class="btn_ej" type="submit" value="업로드"  style="margin-top:10%"><br></center>
-
                                  </form>
                               </div>
                            </div>

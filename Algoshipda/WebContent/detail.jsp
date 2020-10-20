@@ -34,7 +34,7 @@
 <style>
 img {
 	display: inline-block;
-	width: 250px;
+	width: 350px;
 	max-width: 250%;
 	height: auto;
 }
@@ -55,26 +55,27 @@ div.card-container card-container-lg {
 		<%
 			MemberDTO info = (MemberDTO) session.getAttribute("info");
 		%>
-		<div class="collapse navbar-collapse" id="navbar-collapse">
-			<ul class="nav navbar-nav ">
-				<li><a href="./main.jsp" title="">Home</a></li>
-				<li><a href="./board_cat.jsp" title="">Board</a></li>
-				<%
-					if (info == null) {
-				%>
-				<li><a href="./Login_form.jsp" title="">Login</a></li>
-				<li><a href="./Join_form.jsp" title="">Join</a></li>
-				<%
-					} else {
-				%>
-				<li><a href="LogoutService">Logout</a></li>
-				<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
-				<%
-					}
-				%>
-			</ul>
-		</div>
-
+		<nav class="navbar  navbar-fixed-top navbar-inverse">
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav ">
+					<li><a href="./main.jsp" title="">Home</a></li>
+					<li><a href="./board_cat.jsp" title="">Board</a></li>
+					<%
+						if (info == null) {
+					%>
+					<li><a href="./Login_form.jsp" title="">Login</a></li>
+					<li><a href="./Join_form.jsp" title="">Join</a></li>
+					<%
+						} else {
+					%>
+					<li><a href="LogoutService">Logout</a></li>
+					<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
+					<%
+						}
+					%>
+				</ul>
+			</div>
+		</nav>
 
 		<nav class="navbar  navbar-fixed-top navbar-default">
 			<div class="container">
@@ -87,36 +88,36 @@ div.card-container card-container-lg {
 			</div>
 		</nav>
 	</header>
-	<div class="section-container">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-					<div class="text-center">
-						<h1 class="h2">그곳을 알려드림</h1>
-						<br> 
-						<p>클릭해주셔서 감사합니다</p>
-					</div>
-				</div>
-	<div class="section-container">
-		<div class="container">
-			<div class="row">
-				<%
-					infoDAO dao2 = new infoDAO();
-				%>
 
-				<%
-					FileDAO dao = new FileDAO();
-				%>
-
-				<%
-					ArrayList<SimilarPicture> list = dao.rec_select();
-				%>
-				<%
-					ArrayList<infoDTO> list2 = dao2.infomation_select();
-				%>
-				<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+			<div class="text-center">
+				<h1 class="h2">그곳을 알려드림</h1>
+				<br>
+				<p>클릭해주셔서 감사합니다</p>
 			</div>
 		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<%
+				infoDAO dao2 = new infoDAO();
+			%>
+
+			<%
+				FileDAO dao = new FileDAO();
+			%>
+
+			<%
+				ArrayList<SimilarPicture> list = dao.rec_select();
+			%>
+			<%
+				ArrayList<infoDTO> list2 = dao2.infomation_select();
+			%>
+			<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
+		</div>
+
 
 
 		<div class="col-md-12">
@@ -125,23 +126,27 @@ div.card-container card-container-lg {
 				<!-- Carousel items -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<div class="row">
-							<div class="col-sm-4">
-								<a href="./work.html" title="">
-									<img src="SimilarPicture/<%=list.get(0).getImageName()%>"
-									alt=" class="img-responsive">
-								</a>
+						<div class="row" align="center">
 
-								
-									
-									<h3><%=list2.get(0).getInfor_title()%></h3>
-
-									<p><%=list2.get(0).getInfor_addr()%></p>
-									
-								
-							</div>
+							<img align="left"
+								src="SimilarPicture/<%=list.get(0).getImageName()%>"
+								alt="class="img-responsive">
+							<p>
+								찾는 곳 이름:
+								<%=list.get(0).getPicturetitle()%>
+								<br> <br> 찾는 곳 주소:
+								<%=list.get(0).getPicture_addr()%>
+								<br> <br> 찾는곳 간략한 설명:
+								<%=list.get(0).getPicture_text()%>
+								<br> <br> 찾는곳 주변 관광지:
+								<%=list.get(0).getPicture_tour()%>
+								<br> <br> 공식 웹사이트 :
+								<%=list.get(0).getPicture_web()%>
+							</p>
 							<!--/row-->
 						</div>
+
+
 						<!--/item-->
 						<div class="item">
 							<div class="row"></div>
@@ -160,7 +165,8 @@ div.card-container card-container-lg {
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h1>나도 여행이 가고 싶다</h1>
+					<br> <br>
+					<p>여기를 가보자</p>
 				</div>
 			</div>
 		</div>

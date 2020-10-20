@@ -1530,7 +1530,8 @@ caption, th {
 	padding: 8px;
 	line-height: 1.78;
 	vertical-align: top;
-	border-top: 1px solid #ddd
+	border-top: 1px solid #ddd;
+	width:70%;
 }
 
 .table>thead>tr>th {
@@ -1779,7 +1780,6 @@ output {
 	padding: 8px 14px;
 	background-color: #fff;
 	background-image: none;
-	border: 1px solid #000;
 	border-radius: 0;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
@@ -2332,9 +2332,10 @@ a.btn.disabled, fieldset[disabled] a.btn {
 	.open>.btn-default.dropdown-toggle, .open>.btn-default.dropdown-toggle.focus,
 	.open>.btn-default.dropdown-toggle:focus, .open>.btn-default.dropdown-toggle:hover
 	{
-	color: #000;
-	background-color: transparent;
-	border-color: #000
+	
+	background-color: gray;
+	border-color: #000;
+	color:white;
 }
 
 .btn-default.active, .btn-default:active, .open>.btn-default.dropdown-toggle
@@ -5014,11 +5015,11 @@ textarea {
 }
 
 .card-container {
-	background-color: #fff;
+/* 	background-color: #fff; */
 	padding: 1rem 1rem;
 	position: relative;
-	width: 80%;
-	margin: -10em auto 20px
+/* 	width: 80%;
+	margin: -10em auto 20px */
 }
 
 @media ( max-width :992px) {
@@ -5249,7 +5250,8 @@ textarea {
 	.template-example .table>tfoot>tr>td, .template-example .table>tfoot>tr>th,
 	.template-example .table>thead>tr>td, .template-example .table>thead>tr>th
 	{
-	padding: 0 15px
+	padding: 0 15px;
+	width:70%;
 }
 
 .list-icons {
