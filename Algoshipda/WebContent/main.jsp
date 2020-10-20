@@ -122,9 +122,7 @@ img {
 		%>
 		<nav class="navbar  navbar-fixed-top navbar-inverse">
 			<div class="container">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar-collapse"
-					aria-expanded="false">
+				
 					<span class="sr-only">Toggle navigation</span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
@@ -155,10 +153,10 @@ img {
 	<!-- Add your site or app content here -->
 	<div
 		class="hero-full-container background-image-container white-text-container"
-		style="background-image: url('./assets/images/')">
-		<div class="section-container">
+		style="background-color:">
+		<div class="section-container" style="padding-top:0px;">
 			<div class="container">
-				<div class="row">
+				<div class="row" style="width:1300px;">
 						<div class="row">
 
 							<div class="col-xs-12 col-md-6">
@@ -166,7 +164,7 @@ img {
 									<div class="text-content">
 
 										<h1>
-											<span id="typed-strings"> <span>그 곳이 알고 싶다.</span>
+											<span id="typed-strings" style=""> <span>그 곳이 알고 싶다.</span>
 											</span> <span id="typed"></span><br>
 
 
@@ -178,16 +176,14 @@ img {
 							<div class="col-xs-12 col-md-6">
 								<div class="hero-full-wrapper">
 									<div class="text-content">
-										<div class="back" >
+										<div class="back" style="margin:10%; padding-left:75px;">
 											<form method="post" enctype="multipart/form-data"
 												action="UploadService">
-
 												<label for="file"><img class="img_upload"
 													id="image_section" src="./assets/images/upup.PNG"
 													style="max-width: 359px; height: 300px;" /></label> <input
 													class="btn btn-default" type="file" id="file" name="file">
 												<center><input class="btn_ej" type="submit" value="업로드"  style="margin-top:10%"><br></center>
-
 											</form>
 										</div>
 									</div>
