@@ -51,43 +51,7 @@ div.card-container card-container-lg {
 	<div id="site-border-top"></div>
 	<div id="site-border-bottom"></div>
 	<!-- Add your content of header -->
-	<header>
-		<%
-			MemberDTO info = (MemberDTO) session.getAttribute("info");
-		%>
-		<nav class="navbar  navbar-fixed-top navbar-inverse">
-			<div class="collapse navbar-collapse" id="navbar-collapse">
-				<ul class="nav navbar-nav ">
-					<li><a href="./main.jsp" title="">Home</a></li>
-					<li><a href="./board_cat.jsp" title="">Board</a></li>
-					<%
-						if (info == null) {
-					%>
-					<li><a href="./Login_form.jsp" title="">Login</a></li>
-					<li><a href="./Join_form.jsp" title="">Join</a></li>
-					<%
-						} else {
-					%>
-					<li><a href="LogoutService">Logout</a></li>
-					<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
-					<%
-						}
-					%>
-				</ul>
-			</div>
-		</nav>
-
-		<nav class="navbar  navbar-fixed-top navbar-default">
-			<div class="container">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar-collapse"
-					aria-expanded="false">
-					<span class="sr-only"> </span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span>
-				</button>
-			</div>
-		</nav>
-	</header>
+	<%@include file="header.jsp"%>
 
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
@@ -161,17 +125,7 @@ div.card-container card-container-lg {
 	</div>
 
 
-	<footer class="footer-container text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<br> <br>
-					<p>여기를 가보자</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-
+	<%@include file="footer.jsp"%>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
 			navActivePage();

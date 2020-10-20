@@ -47,35 +47,9 @@ img {
 
 <body class="">
 
-	<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	%>
-
-
+	<%@include file="header.jsp"%>
 
 	<div id="bbsTitle">
-		<header>
-			<nav class="navbar  navbar-fixed-top navbar-default">
-				<div class="container">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#navbar-collapse"
-						aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-
-					<div class="collapse navbar-collapse" id="navbar-collapse">
-						<ul class="nav navbar-nav ">
-							<li><a href="./main.jsp" title="">Home</a></li>
-							<li><a href="./board_cat.jsp" title="">Board</a></li>
-
-						</ul>
-
-					</div>
-				</div>
-			</nav>
-		</header>
 
 		<div class="section-container">
 
@@ -105,14 +79,10 @@ img {
 					<div class="col-md-8 col-md-offset-2 section-container-spacer">
 
 						
-							<table class="table_con"
+						<!--  	<table class="table_con"
 								style="text-align: center; border: 10px solid #f5f5f5; width: 100%; padding:30px;">
 								<tbody>
 									<tr>
-
-
-
-
 										<td rowspan="3"><img
 											src="./bbsimage/<%=infoo.getBbsImg()%>"></td>
 										<th><h3 style="margin: 0%;" align="right"><%=infoo.getMember_id()%></h3></th>
@@ -128,8 +98,17 @@ img {
 									</tr>
 								</tbody>
 
-							</table>
+							</table>-->
 				
+
+
+								<img src="./bbsimage/<%=infoo.getBbsImg()%>">
+
+								<h3><%=infoo.getBbsContent()%></h3>
+
+							</div>
+
+						</div>
 
 					</div>
 
@@ -157,21 +136,8 @@ img {
 		</div>
 
 
-		<footer class="footer-container text-center">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<p>
-							© UNTITLED | Website created with <a
-								href="http://www.mashup-template.com/"
-								title="Create website with free html template">Mashup
-								Template</a>/<a href="https://www.unsplash.com/"
-								title="Beautiful Free Images">Unsplash</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</footer>
+
+		<%@include file="footer.jsp"%>
 
 		<script>
 			document.addEventListener("DOMContentLoaded", function(event) {

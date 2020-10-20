@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 import com.model.MemberDTO;
 
-
 public class MemberDAO {
 	private Connection conn;
 	private PreparedStatement psmt;
@@ -17,7 +16,7 @@ public class MemberDAO {
 	private void getConnection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String db_url = "jdbc:oracle:thin:@localhost:1521:hr";
 			String db_id = "hr";
 			String db_pw = "hr";
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
@@ -43,7 +42,7 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public int join(MemberDTO dto) {
 
 		int cnt = 0;
@@ -66,12 +65,13 @@ public class MemberDAO {
 
 		return cnt;
 	}
+
 	public boolean idCheck(String member_id) {
 		boolean check = false;
 
 		getConnection();
 		try {
-			
+
 			String sql = "select member_id from Members where member_id=?";
 			psmt = conn.prepareStatement(sql);
 
@@ -93,38 +93,35 @@ public class MemberDAO {
 
 		return check;
 	}
+
 	public MemberDTO login(MemberDTO dto) {
 		MemberDTO info = null;
-		
+
 		getConnection();
-		
+
 		try {
 			String sql = "SELECT * FROM MEMBERS WHERE member_id = ? AND member_pw = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getMember_id());
 			psmt.setString(2, dto.getMember_pw());
-			
+
 			rs = psmt.executeQuery();
-			if(rs.next()) {
-				
+			if (rs.next()) {
+
 				String member_id = rs.getString(1);
 				String member_tel = rs.getString(2);
 				String member_addr = rs.getString(3);
-				
-				
-				info = new MemberDTO(member_id,member_addr,member_tel );
-			
+
+				info = new MemberDTO(member_id, member_addr, member_tel);
+
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
 		return info;
 	}
 
-	
-	
-	
 }

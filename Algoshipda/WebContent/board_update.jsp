@@ -30,29 +30,7 @@
 </head>
 
 <body class="">
-	<header>
-		<nav class="navbar  navbar-fixed-top navbar-default">
-			<div class="container">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar-collapse"
-					aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navbar-collapse">
-					<ul class="nav navbar-nav ">
-						<li><a href="./main.jsp" title="">Home</a></li>
-						<li><a href="./board_cat.jsp" title="">Board</a></li>
-
-					</ul>
-
-
-				</div>
-			</div>
-		</nav>
-	</header>
+	<%@include file="header.jsp"%>
 
 	<div class="section-container">
 		<div class="container">
@@ -77,35 +55,44 @@
 
 									<div class="container">
 										<div class="row">
-											<form method="post" action="UpdateService" enctype="multipart/form-data" style="width: 100%; padding: 50px;" >
+											<form method="post" action="UpdateService"
+												enctype="multipart/form-data"
+												style="width: 100%; padding: 50px;">
 												<table class="table table-striped"
 													style="text-align: center; border: 10px solid #dddddd; width: 100%;">
 													<thead>
 														<tr>
-															<th colspan="2"	style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
+															<th colspan="2"
+																style="background-color: #eeeeee; text-align: center;">게시판
+																글쓰기 양식</th>
 														</tr>
 													</thead>
 													<tbody>
 														<tr>
-															<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" ></td>
+															<td><input type="text" class="form-control"
+																placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
 														</tr>
-													 
+
 														<tr>
-															<td><input type="file" class="form-control" placeholder="파일업로드" name="bbsImg"></td>
+															<td><input type="file" class="form-control"
+																placeholder="파일업로드" name="bbsImg"></td>
 														</tr>
 														<tr>
-															<td><textarea type="text" class="form-control" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
+															<td><textarea type="text" class="form-control"
+																	name="bbsContent" maxlength="2048"
+																	style="height: 350px;"></textarea></td>
 														</tr>
 													</tbody>
 
 												</table>
-												<input type="submit" class="btn btn-primary pull-right" value="글쓰기"> 
-												<input type="reset" value="내용 초기화" class="button">
+												<input type="submit" class="btn btn-primary pull-right"
+													value="글쓰기"> <input type="reset" value="내용 초기화"
+													class="button">
 											</form>
-										
+
 										</div>
 									</div>
-								
+
 								</section>
 								<!-- / -->
 
@@ -125,22 +112,7 @@
 		</div>
 	</div>
 
-
-	<footer class="footer-container text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<p>
-						© UNTITLED | Website created with <a
-							href="http://www.mashup-template.com/"
-							title="Create website with free html template">Mashup
-							Template</a>/<a href="https://www.unsplash.com/"
-							title="Beautiful Free Images">Unsplash</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<%@include file="footer.jsp"%>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
