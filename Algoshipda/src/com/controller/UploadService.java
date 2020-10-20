@@ -28,16 +28,13 @@ public class UploadService extends HttpServlet {
 		MultipartRequest multipartRequest = new MultipartRequest(request, directory, maxSize, encoding,
 				new DefaultFileRenamePolicy());
 		String fileName = multipartRequest.getOriginalFileName("file");
-		String fileRealName = multipartRequest.getFilesystemName("file");
-		if (fileName != null && fileRealName != null) {
-			cnt = new FileDAO().upload(fileName, fileRealName);
-
+		if (fileName != null) {
+			cnt = new FileDAO().upload(fileName);
 		}
 
 		System.out.println(fileName);
 		if (cnt > 0) {
-			response.sendRedirect("RecommendPage.jsp?fileName=" + fileName);
-
+			response.sendRedirect("http://172.30.1.50:9000/predict/predict?fileName=" + fileName);
 		} else {
 			response.sendRedirect("main.jsp");
 		}

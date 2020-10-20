@@ -3,6 +3,7 @@ drop table files;
 drop table SimilarPicture;
 drop table information;
 drop table Picturelocation
+drop table BBS;
 
 create table  Members(
 	member_id varchar2(30) primary key,	
@@ -13,7 +14,7 @@ create table  Members(
 select * from Members;
 
 
-drop table BBS;
+
 
 create table BBS(
 	bbsID number,
@@ -33,9 +34,9 @@ select * from BBS;
 
 create table files(
 picture_index number,
-fileName varchar(200),
-fileRealName varchar(200),
-filetime date 
+fileName varchar2(200),
+filetime date ,
+predictlocation varchar2(50)
 );
 select * from files;
 
@@ -49,6 +50,8 @@ increment by 1
 start with 1;
 
 drop sequence picture_index;
+
+drop sequence similar_index;
 
 create table Picturelocation(
 picture_index number,
@@ -81,7 +84,7 @@ information_index number,
 infor_title varchar(100),
 infor_addr varchar(100)
 );
-insert into information values(information_index.nextVal,'한국의 산토리니','이곳의 위치는 가평 산토리니 펜션입니다.')
 create sequence information_index start with 1 increment by 1;
+insert into information values(information_index.nextVal,'한국의 산토리니','이곳의 위치는 가평 산토리니 펜션입니다.')
 
 select * from information;

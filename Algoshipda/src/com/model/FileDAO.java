@@ -61,19 +61,14 @@ public class FileDAO {
 		}
 	}
 
-	public int upload(String fileName, String fileRealName) {
+	public int upload(String fileName) {
 		getConn();
 		int cnt = 0;
-		String SQL = "INSERT INTO FILES VALUES (picture_index.NEXTVAL,?,?,sysdate)";
+		String SQL = "INSERT INTO FILES VALUES (picture_index.NEXTVAL,?,sysdate,1)";
 
 		try {
-
 			PreparedStatement psmt = conn.prepareStatement(SQL);
-
 			psmt.setString(1, fileName);
-
-			psmt.setString(2, fileRealName);
-
 			return psmt.executeUpdate();
 
 		} catch (Exception e) {

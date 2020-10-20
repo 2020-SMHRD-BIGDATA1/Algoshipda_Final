@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+   pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +9,13 @@
 <meta content="description" name="description">
 <meta name="google" content="notranslate" />
 <meta content="Mashup templates have been developped by Orson.io team"
-	name="author">
+   name="author">
 
 <!-- Disable tap highlight on IE -->
 <meta name="msapplication-tap-highlight" content="no">
 
 <link rel="apple-touch-icon" sizes="180x180"
-	href="./assets/apple-icon-180x180.png">
+   href="./assets/apple-icon-180x180.png">
 <link href="./assets/favicon.ico" rel="icon">
 <link rel="stylesheet" href="assets/css/JoinCSS.css" />
 <title>Title page</title>
@@ -25,14 +25,14 @@
 
 <style>
 #pp {
-	margin-left: 121px;
-	margin-top: 1px;
-	width: 84px;
-	height: 45px;
+   margin-left: 121px;
+   margin-top: 1px;
+   width: 84px;
+   height: 45px;
 }
 
 .nav navbar-nav {
-	
+   
 }
 </style>
 </head>
@@ -50,7 +50,7 @@
             <tr>
                 <th>아이디</th>
                 <td><input type="text" class="form-control" name="member_id" id = "member_id2" placeholder="id를 넣으세요"></td>  
-               	<td><input type="button" value="중복확인" onclick="idCheck()"><p id="p1"></p></td>
+                  <td><input type="button" value="중복확인" onclick="idCheck()"><p id="p1"></p></td>
             </tr>
             <tr>
                 <th>패스워드</th>
@@ -67,11 +67,11 @@
                 <td><input type="tel" class="form-control" name="member_tel"></td>       
             </tr>
              <tr>
-            	<td colspan='2' align='center'><input type="submit" value="회원가입"></td>
-            	
-            	<td colspan='2' align='center'><input type="button" id="button1" onclick="button_click();" value="취소" ></td>
-            	
-        	</tr>
+               <td colspan='2' align='center'><input type="submit" value="회원가입"></td>
+               
+               <td colspan='2' align='center'><input type="button" id="button1" onclick="button_click();" value="취소" ></td>
+               
+           </tr>
         </table>
     </form>
     </div>
@@ -85,7 +85,7 @@
 <script type="text/javascript">
 
 function button_click() {
-	location.href='main.jsp'
+   location.href='main.jsp'
 }
 
 
