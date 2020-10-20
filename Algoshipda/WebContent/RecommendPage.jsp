@@ -60,9 +60,7 @@ div.card-container card-container-lg {
 	<div id="site-border-bottom"></div>
 	<!-- Add your content of header -->
 	<header>
-		<%
-			MemberDTO info = (MemberDTO) session.getAttribute("info");
-		%>
+		<%@include file="header.jsp"%>
 		<%
 			infoDAO dao2 = new infoDAO();
 		%>
@@ -78,27 +76,6 @@ div.card-container card-container-lg {
 		<%
 			ArrayList<infoDTO> list2 = dao2.infomation_select();
 		%>
-		<nav class="navbar  navbar-fixed-top navbar-inverse">
-			<div class="collapse navbar-collapse" id="navbar-collapse">
-				<ul class="nav navbar-nav ">
-					<li><a href="./main.jsp" title="">Home</a></li>
-					<li><a href="./board_cat.jsp" title="">Board</a></li>
-					<%
-						if (info == null) {
-					%>
-					<li><a href="./Login_form.jsp" title="">Login</a></li>
-					<li><a href="./Join_form.jsp" title="">Join</a></li>
-					<%
-						} else {
-					%>
-					<li><a href="LogoutService">Logout</a></li>
-					<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
-					<%
-						}
-					%>
-				</ul>
-			</div>
-		</nav>
 
 		<nav class="navbar  navbar-fixed-top navbar-default">
 			<div class="container">
@@ -177,7 +154,7 @@ div.card-container card-container-lg {
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/<%=list.get(1).getImageName()%>" alt=""
+											src="SimilarPicture/<%=list.get(0).getImageName()%>" alt=""
 											class="img-responsive">
 										</a>
 										<p><%=list2.get(0).getInfor_title()%></p>
@@ -200,30 +177,11 @@ div.card-container card-container-lg {
 	<div class="item">
 		<div class="row"></div>
 	</div>
-	<!--/row-->
-	</div>
-	<!--/item-->
-	</div>
-	<!--/carousel-inner-->
-
-	</div>
-	<!--/myCarousel-->
-	</div>
-	</div>
-	</div>
-	</div>
 
 
-	<footer class="footer-container text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<p>여기에도 뭘 쓸깐</p>
-				</div>
-			</div>
-		</div>
-	</footer>
 
+	<%@include file="footer.jsp"%>
+	<script type="text/javascript" src="./main.70a66962.js"></script>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
 			navActivePage();
@@ -244,7 +202,6 @@ div.card-container card-container-lg {
 </script>
 
 -->
-	<script type="text/javascript" src="./main.70a66962.js"></script>
 </body>
 
 </html>

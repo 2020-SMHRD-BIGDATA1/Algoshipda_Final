@@ -38,47 +38,49 @@
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
-    <div class="col-sm-12 text-left" >
-    <div class="col-sm-3"></div>
-     
-    <div class="col-sm-6">
-    <h2 align="center">회원가입</h2>
-    <form action="JoinService" method="post" accept-charset="utf-8">
-        <table class="table table-boardered">
-                <th>패스워드</th>
-                <td><input type="password" class="form-control" name="member_pw" placeholder="비밀번호 입력"></td>      
-            </tr>
-              
-            <tr>
-                <th>주소</th>
-                <td><input type="text" class="form-control" name="member_addr"></td>       
-            </tr>
-             
-            <tr>
-                <th>연락처</th>
-                <td><input type="tel" class="form-control" name="member_tel"></td>       
-            </tr>
-             <tr>
-            	<td colspan='2' align='center'><input type="submit" value="수정"></td>
-            	<td colspan='2' align='center'><input type="submit" value="취소"></td>
-        	</tr>
-        </table>
-    </form>
-    </div>
-    </div>
-    </div>
-</div>
+	<%@include file="header.jsp"%>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-left">
+				<div class="col-sm-3"></div>
 
+				<div class="col-sm-6" style="margin-top: 100px;">
+					<h2 align="center">마이페이지</h2>
+					<form action="JoinService" method="post" accept-charset="utf-8">
+						<table class="table table-boardered">
+							<th>패스워드</th>
+							<td><input type="password" class="form-control"
+								name="member_pw" placeholder="비밀번호 입력"></td>
+							</tr>
 
-      <!-- footer.jsp파일 불러오기 -->
+							<tr>
+								<th>주소</th>
+								<td><input type="text" class="form-control"
+									name="member_addr"></td>
+							</tr>
 
-<script type="text/javascript">
+							<tr>
+								<th>연락처</th>
+								<td><input type="tel" class="form-control"
+									name="member_tel"></td>
+							</tr>
+							<tr>
+								<td colspan='2' align='center'><input type="submit"
+									value="수정"></td>
+								<td colspan='2' align='center'><input type="submit"
+									value="취소"></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<%@include file="footer.jsp"%>
 
-
-
-</script>
+	<script type="text/javascript">
+		
+	</script>
 </body>
 </html>

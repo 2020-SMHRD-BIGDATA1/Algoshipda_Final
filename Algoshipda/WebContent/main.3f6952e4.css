@@ -30,9 +30,9 @@ audio, canvas, progress, video {
 	vertical-align: baseline
 }
 
-audio:not ([controls] ){
+audio:not [controls] {
 	display: none;
-	height: 0
+	height: 0;
 }
 
 [hidden], template {
@@ -92,7 +92,7 @@ img {
 	border: 0
 }
 
-svg:not (:root ){
+svg:not :root {
 	overflow: hidden
 }
 
@@ -300,7 +300,7 @@ img {
 .img-responsive {
 	display: block;
 	width: 359px;
-    height: 300px;
+	height: 300px;
 }
 
 .img-rounded {
@@ -1531,7 +1531,7 @@ caption, th {
 	line-height: 1.78;
 	vertical-align: top;
 	border-top: 1px solid #ddd;
-	width:70%;
+	width: 70%;
 }
 
 .table>thead>tr>th {
@@ -1891,6 +1891,7 @@ input[type=search] {
 	position: absolute;
 	margin-left: -20px;
 	margin-top: 4px\9
+
 }
 
 .checkbox+.checkbox, .radio+.radio {
@@ -2332,10 +2333,9 @@ a.btn.disabled, fieldset[disabled] a.btn {
 	.open>.btn-default.dropdown-toggle, .open>.btn-default.dropdown-toggle.focus,
 	.open>.btn-default.dropdown-toggle:focus, .open>.btn-default.dropdown-toggle:hover
 	{
-	
 	background-color: gray;
 	border-color: #000;
-	color:white;
+	color: white;
 }
 
 .btn-default.active, .btn-default:active, .open>.btn-default.dropdown-toggle
@@ -2893,8 +2893,8 @@ tbody.collapse.in {
 	margin-left: 5px
 }
 
-.btn-group>.btn:not (:first-child ):not (:last-child ):not (.dropdown-toggle
-	){
+.btn-group>.btn:not :first-child :not :last-child :not .dropdown-toggle
+	{
 	border-radius: 0
 }
 
@@ -2902,32 +2902,32 @@ tbody.collapse.in {
 	margin-left: 0
 }
 
-.btn-group>.btn:first-child:not (:last-child ):not (.dropdown-toggle ){
+.btn-group>.btn:first-child:not :last-child :not .dropdown-toggle {
 	border-bottom-right-radius: 0;
-	border-top-right-radius: 0
+	border-top-right-radius: 0;
 }
 
-.btn-group>.btn:last-child:not (:first-child ), .btn-group>.dropdown-toggle:not
-	(:first-child ){
+.btn-group>.btn:last-child:not :first-child, .btn-group>.dropdown-toggle:not
+	:first-child {
 	border-bottom-left-radius: 0;
-	border-top-left-radius: 0
+	border-top-left-radius: 0;
 }
 
 .btn-group>.btn-group {
 	float: left
 }
 
-.btn-group>.btn-group:not (:first-child ):not (:last-child )>.btn {
+.btn-group>.btn-group:not :first-child :not :last-child>.btn {
 	border-radius: 0
 }
 
-.btn-group>.btn-group:first-child:not (:last-child )>.btn:last-child,
-	.btn-group>.btn-group:first-child:not (:last-child )>.dropdown-toggle {
+.btn-group>.btn-group:first-child:not :last-child>.btn:last-child,
+	.btn-group>.btn-group:first-child:not :last-child>.dropdown-toggle {
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0
 }
 
-.btn-group>.btn-group:last-child:not (:first-child )>.btn:first-child {
+.btn-group>.btn-group:last-child:not :first-child>.btn:first-child {
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0
 }
@@ -2999,34 +2999,33 @@ tbody.collapse.in {
 	margin-left: 0
 }
 
-.btn-group-vertical>.btn:not (:first-child ):not (:last-child ){
+.btn-group-vertical>.btn:not :first-child :not :last-child {
 	border-radius: 0
 }
 
-.btn-group-vertical>.btn:first-child:not (:last-child ),
-	.btn-group-vertical>.btn:last-child:not (:first-child ){
+.btn-group-vertical>.btn:first-child:not :last-child,
+	.btn-group-vertical>.btn:last-child:not :first-child {
 	border-top-right-radius: 0;
 	border-top-left-radius: 0;
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0
 }
 
-.btn-group-vertical>.btn-group:not (:first-child ):not (:last-child )>.btn
-	{
+.btn-group-vertical>.btn-group:not :first-child :not :last-child>.btn {
 	border-radius: 0
 }
 
-.btn-group-vertical>.btn-group:first-child:not (:last-child )>.btn:last-child,
-	.btn-group-vertical>.btn-group:first-child:not (:last-child )>.dropdown-toggle
+.btn-group-vertical>.btn-group:first-child:not :last-child>.btn:last-child,
+	.btn-group-vertical>.btn-group:first-child:not :last-child>.dropdown-toggle
 	{
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0
 }
 
-.btn-group-vertical>.btn-group:last-child:not (:first-child )>.btn:first-child
+.btn-group-vertical>.btn-group:last-child:not :first-child>.btn:first-child
 	{
 	border-top-right-radius: 0;
-	border-top-left-radius: 0
+	border-top-left-radius: 0;
 }
 
 .btn-group-justified {
@@ -3086,9 +3085,9 @@ tbody.collapse.in {
 	display: table-cell
 }
 
-.input-group-addon:not (:first-child ):not (:last-child ),
-	.input-group-btn:not (:first-child ):not (:last-child ), .input-group .form-control:not
-	(:first-child ):not (:last-child ){
+.input-group-addon:not :first-child :not :last-child, .input-group-btn:not :first-child :not :last-child,
+	.input-group .form-control:not
+	:first-child :not :last-child {
 	border-radius: 0
 }
 
@@ -3131,9 +3130,9 @@ tbody.collapse.in {
 
 .input-group-addon:first-child, .input-group-btn:first-child>.btn,
 	.input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle,
-	.input-group-btn:last-child>.btn-group:not (:last-child )>.btn,
-	.input-group-btn:last-child>.btn:not (:last-child ):not (.dropdown-toggle
-	), .input-group .form-control:first-child {
+	.input-group-btn:last-child>.btn-group:not :last-child>.btn,
+	.input-group-btn:last-child>.btn:not :last-child :not .dropdown-toggle,
+	.input-group .form-control:first-child {
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0
 }
@@ -3143,8 +3142,8 @@ tbody.collapse.in {
 }
 
 .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not
-	(:first-child )>.btn, .input-group-btn:first-child>.btn:not (:first-child
-	), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn,
+	:first-child>.btn, .input-group-btn:first-child>.btn:not :first-child,
+	.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn,
 	.input-group-btn:last-child>.dropdown-toggle, .input-group .form-control:last-child
 	{
 	border-bottom-left-radius: 0;
@@ -4429,7 +4428,7 @@ button.close {
 	border: 1px solid #fff;
 	border-radius: 10px;
 	cursor: pointer;
-	background-color: #000\9;
+	background-color: #0009;
 	background-color: transparent
 }
 
@@ -4534,7 +4533,6 @@ button.close {
 	position: fixed
 }
 
-@
 -ms-viewport {
 	width: device-width
 }
@@ -4810,7 +4808,7 @@ body.minimal {
 
 .hero-full-container h1 {
 	font-family: Roboto, Helvetica, Arial, sans-serif;
-	font-weight: 900
+	font-weight: 900;
 }
 
 .hero-full-container .hero-full-wrapper {
@@ -4822,14 +4820,14 @@ body.minimal {
 
 .hero-full-container .hero-full-wrapper .text-content {
 	vertical-align: middle;
-	display: table-cell
+	display: table-cell;
 }
 
 .white-text-container h1, .white-text-container h2,
 	.white-text-container h3, .white-text-container h4,
 	.white-text-container h5, .white-text-container p {
-	text-shadow: 0 1px 3px #000;
-	color: #fff
+	text-shadow: 0 1px 3px black;
+	color: white;
 }
 
 .white-text-container a {
@@ -5015,10 +5013,10 @@ textarea {
 }
 
 .card-container {
-/* 	background-color: #fff; */
+	/* 	background-color: #fff; */
 	padding: 1rem 1rem;
 	position: relative;
-/* 	width: 80%;
+	/* 	width: 80%;
 	margin: -10em auto 20px */
 }
 
@@ -5251,7 +5249,7 @@ textarea {
 	.template-example .table>thead>tr>td, .template-example .table>thead>tr>th
 	{
 	padding: 0 15px;
-	width:70%;
+	width: 70%;
 }
 
 .list-icons {

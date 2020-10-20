@@ -51,7 +51,7 @@
 	font-size: 15px;
 	margin: 4px;
 	cursor: pointer;
-	 text-decoration:none
+	text-decoration: none
 }
 </style>
 </head>
@@ -60,47 +60,9 @@
 
 	<%
 		BbsDAO bbsDao = new BbsDAO();
-	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
 
-
-	<header>
-		<nav class="navbar  navbar-fixed-top navbar-default"
-			style="background-color: #f5f5f5; margin: 0;">
-			<div class="container">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar-collapse"
-					aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navbar-collapse">
-					<ul class="nav navbar-nav ">
-						<li><a href="./main.jsp" title="">Home</a></li>
-						<li><a href="./board_cat.jsp" title="">Board</a></li>
-
-					</ul>
-
-
-				</div>
-
-				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-					<div class="text-center">
-						<h1 class="h1" style="font-size: 40px; color: gray;">자유게시판</h1>
-
-						<p>
-							<input class="btn_ej" type="button" value="작성하기" onClick="location.href='./board_write.jsp'">
-
-						</p>
-					</div>
-				</div>
-
-
-			</div>
-		</nav>
-	</header>
+	<%@include file="header.jsp"%>
 
 	<div class="section-container">
 		<div class="container">
@@ -142,8 +104,9 @@
 
 							</div>
 							<center>
-									<input class="btn_ej" type="button" value="더보기" onClick="location.href='board_info.jsp?num=<%=num%>'"
-									style="width:350px; margin-bottom:20px;">
+								<input class="btn_ej" type="button" value="더보기"
+									onClick="location.href='board_info.jsp?num=<%=num%>'"
+									style="width: 350px; margin-bottom: 20px;">
 							</center>
 						</div>
 						<%
@@ -165,22 +128,7 @@
 		</div>
 	</div>
 
-
-	<footer class="footer-container text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<p>
-						© UNTITLED | Website created with <a
-							href="http://www.mashup-template.com/"
-							title="Create website with free html template">Mashup
-							Template</a>/<a href="https://www.unsplash.com/"
-							title="Beautiful Free Images">Unsplash</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<%@include file="footer.jsp"%>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {

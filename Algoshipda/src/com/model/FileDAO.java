@@ -21,7 +21,7 @@ public class FileDAO {
 	private void getConn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String db_url = "jdbc:oracle:thin:@localhost:1521:hr";
 			String db_id = "hr";
 			String db_pw = "hr";
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
@@ -49,14 +49,14 @@ public class FileDAO {
 		}
 	}
 
-	public int upload(String fileName) {
+	public int upload(String fileRealName) {
 		getConn();
 		int cnt = 0;
 		String SQL = "INSERT INTO FILES VALUES (picture_index.NEXTVAL,?,sysdate,1)";
 
 		try {
 			PreparedStatement psmt = conn.prepareStatement(SQL);
-			psmt.setString(1, fileName);
+			psmt.setString(1, fileRealName);
 			return psmt.executeUpdate();
 
 		} catch (Exception e) {

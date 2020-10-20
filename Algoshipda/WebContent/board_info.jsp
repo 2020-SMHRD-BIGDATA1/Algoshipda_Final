@@ -39,35 +39,9 @@ img {
 
 <body class="">
 
-	<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	%>
-
-
+	<%@include file="header.jsp"%>
 
 	<div id="bbsTitle">
-		<header>
-			<nav class="navbar  navbar-fixed-top navbar-default">
-				<div class="container">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#navbar-collapse"
-						aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-
-					<div class="collapse navbar-collapse" id="navbar-collapse">
-						<ul class="nav navbar-nav ">
-							<li><a href="./main.jsp" title="">Home</a></li>
-							<li><a href="./board_cat.jsp" title="">Board</a></li>
-
-						</ul>
-
-					</div>
-				</div>
-			</nav>
-		</header>
 
 		<div class="section-container">
 
@@ -89,8 +63,8 @@ img {
 						</div>
 					</div>
 
-	
-					
+
+
 
 
 					<div class="col-md-8 col-md-offset-2 section-container-spacer">
@@ -103,23 +77,30 @@ img {
 								<img src="./bbsimage/<%=infoo.getBbsImg()%>">
 
 								<h3><%=infoo.getBbsContent()%></h3>
-								
+
 							</div>
 
 						</div>
-						
+
 					</div>
 
 				</div>
 
 				<p>
-				  <% if (info.getMember_id().equals(infoo.getMember_id())) {%>
-					<a href = "DeleteService?bbsTitlef=<%=infoo.getBbsTitle()%>" class="btn btn-default" >삭제</a>
-							 <a href="UpdateService?bbsId=<%=infoo.getBbsId() %>" class="btn btn-default">수정</a>
-							<% } %>										    
-					
-					 					 
-					<center><a href="./board_cat.jsp" class="btn btn-default">목록으로</a></center>
+					<%
+						if (info.getMember_id().equals(infoo.getMember_id())) {
+					%>
+					<a href="DeleteService?bbsTitlef=<%=infoo.getBbsTitle()%>"
+						class="btn btn-default">삭제</a> <a
+						href="UpdateService?bbsId=<%=infoo.getBbsId()%>"
+						class="btn btn-default">수정</a>
+					<%
+						}
+					%>
+				
+				<center>
+					<a href="./board_cat.jsp" class="btn btn-default">목록으로</a>
+				</center>
 				</p>
 
 			</div>
@@ -127,21 +108,8 @@ img {
 		</div>
 
 
-		<footer class="footer-container text-center">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<p>
-							© UNTITLED | Website created with <a
-								href="http://www.mashup-template.com/"
-								title="Create website with free html template">Mashup
-								Template</a>/<a href="https://www.unsplash.com/"
-								title="Beautiful Free Images">Unsplash</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</footer>
+
+		<%@include file="footer.jsp"%>
 
 		<script>
 			document.addEventListener("DOMContentLoaded", function(event) {

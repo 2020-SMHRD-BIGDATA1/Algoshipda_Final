@@ -62,7 +62,7 @@ picture_web varchar2(100),
 imageName varchar2(200)
 );
 create table SimilarPicture(
-picture_index number,
+similar_index number,
 picturetitle varchar2(200),
 picture_addr varchar2(100),
 picture_text varchar2(1000),

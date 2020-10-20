@@ -33,7 +33,6 @@
 .nav navbar-nav {
 	
 }
-
 </style>
 </head>
 
@@ -42,38 +41,39 @@
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
 
-	<p class="tip">우리제목</p>
-<div class="cont">
-  <div class="form sign-in">
-    <h2>어서와 여기는처음이지?</h2>
-   <form method="post" action="LoginService">
-    <label>
-      <span>ID</span>
-      <input type="text" name="member_id" value="" />
-    </label>
-    <label>
-      <span>Password</span>
-      <input type="password" name="member_pw" value=""/>
-    </label>
-    <button type="submit" class="btn" value="">Login</button>
-    </form>
-  </div>
-  <div class="sub-cont">
-    <div class="img">
-      <div class="img__text m--up">
-        <h2>박찬</h2>
-        <p>이지</p>
-      </div>
-      <div class="img__text m--in">
-        <h2>박찬</h2>
-        <p>이지</p>
-      </div>
-    </div>
-    <div class="form sign-up">
-      <h2>여기도 글</h2>
-    </div>
-  </div>
-</div>
+	<div
+		style="width: 100%; text-align: center; margin-top: 50px; margin-bottom: 50px;">
+		<a href="main.jsp"><img src="assets/images/logo.png"></a>
+	</div>
+	<div class="cont">
+		<div class="form sign-in">
+			<h2>어서와 여기는처음이지?</h2>
+			<form method="post" action="LoginService">
+				<label> <span>ID</span> <input type="text" name="member_id"
+					value="" />
+				</label> <label> <span>Password</span> <input type="password"
+					name="member_pw" value="" />
+				</label>
+				<button type="submit" class="btn" value="">Login</button>
+			</form>
+		</div>
+		<div class="sub-cont">
+			<div class="img">
+				<div class="img__text m--up">
+					<h2>박찬</h2>
+					<p>이지</p>
+				</div>
+				<div class="img__text m--in">
+					<h2>박찬</h2>
+					<p>이지</p>
+				</div>
+			</div>
+			<div class="form sign-up">
+				<h2>여기도 글</h2>
+			</div>
+		</div>
+	</div>
 
 </body>
+<%@include file="footer.jsp"%>
 </html>
