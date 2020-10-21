@@ -30,7 +30,7 @@ create table BBS(
 CREATE SEQUENCE bbsId START WITH 1 INCREMENT BY 1;
 
 select * from BBS;
-
+UPDATE bbs SET bbsHit = bbsHit + 1 WHERE bbsId = 6;
 
 create table files(
 picture_index number,
@@ -85,7 +85,14 @@ information_index number,
 infor_title varchar(100),
 infor_addr varchar(100)
 );
+
+
 create sequence information_index start with 1 increment by 1;
 insert into information values(information_index.nextVal,'한국의 산토리니','이곳의 위치는 가평 산토리니 펜션입니다.')
 
 select * from information;
+delete bbs where bbsid=5;
+
+
+
+

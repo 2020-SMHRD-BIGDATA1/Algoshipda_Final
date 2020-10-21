@@ -67,9 +67,6 @@ img {
 	height: 45px;
 }
 
-.nav navbar-nav {
-	
-}
 
 .half {
 	background-color: yellow;
@@ -77,8 +74,8 @@ img {
 
 .back {
 	background-color: #f5f5f5;
-	padding: 10%;
-	margin: 10%
+	padding: 13%;
+	margin: 9%
 }
 
 #file {
@@ -121,7 +118,7 @@ img {
 	<!-- Add your site or app content here -->
 	<div
 		class="hero-full-container background-image-container white-text-container"
-		style="background-image: url('assets/images/back.jpg')">
+		style="background-image:">
 		<div class="section-container">
 			<div class="container">
 				<div class="row" style="width: 1300px;">
@@ -133,18 +130,6 @@ img {
 										<span id="typed-strings"> <span>그 곳이 알고 싶다.</span>
 										</span> <span id="typed"></span><br>
 									</h1>
-
-									<div class="col-xs-12 col-md-6">
-										<div class="hero-full-wrapper">
-											<div class="text-content">
-
-												<h1>
-													<span id="typed-strings" style=""> <span>그 곳이
-															알고 싶다.</span>
-													</span> <span id="typed"></span><br>
-
-
-												</h1>
 
 											</div>
 										</div>
