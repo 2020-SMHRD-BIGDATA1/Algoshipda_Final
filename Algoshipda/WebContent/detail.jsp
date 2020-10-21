@@ -1,6 +1,5 @@
-<%@page import="com.model.infoDTO"%>
-<%@page import="com.model.infoDAO"%>
-<%@page import="com.model.SimilarPicture"%>
+
+<%@page import="com.model.KOREAPLACE"%>
 <%@page import="com.model.FileDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -50,7 +49,6 @@ div.card-container card-container-lg {
 	<div id="site-border-right"></div>
 	<div id="site-border-top"></div>
 	<div id="site-border-bottom"></div>
-	<!-- Add your content of header -->
 	<%@include file="header.jsp"%>
 
 	<div class="row">
@@ -62,22 +60,14 @@ div.card-container card-container-lg {
 			</div>
 		</div>
 	</div>
-
 	<div class="container">
 		<div class="row">
-			<%
-				infoDAO dao2 = new infoDAO();
-			%>
-
 			<%
 				FileDAO dao = new FileDAO();
 			%>
 
 			<%
-				ArrayList<SimilarPicture> list = dao.rec_select();
-			%>
-			<%
-				ArrayList<infoDTO> list2 = dao2.infomation_select();
+				ArrayList<KOREAPLACE> list = dao.rec_select();
 			%>
 			<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
 		</div>
@@ -93,24 +83,25 @@ div.card-container card-container-lg {
 						<div class="row" align="center">
 
 							<img align="left"
-								src="SimilarPicture/<%=list.get(0).getImageName()%>"
+								src="SimilarPicture/<%=list.get(0).getKOREAIMGNAME()%>"
 								alt="class="img-responsive">
+							<!--추천페이지에서 클릭한 여행지의 사진  -->
+
 							<p>
-								찾는 곳 이름:
-								<%=list.get(0).getPicturetitle()%>
+								이름: <br> <br> 주소: <br> <br> 여행지 설명: <br>
+								<br> 주변 관광지: <br> <br> 웹사이트 : 찾는 곳 이름:
+								<%=list.get(0).getKOREAtitle()%>
 								<br> <br> 찾는 곳 주소:
-								<%=list.get(0).getPicture_addr()%>
+								<%=list.get(0).getKOREA_addr()%>
 								<br> <br> 찾는곳 간략한 설명:
-								<%=list.get(0).getPicture_text()%>
+								<%=list.get(0).getKOREA_text()%>
 								<br> <br> 찾는곳 주변 관광지:
-								<%=list.get(0).getPicture_tour()%>
+								<%=list.get(0).getKOREA_tour()%>
 								<br> <br> 공식 웹사이트 :
-								<%=list.get(0).getPicture_web()%>
+								<%=list.get(0).getKOREA_URL()%>
 							</p>
 							<!--/row-->
 						</div>
-
-
 						<!--/item-->
 						<div class="item">
 							<div class="row"></div>
