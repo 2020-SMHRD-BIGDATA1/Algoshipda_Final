@@ -61,10 +61,7 @@ th {
 </head>
 
 <body class="">
-
-	<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	%>
+	<%@include file="header.jsp"%>
 	<%
 		if (info == null) {
 		PrintWriter script = response.getWriter();
@@ -75,29 +72,7 @@ th {
 	} else {
 	%>
 
-	<header>
-		<nav class="navbar  navbar-fixed-top navbar-default">
-			<div class="container">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar-collapse"
-					aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
 
-				<div class="collapse navbar-collapse" id="navbar-collapse">
-					<ul class="nav navbar-nav ">
-						<li><a href="./main.jsp" title="">Home</a></li>
-						<li><a href="./board_cat.jsp" title="">Board</a></li>
-
-					</ul>
-
-
-				</div>
-			</div>
-		</nav>
-	</header>
 
 	<div class="section-container">
 		<div class="container">
@@ -132,34 +107,33 @@ th {
 														<tr>
 
 															<th><input type="text" class="form-con"
-																placeholder="글 제목" name="bbsTitle" maxlength="50" style="border: 1px solid lightgray;"></th>
+																placeholder="글 제목" name="bbsTitle" maxlength="50"
+																style="border: 1px solid lightgray;"></th>
 
 
-															<td rowspan="3">
-															
-															<label for="file"><img class="img_upload"
-															id="image_section" src="./assets/images/upup.PNG"
-															style="max-width: 359px; height: 300px;" /> </label></td>
+															<td rowspan="3"><label for="file"><img
+																	class="img_upload" id="image_section"
+																	src="./assets/images/upup.PNG"
+																	style="max-width: 359px; height: 300px;" /> </label></td>
 
 														</tr>
 
 														<tr>
-															<th><input type="file" class="form-con"
-															id="file" name="bbsImg" style="border: 1px solid lightgray;"></th>
+															<th><input type="file" class="form-con" id="file"
+																name="bbsImg" style="border: 1px solid lightgray;"></th>
 														</tr>
 														<tr>
 															<th><textarea type="text" class="form-con"
 																	name="bbsContent" maxlength="2048" placeholder="글 내용"
-																	style="height: 350px;border: 1px solid lightgray;"></textarea></th>
+																	style="height: 350px; border: 1px solid lightgray;"></textarea></th>
 														</tr>
 													</tbody>
 
 												</table>
 												<center>
-													
+
 													<input class="btn_ej" type="submit" value="글쓰기">
-													
-													
+
 												</center>
 											</form>
 
@@ -188,44 +162,31 @@ th {
 	</div>
 
 
-	<footer class="footer-container text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<p>
-						© UNTITLED | Website created with <a
-							href="http://www.mashup-template.com/"
-							title="Create website with free html template">Mashup
-							Template</a>/<a href="https://www.unsplash.com/"
-							title="Beautiful Free Images">Unsplash</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+
+	<%@include file="footer.jsp"%>
 
 
 	<script>
-	document.addEventListener("DOMContentLoaded", function(event) {
-		type();
-		movingBackgroundImage();
-	});
-	function readURL(input) {
-		if (input.files && input.files[0]) {
-			var reader = new FileReader();
+		document.addEventListener("DOMContentLoaded", function(event) {
+			type();
+			movingBackgroundImage();
+		});
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
 
-			reader.onload = function(e) {
-				$('#image_section').attr('src', e.target.result);
+				reader.onload = function(e) {
+					$('#image_section').attr('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
 			}
-
-			reader.readAsDataURL(input.files[0]);
 		}
-	}
 
-	// 이벤트를 바인딩해서 input에 파일이 올라올때 위의 함수를 this context로 실행합니다.
-	$("#file").change(function() {
-		readURL(this);
-	});
+		// 이벤트를 바인딩해서 input에 파일이 올라올때 위의 함수를 this context로 실행합니다.
+		$("#file").change(function() {
+			readURL(this);
+		});
 	</script>
 	<script type="text/javascript" src="./main.70a66962.js"></script>
 	<div class="half"></div>

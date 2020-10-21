@@ -59,65 +59,38 @@ div.card-container card-container-lg {
 	<div id="site-border-bottom"></div>
 	<!-- Add your content of header -->
 	<header>
-	
+
 		<%
 			// 파이썬에서 넘겨받아야 하는 키워드들
-			// 해외 지역어딘지 분석해서 넘겨줄 이름	
-			String OVERSEAPLACE  = request.getParameter("OVERSEAPLACE");
-			// 한국 지역어딘지 분석해서 넘겨줄 이름
-			String[] KOREAPLACE = request.getParameterValues("KOREAPLACE");
-			ArrayList<KOREAPLACE> list = new ArrayList<KOREAPLACE>();
-			
-			// 테스트 용도로 임의의 데이터 넣기
-			// 해외
-			OVERSEAPLACE = "산토리니";
-			// 한국
-			KOREAPLACE = new String[3];
-			KOREAPLACE[0] = "독일마을";
-			KOREAPLACE[1] = "산토리니펜션";
-			KOREAPLACE[2] = "다랭이 마을";
+		// 해외 지역어딘지 분석해서 넘겨줄 이름	
+		String OVERSEAPLACE = request.getParameter("OVERSEAPLACE");
+		// 한국 지역어딘지 분석해서 넘겨줄 이름
+		String[] KOREAPLACE = request.getParameterValues("KOREAPLACE");
+		ArrayList<KOREAPLACE> list = new ArrayList<KOREAPLACE>();
 
-			FileDAO dao = new FileDAO();
-			// dao를 통해 분석한 외국 정보 dto를 받아오는 부분
-			OVERSEAPLACE over = dao.searchForeign(OVERSEAPLACE);
-			// dao를 통해 분석한 한국 정보 dto를 받아오는 부분
-			for(int i = 0; i < KOREAPLACE.length; i++){
-				KOREAPLACE korea = dao.searchKorea(KOREAPLACE[i]);
-				if(korea != null){
-					list.add(korea);
-				}
+		// 테스트 용도로 임의의 데이터 넣기
+		// 해외
+		OVERSEAPLACE = "산토리니";
+		// 한국
+		KOREAPLACE = new String[3];
+		KOREAPLACE[0] = "독일마을";
+		KOREAPLACE[1] = "산토리니펜션";
+		KOREAPLACE[2] = "다랭이 마을";
+
+		FileDAO dao = new FileDAO();
+		// dao를 통해 분석한 외국 정보 dto를 받아오는 부분
+		OVERSEAPLACE over = dao.searchForeign(OVERSEAPLACE);
+		// dao를 통해 분석한 한국 정보 dto를 받아오는 부분
+		for (int i = 0; i < KOREAPLACE.length; i++) {
+			KOREAPLACE korea = dao.searchKorea(KOREAPLACE[i]);
+			if (korea != null) {
+				list.add(korea);
 			}
-			
-		
-		%>
-	
-	
-		<%
-			MemberDTO info = (MemberDTO) session.getAttribute("info");
+		}
 		%>
 
-		
-		<nav class="navbar  navbar-fixed-top navbar-inverse">
-			<div class="collapse navbar-collapse" id="navbar-collapse">
-				<ul class="nav navbar-nav ">
-					<li><a href="./main.jsp" title="">Home</a></li>
-					<li><a href="./board_cat.jsp" title="">Board</a></li>
-					<%
-						if (info == null) {
-					%>
-					<li><a href="./Login_form.jsp" title="">Login</a></li>
-					<li><a href="./Join_form.jsp" title="">Join</a></li>
-					<%
-						} else {
-					%>
-					<li><a href="LogoutService">Logout</a></li>
-					<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
-					<%
-						}
-					%>
-				</ul>
-			</div>
-		</nav>
+		<%@include file="header.jsp"%>
+
 
 		<nav class="navbar  navbar-fixed-top navbar-default">
 			<div class="container">
@@ -137,13 +110,12 @@ div.card-container card-container-lg {
 				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 					<div class="text-center">
 						<h1 class="h2">여기가 어디인가유</h1>
-						<br> <br> <br> <br> 
+						<br> <br> <br> <br>
 						<p>
-							찾는 곳 이름: <br><%= over.getOVERSEAtitle() %> <br> 
-							찾는 곳 주소: <br> <br> 
-							찾는곳 간략한 설명: <br> <br> 
-							<a href="http://www.swissthemepark.com?searchName="+ <%= over.getOVERSEAtitle()%>>
-							공식웹사이트 : </a>
+							찾는 곳 이름: <br><%=over.getOVERSEAtitle()%>
+							<br> 찾는 곳 주소: <br> <br> 찾는곳 간략한 설명: <br> <br>
+							<a href="http://www.swissthemepark.com?searchName="
+								+ <%=over.getOVERSEAtitle()%>> 공식웹사이트 : </a>
 						</p>
 					</div>
 				</div>
@@ -168,34 +140,46 @@ div.card-container card-container-lg {
 									<div class="col-sm-4">
 
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/"alt=""
-											class="img-responsive"><!--한국 유사 여행지 사진이 나올곳이야  --> 
+											src="SimilarPicture/" alt="" class="img-responsive">
+										<!--한국 유사 여행지 사진이 나올곳이야  -->
 										</a>
-										<p><%-- 여행지의 이름--%></p>
+										<p>
+											<%-- 여행지의 이름--%>
+										</p>
 										<br>
-										<p><!--간략 설명(?)  --></p>
+										<p>
+											<!--간략 설명(?)  -->
+										</p>
 										<a href="./detail.jsp" title="" class="btn btn-default">정보
 											보기</a>
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/" alt=""
-											class="img-responsive"><!--한국 유사 여행지 사진이 나올곳이야  --> 
+											src="SimilarPicture/" alt="" class="img-responsive">
+										<!--한국 유사 여행지 사진이 나올곳이야  -->
 										</a>
-										<p><%-- 여행지의 이름--%></p>
+										<p>
+											<%-- 여행지의 이름--%>
+										</p>
 										<br>
-										<p><!--간략 설명(?)  --></p>
+										<p>
+											<!--간략 설명(?)  -->
+										</p>
 										<a href="./detail.jsp" title="" class="btn btn-default">정보
 											보기</a>
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/" alt=""
-											class="img-responsive"><!--한국 유사 여행지 사진이 나올곳이야  --> 
+											src="SimilarPicture/" alt="" class="img-responsive">
+										<!--한국 유사 여행지 사진이 나올곳이야  -->
 										</a>
-										<p><%-- 여행지의 이름--%></p>
+										<p>
+											<%-- 여행지의 이름--%>
+										</p>
 										<br>
-										<p><!--간략 설명(?)  --></p>
+										<p>
+											<!--간략 설명(?)  -->
+										</p>
 										<a href="./detail.jsp" title="" class="btn btn-default">정보
 											보기</a>
 									</div>

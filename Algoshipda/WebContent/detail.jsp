@@ -1,3 +1,5 @@
+
+<%@page import="com.model.KOREAPLACE"%>
 <%@page import="com.model.FileDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -47,43 +49,7 @@ div.card-container card-container-lg {
 	<div id="site-border-right"></div>
 	<div id="site-border-top"></div>
 	<div id="site-border-bottom"></div>
-	<!-- Add your content of header -->
-	<header>
-		<%
-			MemberDTO info = (MemberDTO) session.getAttribute("info");
-		%>
-		<nav class="navbar  navbar-fixed-top navbar-inverse">
-			<div class="collapse navbar-collapse" id="navbar-collapse">
-				<ul class="nav navbar-nav ">
-					<li><a href="./main.jsp" title="">Home</a></li>
-					<li><a href="./board_cat.jsp" title="">Board</a></li>
-					<%
-						if (info == null) {
-					%>
-					<li><a href="./Login_form.jsp" title="">Login</a></li>
-					<li><a href="./Join_form.jsp" title="">Join</a></li>
-					<%
-						} else {
-					%>
-					<li><a href="LogoutService">Logout</a></li>
-					<li><a href="MyPage_form.jsp">킹겨찾기</a></li>
-					<%
-						}
-					%>
-				</ul>
-			</div>
-		</nav>
-		<nav class="navbar  navbar-fixed-top navbar-default">
-			<div class="container">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar-collapse"
-					aria-expanded="false">
-					<span class="sr-only"> </span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span>
-				</button>
-			</div>
-		</nav>
-	</header>
+	<%@include file="header.jsp"%>
 
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
@@ -99,6 +65,10 @@ div.card-container card-container-lg {
 			<%
 				FileDAO dao = new FileDAO();
 			%>
+
+			<%
+ 	ArrayList<KOREAPLACE> list = dao.rec_select();
+ %>
 			<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
 		</div>
 
@@ -113,18 +83,22 @@ div.card-container card-container-lg {
 						<div class="row" align="center">
 
 							<img align="left"
-								src="SimilarPicture/"
-								alt=""class="img-responsive"><!--추천페이지에서 클릭한 여행지의 사진  -->
+								src="SimilarPicture/<%=list.get(0).getKOREAIMGNAME()%>"
+								alt="class="img-responsive">
+							<!--추천페이지에서 클릭한 여행지의 사진  -->
+
 							<p>
-								 이름:
-								
-								<br> <br>  주소:
-								
-								<br> <br> 여행지 설명:
-								
-								<br> <br> 주변 관광지:
-								
-								<br> <br> 웹사이트 :
+								이름: <br> <br> 주소: <br> <br> 여행지 설명: <br>
+								<br> 주변 관광지: <br> <br> 웹사이트 : 찾는 곳 이름:
+								<%=list.get(0).getKOREAtitle()%>
+								<br> <br> 찾는 곳 주소:
+								<%=list.get(0).getKOREA_addr()%>
+								<br> <br> 찾는곳 간략한 설명:
+								<%=list.get(0).getKOREA_text()%>
+								<br> <br> 찾는곳 주변 관광지:
+								<%=list.get(0).getKOREA_tour()%>
+								<br> <br> 공식 웹사이트 :
+								<%=list.get(0).getKOREA_URL()%>
 							</p>
 							<!--/row-->
 						</div>
@@ -140,16 +114,9 @@ div.card-container card-container-lg {
 			</div>
 		</div>
 	</div>
-	<footer class="footer-container text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<br> <br>
-					<p>여기를 가보자</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+
+
+	<%@include file="footer.jsp"%>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
 			navActivePage();

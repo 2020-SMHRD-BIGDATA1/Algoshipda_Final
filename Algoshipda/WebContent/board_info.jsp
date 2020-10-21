@@ -34,45 +34,28 @@ img {
 	max-width: 359px;
 	height: 300px;
 }
+.table_con {
+	text-align: center;
+	width: 100%;
+	background-color: #f5f5f5;
+	padding: 30px;
+}
+
+
 </style>
 </head>
 
 <body class="">
 
-	<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	%>
-
-
+	<%@include file="header.jsp"%>
 
 	<div id="bbsTitle">
-		<header>
-			<nav class="navbar  navbar-fixed-top navbar-default">
-				<div class="container">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#navbar-collapse"
-						aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-
-					<div class="collapse navbar-collapse" id="navbar-collapse">
-						<ul class="nav navbar-nav ">
-							<li><a href="./main.jsp" title="">Home</a></li>
-							<li><a href="./board_cat.jsp" title="">Board</a></li>
-
-						</ul>
-
-					</div>
-				</div>
-			</nav>
-		</header>
 
 		<div class="section-container">
 
 			<div class="container">
-				<div class="row">
+				<div class="row"
+					style="background-color: ; margin-left: 0px; margin-right: 0px;">
 
 					<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 						<%
@@ -84,42 +67,68 @@ img {
 						BbsDTO infoo = bbsDao.selectById(num);
 						%>
 						<div class="text-center">
-							<h1 class="h2"><%=infoo.getBbsTitle()%></h1>
+							<h1 class="h1" style="font-size: 40px; color: gray;"><%=infoo.getBbsTitle()%></h1>
 
 						</div>
 					</div>
 
-	
-					
+
+
 
 
 					<div class="col-md-8 col-md-offset-2 section-container-spacer">
-						<h3 class="pull-right"><%=infoo.getMember_id()%></h3>
-						<div class="row">
-							<div class="col-xs-12 col-md-6">
 
+						
+						<!--  	<table class="table_con"
+								style="text-align: center; border: 10px solid #f5f5f5; width: 100%; padding:30px;">
+								<tbody>
+									<tr>
+										<td rowspan="3"><img
+											src="./bbsimage/<%=infoo.getBbsImg()%>"></td>
+										<th><h3 style="margin: 0%;" align="right"><%=infoo.getMember_id()%></h3></th>
+
+
+									</tr>
+
+									<tr>
+										<th><h4 align="right"><%=infoo.getBbsDate()%></h4></th>
+									</tr>
+									<tr>
+										<th><%=infoo.getBbsContent()%></th>
+									</tr>
+								</tbody>
+
+							</table>-->
+				
 
 
 								<img src="./bbsimage/<%=infoo.getBbsImg()%>">
 
 								<h3><%=infoo.getBbsContent()%></h3>
-								
+
 							</div>
 
 						</div>
-						
+
 					</div>
 
 				</div>
 
 				<p>
-				  <% if (info.getMember_id().equals(infoo.getMember_id())) {%>
-					<a href = "DeleteService?bbsTitlef=<%=infoo.getBbsTitle()%>" class="btn btn-default" >삭제</a>
-							 <a href="UpdateService?bbsId=<%=infoo.getBbsId() %>" class="btn btn-default">수정</a>
-							<% } %>										    
-					
-					 					 
-					<center><a href="./board_cat.jsp" class="btn btn-default">목록으로</a></center>
+					<%
+						if (info.getMember_id().equals(infoo.getMember_id())) {
+					%>
+					<a href="DeleteService?bbsTitlef=<%=infoo.getBbsTitle()%>"
+						class="btn btn-default">삭제</a> <a
+						href="UpdateService?bbsId=<%=infoo.getBbsId()%>"
+						class="btn btn-default">수정</a>
+					<%
+						}
+					%>
+				
+				<center>
+					<a href="./board_cat.jsp" class="btn btn-default">목록으로</a>
+				</center>
 				</p>
 
 			</div>
@@ -127,21 +136,8 @@ img {
 		</div>
 
 
-		<footer class="footer-container text-center">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<p>
-							© UNTITLED | Website created with <a
-								href="http://www.mashup-template.com/"
-								title="Create website with free html template">Mashup
-								Template</a>/<a href="https://www.unsplash.com/"
-								title="Beautiful Free Images">Unsplash</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</footer>
+
+		<%@include file="footer.jsp"%>
 
 		<script>
 			document.addEventListener("DOMContentLoaded", function(event) {
