@@ -52,15 +52,13 @@ public class FileDAO {
 	public int upload(String fileName, String fileRealName) {
 		getConn();
 		int cnt = 0;
-		String SQL = "INSERT INTO FILES VALUES (picture_index.NEXTVAL,?,?,sysdate)";
+		String SQL = "INSERT INTO FILES VALUES (picture_index.NEXTVAL,?,sysdate,1)";
 
 		try {
 
 			PreparedStatement psmt = conn.prepareStatement(SQL);
 
 			psmt.setString(1, fileName);
-
-			psmt.setString(2, fileRealName);
 
 			return psmt.executeUpdate();
 
@@ -72,36 +70,114 @@ public class FileDAO {
 		return cnt;
 
 	}
-
-	public ArrayList<SimilarPicture> rec_select(){
+	public ArrayList<KOREAPLACE> rec_select(){
 	   
 	   getConn();
 	   
-	   ArrayList<SimilarPicture> list = new ArrayList<SimilarPicture>();
+	   ArrayList<KOREAPLACE> list = new ArrayList<KOREAPLACE>();
 	   
-	   String sql = "select * from SimilarPicture";
+	   String sql ="select *from KOREAPLACE where KOREAtitle = ? ";
 	   
 	   try {
 		psmt = conn.prepareStatement(sql);
 		rs = psmt.executeQuery();
 		while(rs.next()) {
 			
-			int picture_index = rs.getInt(1);
-			String picturetitle = rs.getString(2);
-			String picture_addr = rs.getString(3);
-			String picture_text = rs.getString(4);
-			String picture_web = rs.getString(5);
-			String picture_tour = rs.getString(6);
-			String imageName = rs.getString(7);
-			SimilarPicture s = new SimilarPicture(picture_index, picturetitle, picture_addr, picture_text, picture_web, imageName, picture_tour);
+			int KOREA_index = rs.getInt(1);
+			String KOREAtitle = rs.getString(2);
+			String KOREA_addr = rs.getString(3);
+			String KOREA_text = rs.getString(4);
+			String KOREA_URL = rs.getString(5);
+			String KOREA_tour = rs.getString(6);
+			String KOREAIMGNAME = rs.getString(7);
+			KOREAPLACE s = new KOREAPLACE(KOREA_index, KOREAtitle, KOREA_addr, KOREA_text, KOREA_URL, KOREA_tour, KOREAIMGNAME);
 			list.add(s);
 		}}catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
+	
 		return list;
 	}
+	
+	public OVERSEAPLACE searchForeign(String OVERSEAPLACE) {
+		
+		OVERSEAPLACE dto = null;
+		
+		getConn();
+		
+		String sql = "select * from OVERSEAPLACE where OVERSEAtitle = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, OVERSEAPLACE);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				 int OVERSEA_index = rs.getInt(1);
+				 String OVERSEAtitle = rs.getString(2);
+				 String OVERSEA_addr = rs.getString(3);
+				 String OVERSEA_text = rs.getString(4);
+				 String OVERSEA_URL = rs.getString(5);
+				 String OVERSEAIMGNAME = rs.getString(6);
+				 
+				 dto = new OVERSEAPLACE(OVERSEA_index, OVERSEAtitle, OVERSEA_addr, OVERSEA_text, OVERSEA_URL, OVERSEAIMGNAME);
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		
+		
+		return dto;
+		
+		
+	}
+	
+	
+	
+	public KOREAPLACE searchKorea(String searchKorea) {
+		
+		KOREAPLACE dto = null;
+		
+		getConn();
+		
+		
+		try {
+			String sql = "select * from KOREAPLACE where KOREAtitle = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, searchKorea);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				int KOREA_index =rs.getInt(1);
+				String KOREAtitle = rs.getString(2);
+				String KOREA_addr = rs.getString(3);
+				String KOREA_text = rs.getString(4);
+				String KOREA_URL = rs.getString(5);
+				String KOREA_tour = rs.getString(6);
+				String KOREAIMGNAME = rs.getString(7);
+				
+				dto = new KOREAPLACE(KOREA_index, KOREAtitle, KOREA_addr, KOREA_text, KOREA_URL, KOREA_tour, KOREAIMGNAME);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		
+		return dto;
+	}
+	
+	
+
 
 //   private void getConn() {
 //         try {

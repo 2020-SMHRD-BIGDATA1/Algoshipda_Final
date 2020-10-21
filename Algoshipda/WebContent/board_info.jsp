@@ -75,7 +75,6 @@ img {
 				<div class="row">
 
 					<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-
 						<%
 							String num = request.getParameter("num");
 						%>
@@ -84,8 +83,6 @@ img {
 						System.out.println(bbsDao);
 						BbsDTO infoo = bbsDao.selectById(num);
 						%>
-
-
 						<div class="text-center">
 							<h1 class="h2"><%=infoo.getBbsTitle()%></h1>
 
@@ -116,13 +113,9 @@ img {
 				</div>
 
 				<p>
-				
-					<a href = "DeleteService?bbsTitlef=<%=infoo.getBbsTitle()%>">
-					
-					    <% if (info.getMember_id().equals(infoo.getMember_id())) {%>
-					    	<button class="btn btn-default" >삭제</button>
-							</a>
-							 <p><a href="UpdateService?bbsId=<%=infoo.getBbsId() %>" class="btn btn-default">수정</a></p>
+				  <% if (info.getMember_id().equals(infoo.getMember_id())) {%>
+					<a href = "DeleteService?bbsTitlef=<%=infoo.getBbsTitle()%>" class="btn btn-default" >삭제</a>
+							 <a href="UpdateService?bbsId=<%=infoo.getBbsId() %>" class="btn btn-default">수정</a>
 							<% } %>										    
 					
 					 					 
