@@ -68,34 +68,36 @@ public class FileDAO {
 
 	}
 
-	public ArrayList<SimilarPicture> rec_select(){
-	   
-	   getConn();
-	   
-	   ArrayList<SimilarPicture> list = new ArrayList<SimilarPicture>();
-	   
-	   String sql = "select * from SimilarPicture";
-	   
-	   try {
-		psmt = conn.prepareStatement(sql);
-		rs = psmt.executeQuery();
-		while(rs.next()) {
-			
-			int picture_index = rs.getInt(1);
-			String picturetitle = rs.getString(2);
-			String picture_addr = rs.getString(3);
-			String picture_text = rs.getString(4);
-			String picture_web = rs.getString(5);
-			String picture_tour = rs.getString(6);
-			String imageName = rs.getString(7);
-			SimilarPicture s = new SimilarPicture(picture_index, picturetitle, picture_addr, picture_text, picture_web, imageName, picture_tour);
-			list.add(s);
-		}}catch (SQLException e) {
+	public ArrayList<KOREAPLACE> rec_select() {
+
+		getConn();
+
+		ArrayList<KOREAPLACE> list = new ArrayList<KOREAPLACE>();
+
+		String sql = "select * from KOREAPLACE";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+
+				int KOREA_index = rs.getInt(1);
+				String KOREAtitle = rs.getString(2);
+				String KOREA_addr = rs.getString(3);
+				String KOREA_text = rs.getString(4);
+				String KOREA_URL = rs.getString(5);
+				String KOREA_tour = rs.getString(6);
+				String KOREAIMGNAME = rs.getString(7);
+				KOREAPLACE s = new KOREAPLACE(KOREA_index, KOREAtitle, KOREA_addr, KOREA_text, KOREA_URL, KOREAIMGNAME,
+						KOREA_tour);
+				list.add(s);
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-	
+
 		return list;
 	}
 

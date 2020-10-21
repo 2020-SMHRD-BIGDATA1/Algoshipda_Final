@@ -1,6 +1,6 @@
 <%@page import="com.model.infoDTO"%>
 <%@page import="com.model.infoDAO"%>
-<%@page import="com.model.SimilarPicture"%>
+<%@page import="com.model.KOREAPLACE"%>
 <%@page import="com.model.FileDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -71,7 +71,7 @@ div.card-container card-container-lg {
 		%>
 
 		<%
-			ArrayList<SimilarPicture> list = dao.rec_select();
+			ArrayList<KOREAPLACE> list = dao.rec_select();
 		%>
 		<%
 			ArrayList<infoDTO> list2 = dao2.infomation_select();
@@ -101,13 +101,13 @@ div.card-container card-container-lg {
 							src="upload/<%=request.getParameter("fileName")%>">
 						<p>
 							찾는 곳 이름:
-							<%=list.get(0).getPicturetitle()%>
+							<%=list.get(0).getKOREAtitle()%>
 							<br> <br> 찾는 곳 주소:
-							<%=list.get(0).getPicture_addr()%>
+							<%=list.get(0).getKOREA_addr()%>
 							<br> <br> 찾는곳 간략한 설명:
-							<%=list.get(0).getPicture_text()%>
+							<%=list.get(0).getKOREA_text()%>
 							<br> <br> <a href="http://www.swissthemepark.com/">공식
-								웹사이트 : <%=list.get(0).getPicture_web()%></a>
+								웹사이트 : <%=list.get(0).getKOREA_URL()%></a>
 						</p>
 					</div>
 				</div>
@@ -132,7 +132,7 @@ div.card-container card-container-lg {
 									<div class="col-sm-4">
 
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/<%=list.get(0).getImageName()%>" alt=""
+											src="KOREAPLACE/<%=list.get(0).getKOREAIMGNAME()%>" alt=""
 											class="img-responsive">
 										</a>
 										<p><%=list2.get(0).getInfor_title()%></p>
@@ -143,7 +143,7 @@ div.card-container card-container-lg {
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/<%=list.get(0).getImageName()%>" alt=""
+											src="KOREAPLACE/<%=list.get(0).getKOREAIMGNAME()%>" alt=""
 											class="img-responsive">
 										</a>
 										<p><%=list2.get(0).getInfor_title()%></p>
@@ -154,7 +154,7 @@ div.card-container card-container-lg {
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/<%=list.get(0).getImageName()%>" alt=""
+											src="KOREAPLACE/<%=list.get(0).getKOREAIMGNAME()%>" alt=""
 											class="img-responsive">
 										</a>
 										<p><%=list2.get(0).getInfor_title()%></p>
