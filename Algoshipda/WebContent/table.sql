@@ -85,3 +85,7 @@ insert into KOREAPLACE values(KOREA_index.nextVal, '가평에델바이스','경기도 가평
 'http://www.swissthemepark.com/','인터렉티브 아트뮤지엄, 제이드가든 수목원, 나인포레스트 이화원','testValue4.jpg');
 
 
+select * from SimilarPicture;
+select * from Picturelocation;
+
+

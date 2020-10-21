@@ -64,7 +64,7 @@
 
 	<%@include file="header.jsp"%>
 
-	<div class="section-container">
+	<div class="section-container" style="padding-right:150px;">
 		<div class="container">
 			<div class="row" style="margin-top: 20%;">
 

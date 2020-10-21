@@ -124,7 +124,7 @@ img {
 		style="background-image: url('assets/images/back.jpg')">
 		<div class="section-container">
 			<div class="container">
-				<div class="row">
+				<div class="row" style="width: 1300px;">
 					<div class="row">
 						<div class="col-xs-12 col-md-6">
 							<div class="hero-full-wrapper">
@@ -134,46 +134,61 @@ img {
 										</span> <span id="typed"></span><br>
 									</h1>
 
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-md-6">
-							<div class="hero-full-wrapper">
-								<div class="text-content">
-									<div class="back">
-										<form method="post" enctype="multipart/form-data"
-											action="UploadService">
+									<div class="col-xs-12 col-md-6">
+										<div class="hero-full-wrapper">
+											<div class="text-content">
 
-											<%
-												if (info == null) {
-											%><label for="file"><img class="img_upload"
-												id="image_section2" src="./assets/images/upup.PNG"
-												style="max-width: 359px; height: 300px;" /></label>
-											<%
-												} else {
-											%>
-											<label for="file"><img class="img_upload"
-												id="image_section" src="./assets/images/upup.PNG"
-												style="max-width: 359px; height: 300px;" /></label>
-											<%
-												}
-											%>
-											<input class="btn btn-default" type="file" id="file"
-												name="file">
-											<center>
-												<input class="btn_ej" type="submit" value="업로드"
-													style="margin-top: 10%"><br>
-											</center>
-										</form>
+												<h1>
+													<span id="typed-strings" style=""> <span>그 곳이
+															알고 싶다.</span>
+													</span> <span id="typed"></span><br>
+
+
+												</h1>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<div class="hero-full-wrapper">
+											<div class="text-content">
+												<div class="back">
+													<form method="post" enctype="multipart/form-data"
+														action="UploadService">
+
+														<%
+															if (info == null) {
+														%><label for="file"><img class="img_upload"
+															id="image_section2" src="./assets/images/upup.PNG"
+															style="max-width: 359px; height: 300px;" /></label>
+														<%
+															} else {
+														%>
+														<label for="file"><img class="img_upload"
+															id="image_section" src="./assets/images/upup.PNG"
+															style="max-width: 359px; height: 300px;" /></label>
+														<%
+															}
+														%>
+														<input class="btn btn-default" type="file" id="file"
+															name="file">
+														<center>
+															<input class="btn_ej" type="submit" value="업로드"
+																style="margin-top: 10%"><br>
+														</center>
+													</form>
+												</div>
+											</div>
+										</div>
+
 									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
-
 		</div>
 	</div>
 
