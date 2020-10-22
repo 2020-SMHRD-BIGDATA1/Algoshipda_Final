@@ -67,18 +67,27 @@ img {
 	height: 45px;
 }
 
+<<<<<<< HEAD
 .nav navbar-nav {
 	
 }
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Algoshipda_Final.git
 
 .half {
 	background-color: yellow;
 }
 
 .back {
+<<<<<<< HEAD
 	background-color: #f5f5f5;
 	padding: 10%;
 	margin: 10%
+=======
+   background-color: #f5f5f5;
+   padding: 13%;
+   margin: 9%
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Algoshipda_Final.git
 }
 
 #file {
@@ -116,23 +125,23 @@ img {
 
 <body class="minimal">
 
-	<!-- Add your content of header -->
-	<%@include file="header.jsp"%>
-	<!-- Add your site or app content here -->
-	<div
-		class="hero-full-container background-image-container white-text-container"
-		style="background-image: url('assets/images/back.jpg'); background-attachment: fixed;">
-		<div class="section-container">
-			<div class="container">
-				<div class="row" style="width: 1300px;">
-					<div class="row">
-						<div class="col-xs-12 col-md-6">
-							<div class="hero-full-wrapper">
-								<div class="text-content">
-									<h1>
-										<span id="typed-strings"> <span>그 곳이 알고 싶다.</span>
-										</span> <span id="typed"></span><br>
-									</h1>
+   <!-- Add your content of header -->
+   <%@include file="header.jsp"%>
+   <!-- Add your site or app content here -->
+   <div
+      class="hero-full-container background-image-container white-text-container"
+      style="background-image:">
+      <div class="section-container">
+         <div class="container">
+            <div class="row" style="width: 1300px;">
+               <div class="row">
+                  <div class="col-xs-12 col-md-6">
+                     <div class="hero-full-wrapper">
+                        <div class="text-content">
+                           <h1>
+                              <span id="typed-strings"> <span>그 곳이 알고 싶다.</span>
+                              </span> <span id="typed"></span><br>
+                           </h1>
 
 								</div>
 							</div>

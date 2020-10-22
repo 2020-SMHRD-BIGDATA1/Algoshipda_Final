@@ -67,8 +67,8 @@ div.card-container card-container-lg {
 			%>
 
 			<%
- 	ArrayList<KOREAPLACE> list = dao.rec_select();
- %>
+				ArrayList<KOREAPLACE> list = dao.rec_select();
+			%>
 			<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
 		</div>
 
