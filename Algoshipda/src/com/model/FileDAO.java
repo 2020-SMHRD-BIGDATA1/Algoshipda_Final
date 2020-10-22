@@ -49,7 +49,7 @@ public class FileDAO {
       }
    }
 
-   public int upload(String fileName, String fileRealName) {
+   public int upload(String fileName) {
       getConn();
       int cnt = 0;
       String SQL = "INSERT INTO FILES VALUES (picture_index.NEXTVAL,?,sysdate,1)";

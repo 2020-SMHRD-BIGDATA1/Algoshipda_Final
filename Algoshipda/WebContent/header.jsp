@@ -3,7 +3,7 @@
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-	<nav class="navbar  navbar-fixed-top navbar-inverse">
+	<nav class="navbar  navbar-fixed-top navbar-inverse" style='background-color: '>
 		<div class="container" style="margin: 0;">
 			<div
 				style="width: 300px; height: 88px; float: left; margin-left: 50px; margin-top: 15px;">
