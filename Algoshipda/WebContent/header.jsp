@@ -1,21 +1,26 @@
 <%@page import="com.model.MemberDTO"%>
+
+<style>
+
+
+</style>
 <header>
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-	<nav class="navbar  navbar-fixed-top navbar-inverse">
-		<div class="container" style="margin: 0;">
+	<nav class="navbar  navbar-fixed-top navbar-inverse" >
+		<div class="container" >
 			<div
-				style="width: 300px; height: 88px; float: left; margin-left: 50px; margin-top: 15px;">
-				<a href="main.jsp"><img src="assets/images/logo.png"
-					style="width: 250px; height: 77px;"></a>
+				style="width: 300px; height: 200px; float: left;">
+				<a href="main.jsp"><img src="assets/images/icon25.png"
+					style="width: 300px; height: 150px;"></a>
 			</div>
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
-			<div class="collapse navbar-collapse" id="navbar-collapse"style="padding-top: 40px;">
+			<div class="collapse navbar-collapse" id="navbar-collapse" style="padding-top: 40px; ">
 
 				<ul class="nav navbar-nav ">
-					<li><a href="./main.jsp" title="">Home</a></li>
+					<li><a href="./main.jsp" >Home</a></li>
 					<li><a href="./board_cat.jsp" title="">Board</a></li>
 					<%
 						if (info == null) {

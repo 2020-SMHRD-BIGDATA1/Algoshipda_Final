@@ -53,36 +53,38 @@
 	cursor: pointer;
 	text-decoration: none
 }
-.mini_icon{
+
+.mini_icon {
 	width: 15px;
 	height: 15px;
 }
 </style>
 </head>
 
-<body class="">
+<body class=""
+	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
+	<div style="background-color:">
+		<%
+			BbsDAO bbsDao = new BbsDAO();
+		%>
 
-	<%
-		BbsDAO bbsDao = new BbsDAO();
-	%>
 
+		<%@include file="header.jsp"%>
+		<div class="container" style="margin-top: 150px;">
+			<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+				<div class="text-center">
+					<h1 class="h1" style="font-size: 40px; color: white;">자유게시판</h1>
+					
+					<p>
+						<input class="btn_ej" type="button" value="작성하기"
+							onClick="location.href='./board_write.jsp'">
 
-	<%@include file="header.jsp"%>
-	<div class="container" style="margin-top: 150px; background-color:">
-		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-			<div class="text-center">
-				<h1 class="h1" style="font-size: 40px; color: gray;">자유게시판</h1>
+					</p>
 
-				<p>
-					<input class="btn_ej" type="button" value="작성하기"
-						onClick="location.href='./board_write.jsp'">
-
-				</p>
-
+				</div>
 			</div>
+
 		</div>
-
-
 	</div>
 	<div class="section-container" style="margin-right: 150px;">
 		<div class="container">
@@ -109,9 +111,11 @@
 
 						<div class="col-sm-4"
 							style="background-color: #f5f5f5; width: 400px; margin: 20px;">
-
+							<%
+								System.out.print(list.get(i).getBbsImg() + "짠\n");
+							%>
 							<a href="board_info.jsp?num=<%=num%>" class="image featured">
-								<img src="./bbsimage/<%=list.get(i).getBbsImg()%>" alt=""
+								<img src="bbsimage/<%=list.get(i).getBbsImg()%>"
 								class="img-responsive" style="margin-top: 20px">
 							</a>
 
@@ -120,22 +124,22 @@
 
 								<h4 style="float: right;"><%=list.get(i).getMember_id()%></h4>
 								<h3><%=list.get(i).getBbsTitle()%></h3>
-								
-								<div style="float: left; margin-right:15px" >
+
+								<div style="float: left; margin-right: 15px">
 									<img class="mini_icon" src="assets/images/eyes.png">
 								</div>
 								<div style="float: left;"><%=list.get(i).getBbsHit()%></div>
-								<div style="float: left; margin-left: 100px; margin-right: 10px">
-							<img class="mini_icon" src="assets/images/time.png">
-						</div>
-								<div style="float: left; margin-left: ;"><%=list.get(i).getBbsDate()%></div>
+								<div style="float: left; margin-left: 145px; margin-right: 10px">
+									<img class="mini_icon" src="assets/images/time.png">
+								</div>
+								<div style="float: left; margin-left:;"><%=list.get(i).getBbsDate()%></div>
 
 
 							</div>
 							<center>
 								<input class="btn_ej" type="button" value="더보기"
 									onClick="location.href='board_info.jsp?num=<%=num%>'"
-									style="width: 350px; margin-bottom: 20px; margin-top:20px;'">
+									style="width: 350px; margin-bottom: 20px; margin-top: 20px;'">
 							</center>
 						</div>
 						<%
@@ -149,6 +153,7 @@
 
 
 				<!--/myCarousel-->
+
 
 
 

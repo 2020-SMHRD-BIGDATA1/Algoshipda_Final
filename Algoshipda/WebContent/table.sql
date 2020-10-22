@@ -19,7 +19,7 @@ create table  Members(
 select * from Members;
 
 create table BBS(
-   bbsID number NOT NULL,
+   bbsID number ,
    bbsTitle varchar2(80) NOT NULL,
    bbsContent varchar2(1000) NOT NULL,
    bbsDate date,
@@ -93,3 +93,4 @@ insert into KOREAPLACE values(KOREA_index.nextVal, '독일마을','경기도 가평군 설�
 
 select * from OVERSEAPLACE;
 select * from KOREAPLACE;
+

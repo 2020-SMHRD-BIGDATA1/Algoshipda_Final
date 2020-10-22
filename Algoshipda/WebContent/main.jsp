@@ -54,6 +54,10 @@
    }*/
 </script>
 <style>
+@FONT-FACE{
+	font-family: 'Gmarket';
+	src:("GmarketSansTTFMedium.ttf");
+}
 img {
    display: inline-block;
    max-width: 359px;
@@ -73,10 +77,17 @@ img {
 }
 
 .back {
-   background-color: #f5f5f5;
+   background-color: white;
    padding: 13%;
-   margin: 9%
+   margin: 9%;
+    background-color: rgba( 255, 255, 255, 0.5 );
+
+
 }
+/* .img_upload{
+	opacity:0.5;
+}
+ */
 
 #file {
    display: none;
@@ -111,14 +122,14 @@ img {
 </style>
 </head>
 
-<body class="minimal">
+<body class="minimal" style="background-image:url('assets/images/back_ground.PNG'); background-repeat:no-repeat;background-size : cover;">
 
    <!-- Add your content of header -->
    <%@include file="header.jsp"%>
    <!-- Add your site or app content here -->
    <div
       class="hero-full-container background-image-container white-text-container"
-      style="background-image:">
+      >
       <div class="section-container">
          <div class="container">
             <div class="row" style="width: 1300px;">
@@ -137,21 +148,21 @@ img {
                            <div class="col-xs-12 col-md-6">
                               <div class="hero-full-wrapper">
                                  <div class="text-content">
-                                    <div class="back">
+                                 <!-- <div class="back">  -->
                                        <form method="post" enctype="multipart/form-data"
                                           action="UploadService">
-
+						
                                           <%
                                              if (info == null) {
                                           %><label for="file"><img class="img_upload"
                                              id="image_section2" src="./assets/images/upup.PNG"
-                                             style="max-width: 359px; height: 300px;" /></label>
+                                             style="max-width: 359px; height: 300px; margin-left:140px; " /></label>
                                           <%
                                              } else {
                                           %>
                                           <label for="file"><img class="img_upload"
                                              id="image_section" src="./assets/images/upup.PNG"
-                                             style="max-width: 359px; height: 300px;" /></label>
+                                             style="max-width: 359px; height: 300px; margin-left:140px;" /></label>
                                           <%
                                              }
                                           %>
@@ -159,11 +170,11 @@ img {
                                              name="file">
                                           <center>
                                              <input class="btn_ej" type="submit" value="업로드"
-                                                style="margin-top: 10%"><br>
-                                          </center>
+                                                style="width:355px; margin-top:10px;opacity:0.8;"><br>
+                                          </center> 
                                        </form>
-                                    </div>
-                                 </div>
+                                 
+                               <!--  </div> -->
                               </div>
 
                            </div>
@@ -177,7 +188,7 @@ img {
       </div>
    </div>
 
-   <%@include file="footer.jsp"%>
+  	<%@include file="footer.jsp"%>
    <script>
       document.addEventListener("DOMContentLoaded", function(event) {
          type();
@@ -211,5 +222,5 @@ img {
    <script type="text/javascript" src="./main.70a66962.js"></script>
    <div class="half"></div>
 </body>
-
+		
 </html>

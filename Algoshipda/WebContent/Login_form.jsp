@@ -33,47 +33,69 @@
 .nav navbar-nav {
 	
 }
+.btn_ej {
+   width: 100px;
+   background-color: gray;
+   border: none;
+   color: #fff;
+   padding: 10px 0;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 15px;
+   margin: 4px;
+   cursor: pointer;
+   text-decoration: none
+}
+
+.col-lg-4{
+	background-color:#f5f5f5;
+	padding:50px;
+	background-color: rgba( 255, 255, 255, 0.3 );
+	margin-left:390px;
+}
+
 </style>
 </head>
 
-<body class="minimal">
+<body class="minimal"
+	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
 
 	<div
 		style="width: 100%; text-align: center; margin-top: 50px; margin-bottom: 50px;">
-		<a href="main.jsp"><img src="assets/images/logo.png"></a>
-	</div>
-	<div class="cont">
-		<div class="form sign-in">
-			<h2>어서와 여기는처음이지?</h2>
-			<form method="post" action="LoginService">
-				<label> <span>ID</span> <input type="text" name="member_id"
-					value="" />
-				</label> <label> <span>Password</span> <input type="password"
-					name="member_pw" value="" />
-				</label>
-				<button type="submit" class="btn" value="">Login</button>
-			</form>
-		</div>
-		<div class="sub-cont">
-			<div class="img">
-				<div class="img__text m--up">
-					<h2>박찬</h2>
-					<p>이지</p>
-				</div>
-				<div class="img__text m--in">
-					<h2>박찬</h2>
-					<p>이지</p>
-				</div>
-			</div>
-			<div class="form sign-up">
-				<h2>여기도 글</h2>
-			</div>
-		</div>
+		<a href="main.jsp"><img src="assets/images/algoicon.png" style="width: 260px;height: 130px;"></a>
 	</div>
 
+	<div class="container">
+
+		<div class="col-lg-4">
+			<!-- 점보트론 -->
+			<div class="jumbotron" style="padding-top: 20px;">
+				<!-- 로그인 정보를 숨기면서 전송post -->
+				<form method="post" action="LoginService">
+					<h3 style="text-align: center; color:white; font-size: 50px;">로그인</h3>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="아이디"
+							name="member_id" maxlength="20">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="비밀번호"
+							name="member_pw" maxlength="20">
+					</div>
+			</div>
+			<center>
+			<input type="submit" value="로그인" class="btn_ej"> <input
+				type="button" value="회원가입" " class="btn_ej"
+				onclick="location.href='Join_form.jsp'">
+			</form></center>
+		</div>
+	</div>
+	</div>
+
+
 </body>
-<%@include file="footer.jsp"%>
+
 </html>

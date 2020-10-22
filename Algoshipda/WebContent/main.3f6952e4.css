@@ -11,7 +11,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-	font-family: sans-serif;
+	font-family: GmarketSansTTFMedium.ttf;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
 }
@@ -110,7 +110,7 @@ pre {
 }
 
 code, kbd, pre, samp {
-	font-family: monospace, monospace;
+	font-family: GmarketSansTTFMedium.ttf;
 	font-size: 1em
 }
 
@@ -261,7 +261,7 @@ html {
 }
 
 body {
-	font-family: Roboto Mono, Helvetica, Arial, sans-serif;
+	font-family: GmarketSansTTFMedium.ttf;
 	font-size: 11px;
 	line-height: 1.78;
 	color: #000;
@@ -357,7 +357,7 @@ hr {
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-	font-family: Roboto Mono, Helvetica, Arial, sans-serif;
+	font-family: GmarketSansTTFMedium.ttf;
 	font-weight: 700;
 	line-height: 1.1;
 	color: #000
@@ -683,7 +683,7 @@ address {
 }
 
 code, kbd, pre, samp {
-	font-family: Menlo, Monaco, Consolas, Courier New, monospace
+	font-family: GmarketSansTTFMedium.ttf;
 }
 
 code {
@@ -3601,14 +3601,16 @@ tbody.collapse.in {
 @media ( min-width :768px) {
 	.navbar-nav {
 		float: left;
-		margin: 0
+		margin: 0;
+		color:white;
 	}
 	.navbar-nav>li {
 		float: left
 	}
 	.navbar-nav>li>a {
 		padding-top: .5px;
-		padding-bottom: .5px
+		padding-bottom: .5px;
+		color:white;
 	}
 }
 
@@ -3768,34 +3770,34 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-nav>li>a {
-	color: #000
+	color: white;
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover
 	{
-	color: #333;
+	color: white;
 	background-color: transparent
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus,
 	.navbar-default .navbar-nav>.active>a:hover {
-	color: #555;
+	color: white;
 	background-color: transparent
 }
 
 .navbar-default .navbar-nav>.disabled>a, .navbar-default .navbar-nav>.disabled>a:focus,
 	.navbar-default .navbar-nav>.disabled>a:hover {
-	color: #ccc;
+	color: white;
 	background-color: transparent
 }
 
 .navbar-default .navbar-toggle {
-	border-color: #ddd
+	border-color: white;
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover
 	{
-	background-color: #ddd
+	background-color: white;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -3809,52 +3811,52 @@ tbody.collapse.in {
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus,
 	.navbar-default .navbar-nav>.open>a:hover {
 	background-color: transparent;
-	color: #555
+	color: white;
 }
 
 @media ( max-width :767px) {
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
-		color: #000
+		color: white;
 	}
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
 		.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
-		color: #333;
+		color: white;
 		background-color: transparent
 	}
 	.navbar-default .navbar-nav .open .dropdown-menu>.active>a,
 		.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
 		.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
-		color: #555;
+		color: white;
 		background-color: transparent
 	}
 	.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a,
 		.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:focus,
 		.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:hover {
-		color: #ccc;
+		color: white;
 		background-color: transparent
 	}
 }
 
 .navbar-default .navbar-link {
-	color: #000
+	color: white;
 }
 
 .navbar-default .navbar-link:hover {
-	color: #333
+	color: white;
 }
 
 .navbar-default .btn-link {
-	color: #000
+	color: white;
 }
 
 .navbar-default .btn-link:focus, .navbar-default .btn-link:hover {
-	color: #333
+	color: white;
 }
 
 .navbar-default .btn-link[disabled]:focus, .navbar-default .btn-link[disabled]:hover,
 	fieldset[disabled] .navbar-default .btn-link:focus, fieldset[disabled] .navbar-default .btn-link:hover
 	{
-	color: #ccc
+	color: white;
 }
 
 .navbar-inverse {
@@ -3863,34 +3865,34 @@ tbody.collapse.in {
 }
 
 .navbar-inverse .navbar-brand {
-	color: #9d9d9d
+	color: white;
 }
 
 .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover
 	{
-	color: #fff;
+	color: white;
 	background-color: transparent
 }
 
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
-	color: #9d9d9d
+	color: white;
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus,
 	.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>li>a:focus,
 	.navbar-inverse .navbar-nav>li>a:hover {
-	color: #fff;
+	color: white;
 	background-color: transparent
 }
 
 .navbar-inverse .navbar-nav>.disabled>a, .navbar-inverse .navbar-nav>.disabled>a:focus,
 	.navbar-inverse .navbar-nav>.disabled>a:hover {
-	color: #444;
+	color: white;
 	background-color: transparent
 }
 
 .navbar-inverse .navbar-toggle {
-	border-color: #333
+	border-color: white;
 }
 
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover
@@ -4396,7 +4398,7 @@ button.close {
 	width: 20px;
 	height: 20px;
 	line-height: 1;
-	font-family: serif
+	font-family: GmarketSansTTFMedium.ttf
 }
 
 .carousel-control .icon-prev:before {
@@ -4807,7 +4809,7 @@ body.minimal {
 }
 
 .hero-full-container h1 {
-	font-family: Roboto, Helvetica, Arial, sans-serif;
+	font-family: GmarketSansTTFMedium.ttf;
 	font-weight: 900;
 }
 
@@ -4835,22 +4837,23 @@ body.minimal {
 }
 
 .section-container-spacer {
-	margin-bottom: 30px
+	/*margin-bottom: 30px;*/
+	
 }
 
 @media ( min-width :1200px) {
 	.section-container-spacer {
-		margin-bottom: 40px
+	/*	margin-bottom: 40px*/
 	}
 }
 
 .section-container {
-	padding: 60px 0
+	/*padding: 60px 0*/
 }
 
 @media ( min-width :1200px) {
 	.section-container {
-		padding: 80px 0
+	/*	padding: 80px 0*/
 	}
 }
 
@@ -4960,7 +4963,7 @@ p {
 }
 
 blockquote {
-	font-family: Roboto Mono, Helvetica, Arial, sans-serif;
+	font-family: GmarketSansTTFMedium.ttf;
 	border: none;
 	padding-left: 0;
 	padding-right: 0;
