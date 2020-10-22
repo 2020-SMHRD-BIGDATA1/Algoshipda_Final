@@ -61,7 +61,7 @@ public class WriteService extends HttpServlet {
 		bbsDto.setBbsContent(bbsContent);
 		bbsDto.setMember_id(info.getMember_id());
 		bbsDto.setBbsImg(bbsImg);
-
+		bbsDao.hitUpdate(bbsId);
 		int wResult = bbsDao.write(bbsDto);
 		System.out.println(wResult);
 		response.sendRedirect("board_cat.jsp");

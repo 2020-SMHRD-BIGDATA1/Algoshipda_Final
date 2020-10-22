@@ -8,6 +8,10 @@ drop table INFORMATION
 drop sequence KOREA_index;
 drop sequence OVERSEA_index;
 drop sequence similar_index;
+drop table KOREAPLACE
+drop sequence information_index;
+drop sequence picture_index;
+drop sequence KOREA_index;
 drop sequence bbsId;
 
 create table  Members(
@@ -53,7 +57,7 @@ OVERSEA_addr varchar2(100) NOT NULL,
 OVERSEA_text varchar2(1000) NOT NULL,
 OVERSEA_URL varchar2(100),
 OVERSEAIMGNAME varchar2(200),
-constraint OVERSEA_index_pk primary key(OVERSEA_index)
+constraint OVERSEAtitle_pk primary key(OVERSEAtitle)
 );
 create sequence OVERSEA_index
 increment by 1
@@ -63,17 +67,15 @@ select * from OVERSEAPLACE;
 
 
 
-
-
 create table KOREAPLACE(
 KOREA_index number,
-KOREAtitle varchar2(200) NOT NULL,
+KOREAtitle varchar2(200) ,
 KOREA_addr varchar2(100) NOT NULL,
 KOREA_text varchar2(1000) NOT NULL,
 KOREA_URL varchar2(100) ,
 KOREA_tour varchar2(1000),
 KOREAIMGNAME varchar2(200),
-constraint KOREA_index_pk primary key(KOREA_index)
+constraint KOREAtitle_pk primary key(KOREAtitle)
 );
 create sequence KOREA_index
 increment by 1
@@ -82,20 +84,11 @@ start with 1;
 
 
 
-
-
-
 create table JJIM(
-JJIM_Index number,
-CONSTRAINT JJIM_Index_fk FOREIGN KEY(JJIM_Index)
-REFERENCES KOREAPLACE(KOREA_index) ON DELETE CASCADE
+JJIM_title varchar2(200),
+CONSTRAINT JJIM_title_fk FOREIGN KEY(JJIM_title)
+REFERENCES KOREAPLACE(KOREAtitle) ON DELETE CASCADE
 );
-
-
-
-
-
-
 
 
 

@@ -14,9 +14,9 @@ public class FileDAO {
 	private ResultSet rs;
 	private PreparedStatement psmt;
 
-	// »ý¼ºÀÚ¸¦ ÅëÇØ db¿¬°á ÇØÁÜ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-	// »ý¼ºÀÚ¸¦ ÅëÇØ db¿¬°á ÇØÁÜ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	private void getConn() {
 		try {
@@ -122,7 +122,7 @@ public class FileDAO {
 				String OVERSEA_text = rs.getString(4);
 				String OVERSEA_URL = rs.getString(5);
 				String OVERSEAIMGNAME = rs.getString(6);
-				System.out.print("µé¾î¿Ó´Ù");
+				System.out.print("ï¿½ï¿½ï¿½Ó´ï¿½");
 				dto = new OVERSEAPLACE(OVERSEA_index, OVERSEAtitle, OVERSEA_addr, OVERSEA_text, OVERSEA_URL,
 						OVERSEAIMGNAME);
 

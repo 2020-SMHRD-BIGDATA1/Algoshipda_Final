@@ -53,6 +53,10 @@
 	cursor: pointer;
 	text-decoration: none
 }
+.mini_icon{
+	width: 15px;
+	height: 15px;
+}
 </style>
 </head>
 
@@ -62,11 +66,27 @@
 		BbsDAO bbsDao = new BbsDAO();
 	%>
 
-	<%@include file="header.jsp"%>
 
-	<div class="section-container" style="padding-right:150px;">
+	<%@include file="header.jsp"%>
+	<div class="container" style="margin-top: 150px; background-color:">
+		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+			<div class="text-center">
+				<h1 class="h1" style="font-size: 40px; color: gray;">자유게시판</h1>
+
+				<p>
+					<input class="btn_ej" type="button" value="작성하기"
+						onClick="location.href='./board_write.jsp'">
+
+				</p>
+
+			</div>
+		</div>
+
+
+	</div>
+	<div class="section-container" style="margin-right: 150px;">
 		<div class="container">
-			<div class="row" style="margin-top: 20%;">
+			<div class="row">
 
 
 				<!-- Carousel items -->
@@ -100,13 +120,22 @@
 
 								<h4 style="float: right;"><%=list.get(i).getMember_id()%></h4>
 								<h3><%=list.get(i).getBbsTitle()%></h3>
-								<p><%=list.get(i).getBbsDate()%></p>
+								
+								<div style="float: left; margin-right:15px" >
+									<img class="mini_icon" src="assets/images/eyes.png">
+								</div>
+								<div style="float: left;"><%=list.get(i).getBbsHit()%></div>
+								<div style="float: left; margin-left: 100px; margin-right: 10px">
+							<img class="mini_icon" src="assets/images/time.png">
+						</div>
+								<div style="float: left; margin-left: ;"><%=list.get(i).getBbsDate()%></div>
+
 
 							</div>
 							<center>
 								<input class="btn_ej" type="button" value="더보기"
 									onClick="location.href='board_info.jsp?num=<%=num%>'"
-									style="width: 350px; margin-bottom: 20px;">
+									style="width: 350px; margin-bottom: 20px; margin-top:20px;'">
 							</center>
 						</div>
 						<%
@@ -128,8 +157,8 @@
 		</div>
 	</div>
 
-	<%@include file="footer.jsp"%>
 
+	<%@include file="footer.jsp"%>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
 			navActivePage();
