@@ -129,10 +129,7 @@ img {
                   <div class="col-xs-12 col-md-6">
                      <div class="hero-full-wrapper">
                         <div class="text-content">
-                           <h1>
-                              <span id="typed-strings"> <span>그 곳이 알고 싶다.</span>
-                              </span> <span id="typed"></span><br>
-                           </h1>
+                         
 
                            <div class="col-xs-12 col-md-6">
                               <div class="hero-full-wrapper">

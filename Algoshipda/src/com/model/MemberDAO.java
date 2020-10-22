@@ -16,7 +16,7 @@ public class MemberDAO {
 	private void getConnection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String db_url = "jdbc:oracle:thin:@localhost:1521:hr";
+			String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String db_id = "hr";
 			String db_pw = "hr";
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
@@ -109,10 +109,11 @@ public class MemberDAO {
 			if (rs.next()) {
 
 				String member_id = rs.getString(1);
-				String member_tel = rs.getString(2);
+				String member_pw = rs.getString(2);
 				String member_addr = rs.getString(3);
-
-				info = new MemberDTO(member_id, member_addr, member_tel);
+				String member_tel = rs.getString(4);
+				
+				info = new MemberDTO(member_id, member_pw, member_addr, member_tel);
 
 			}
 

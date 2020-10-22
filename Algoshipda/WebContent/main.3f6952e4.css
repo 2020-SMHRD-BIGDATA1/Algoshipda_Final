@@ -1,23 +1,30 @@
-@import
-	url(https://fonts.googleapis.com/css?family=Roboto:900|Roboto+Mono:300,400,700)
-	;
-
-@import
-	url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css)
-	; /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+
+ @font-face{
+ font-family: "ng";
+ src: url("NANUMBARUNGOTHICBOLD_0.TTF"); 
+ src: local(). url(NANUMBARUNGOTHICBOLD_0.TTF)format("truetype");
+ font-size: normal;
+ font-weight: normal;
+ }
+
+
 html {
-	font-family: sans-serif;
+	font-family: '나눔고딕','NANUMBARUNGOTHICBOLD_0',ng;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
 }
 
 body {
 	margin: 0
+	font-family: '나눔고딕','NANUMBARUNGOTHICBOLD_0.TTF',ng;
+	font-size: 15px;
+
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup,
@@ -261,7 +268,7 @@ html {
 }
 
 body {
-	font-family: Roboto Mono, Helvetica, Arial, sans-serif;
+	font-family: ;
 	font-size: 11px;
 	line-height: 1.78;
 	color: #000;
@@ -357,7 +364,7 @@ hr {
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-	font-family: Roboto Mono, Helvetica, Arial, sans-serif;
+	font-family: ;
 	font-weight: 700;
 	line-height: 1.1;
 	color: #000
@@ -4807,7 +4814,7 @@ body.minimal {
 }
 
 .hero-full-container h1 {
-	font-family: Roboto, Helvetica, Arial, sans-serif;
+	font-family: ;
 	font-weight: 900;
 }
 
@@ -4960,7 +4967,7 @@ p {
 }
 
 blockquote {
-	font-family: Roboto Mono, Helvetica, Arial, sans-serif;
+	font-family: ;
 	border: none;
 	padding-left: 0;
 	padding-right: 0;
@@ -5263,4 +5270,5 @@ textarea {
 	float: left;
 	margin-right: 5px
 }
+
 /*# sourceMappingURL=main.70a66962.map*/
