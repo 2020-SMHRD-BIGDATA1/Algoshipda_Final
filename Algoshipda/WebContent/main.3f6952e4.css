@@ -1,23 +1,72 @@
-@import
-	url(https://fonts.googleapis.com/css?family=Roboto:900|Roboto+Mono:300,400,700)
-	;
+*
+ 
+Bootstrap
+ 
+v3
+.3
+.7
+ 
+(
+http
+:
+//getbootstrap
+.com
+)
 
-@import
-	url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css)
-	; /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+ 
+*
+ 
+Copyright
+ 
+2011-2016
+Twitter
+,
+Inc
+.
+
+ 
+*
+ 
+Licensed
+ 
+under
+ 
+MIT
+ 
+(
+https
+:
+//github
+.com
+/twbs/bootstrap/blob/master/LICENSE)
+
+ 
+*
+/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-html {
-	font-family: GmarketSansTTFMedium.ttf;
-	-ms-text-size-adjust: 100%;
+
+
+
+ 
+@font-face {
+	font-family: "ng";
+	src: url("NANUMBARUNGOTHICBOLD_0.TTF");
+	src: local() . url(NANUMBARUNGOTHICBOLD_0.TTF) format("truetype");
+	font-size: normal;
+	font-weight: normal;
+}
+
+html { <<<<<<<
+	HEAD font-family: GmarketSansTTFMedium.ttf; =======
+	font-family: '�굹�닎怨좊뵓', 'NANUMBARUNGOTHICBOLD_0', ng; >>>>>>> branch
+	'master' of https :// github.com/ 2020-SMHRD-BIGDATA1/
+	Algoshipda_Final.git -ms-text-size-adjust : 100%;
 	-webkit-text-size-adjust: 100%
 }
 
 body {
-	margin: 0
+	margin: 0 font-family: '�굹�닎怨좊뵓', 'NANUMBARUNGOTHICBOLD_0.TTF', ng;
+	font-size: 15px;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup,
@@ -260,9 +309,10 @@ html {
 	-webkit-tap-highlight-color: transparent
 }
 
-body {
-	font-family: GmarketSansTTFMedium.ttf;
-	font-size: 11px;
+body { <<<<<<<
+	HEAD font-family: GmarketSansTTFMedium.ttf; =======
+	font-family:; >>>>>>> branch 'master' of https :// github.com/
+	2020-SMHRD-BIGDATA1/ Algoshipda_Final.git font-size : 11px;
 	line-height: 1.78;
 	color: #000;
 	background-color: #fff
@@ -356,9 +406,10 @@ hr {
 	cursor: pointer
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-	font-family: GmarketSansTTFMedium.ttf;
-	font-weight: 700;
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { <<<<<<<
+	HEAD font-family: GmarketSansTTFMedium.ttf; =======
+	font-family:; >>>>>>> branch 'master' of https :// github.com/
+	2020-SMHRD-BIGDATA1/ Algoshipda_Final.git font-weight : 700;
 	line-height: 1.1;
 	color: #000
 }
@@ -3602,7 +3653,7 @@ tbody.collapse.in {
 	.navbar-nav {
 		float: left;
 		margin: 0;
-		color:white;
+		color: white;
 	}
 	.navbar-nav>li {
 		float: left
@@ -3610,7 +3661,7 @@ tbody.collapse.in {
 	.navbar-nav>li>a {
 		padding-top: .5px;
 		padding-bottom: .5px;
-		color:white;
+		color: white;
 	}
 }
 
@@ -4808,8 +4859,9 @@ body.minimal {
 	height: 100vh
 }
 
-.hero-full-container h1 {
-	font-family: GmarketSansTTFMedium.ttf;
+.hero-full-container h1 { 
+	HEAD font-family: GmarketSansTTFMedium.ttf;
+	font-family:;
 	font-weight: 900;
 }
 
@@ -4843,17 +4895,20 @@ body.minimal {
 
 @media ( min-width :1200px) {
 	.section-container-spacer {
-	/*	margin-bottom: 40px*/
+		/*	margin-bottom: 40px*/
+		
 	}
 }
 
 .section-container {
 	/*padding: 60px 0*/
+	
 }
 
 @media ( min-width :1200px) {
 	.section-container {
-	/*	padding: 80px 0*/
+		/*	padding: 80px 0*/
+		
 	}
 }
 
@@ -4962,9 +5017,10 @@ p {
 	margin-bottom: 20px
 }
 
-blockquote {
-	font-family: GmarketSansTTFMedium.ttf;
-	border: none;
+blockquote { <<<<<<<
+	HEAD font-family: GmarketSansTTFMedium.ttf; =======
+	font-family:; >>>>>>> branch 'master' of https :// github.com/
+	2020-SMHRD-BIGDATA1/ Algoshipda_Final.git border : none;
 	padding-left: 0;
 	padding-right: 0;
 	font-size: 2.81em
@@ -5266,4 +5322,5 @@ textarea {
 	float: left;
 	margin-right: 5px
 }
+
 /*# sourceMappingURL=main.70a66962.map*/

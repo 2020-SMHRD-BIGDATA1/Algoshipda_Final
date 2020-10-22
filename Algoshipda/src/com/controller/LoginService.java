@@ -29,7 +29,7 @@ public class LoginService extends HttpServlet {
 				MemberDTO info = dao.login(dto);
 				
 				if (info != null) {
-					// ·Î±×ÀÎ ¼º°ø½Ã¿¡´Â session¿¡ info¶ó´Â ³×ÀÓÀ¸·Î info°´Ã¼¸¦ ÀúÀå
+					// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ sessionï¿½ï¿½ infoï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ infoï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					HttpSession session = request.getSession();
 					session.setAttribute("info", info);
 					response.sendRedirect("main.jsp");

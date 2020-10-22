@@ -24,6 +24,7 @@
 <script src="jquery-3.5.1.min.js"></script>
 
 <style>
+
 #pp {
 	margin-left: 121px;
 	margin-top: 1px;
@@ -46,36 +47,46 @@
 
 				<div class="col-sm-6" style="margin-top: 100px;">
 					<h2 align="center">마이페이지</h2>
-					<form action="JoinService" method="post" accept-charset="utf-8">
+					
 						<table class="table table-boardered">
 							<th>패스워드</th>
 							<td><input type="password" class="form-control"
-								name="member_pw" placeholder="비밀번호 입력"></td>
+								name="member_pw" placeholder="<%=info.getMember_pw()%>"></td>
 							</tr>
 
 							<tr>
 								<th>주소</th>
 								<td><input type="text" class="form-control"
-									name="member_addr"></td>
+									name="member_addr"placeholder="<%=info.getMember_addr()%>"></td>
 							</tr>
 
 							<tr>
 								<th>연락처</th>
 								<td><input type="tel" class="form-control"
-									name="member_tel"></td>
-							</tr>
-							<tr>
-								<td colspan='2' align='center'><input type="submit"
-									value="수정"></td>
-								<td colspan='2' align='center'><input type="submit"
-									value="취소"></td>
+									name="member_tel"placeholder="<%=info.getMember_tel()%>"></td>
 							</tr>
 						</table>
-					</form>
+					
 				</div>
 			</div>
 		</div>
 	</div>
+	<form action="main.jsp" method="post" accept-charset="utf-8">
+							<tr>
+								<td colspan='2' align='center'><input type="submit"
+									value="돌아가기"></td>
+							</tr>
+							</form>
+							<h2> MY LIST</h2>
+		
+		
+		<div class = "jjim">
+		<img src = "KOREAPLACE/쁘띠프랑스.jpg" width="200px" height="250px" align="middle" >
+	
+		
+	
+	
+	  </div>
 
 	<%@include file="footer.jsp"%>
 

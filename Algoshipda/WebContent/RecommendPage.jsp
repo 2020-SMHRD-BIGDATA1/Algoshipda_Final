@@ -31,6 +31,22 @@
 <link href="./main.3f6952e4.css" rel="stylesheet">
 </head>
 <style>
+@font-face { font-family: 'NanumGothic';
+src: url('/fonts/NanumGothic.eot');
+src: url('/fonts/NanumGothic.eot') format('embedded-opentype'),
+url('/fonts/NanumGothic.woff') format('woff');}
+
+
+
+
+
+body {font-family: 'NanumGothic', 'serif';}
+
+
+
+
+
+
 /* img {
 	display: inline-block;
 	width: 250px;
@@ -65,17 +81,18 @@ div.card-container card-container-lg {
 		// 해외 지역어딘지 분석해서 넘겨줄 이름	
 		String OVERSEAPLACE = request.getParameter("OVERSEAPLACE");
 		// 한국 지역어딘지 분석해서 넘겨줄 이름
-		String[] KOREAPLACE = request.getParameterValues("KOREAPLACE");
-		ArrayList<KOREAPLACE> list = new ArrayList<KOREAPLACE>();
-
+		//String[] KOREAPLACE = request.getParameterValues("KOREAPLACE");
+		ArrayList<String> list = new ArrayList<String>();
+		System.out.print(OVERSEAPLACE);
 		// 테스트 용도로 임의의 데이터 넣기
 		// 해외
-		OVERSEAPLACE = "산토리니";
+		// OVERSEAPLACE = "산토리니";
 		// 한국
-		KOREAPLACE = new String[3];
+		String[] KOREAPLACE = new String[2];
 		KOREAPLACE[0] = "독일마을";
-		KOREAPLACE[1] = "산토리니펜션";
-		KOREAPLACE[2] = "다랭이 마을";
+		KOREAPLACE[1] = "가평에델바이스";
+		//list.add(KOREAPLACE[0]);
+		//list.add(KOREAPLACE[1]);
 
 		FileDAO dao = new FileDAO();
 		// dao를 통해 분석한 외국 정보 dto를 받아오는 부분
@@ -84,11 +101,10 @@ div.card-container card-container-lg {
 		for (int i = 0; i < KOREAPLACE.length; i++) {
 			KOREAPLACE korea = dao.searchKorea(KOREAPLACE[i]);
 			if (korea != null) {
-				list.add(korea);
+				list.add(korea.getKOREAIMGNAME());
 			}
 		}
 		%>
-
 		<%@include file="header.jsp"%>
 
 
@@ -108,14 +124,23 @@ div.card-container card-container-lg {
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-					<div class="text-center">
-						<h1 class="h2">여기가 어디인가유</h1>
-						<br> <br> <br> <br>
+					<div class="text-center" style="margin-top: 50px;">
+						<h1 class="h2" >여기가 어디인가유</h1>
+						
+						<div class = "row2"  style="margin-top: 100px; margin-left: 90px;" >
+						<img style="width: 600px;"  src="OVERSEAPLACE/<%=over.getOVERSEAIMGNAME()%>" alt=""
+							class="img-responsive">
+							</div> <br>
 						<p>
-							찾는 곳 이름: <br><%=over.getOVERSEAtitle()%>
-							<br> 찾는 곳 주소: <br> <br> 찾는곳 간략한 설명: <br> <br>
-							<a href="http://www.swissthemepark.com?searchName="
-								+ <%=over.getOVERSEAtitle()%>> 공식웹사이트 : </a>
+							찾는 곳 이름: <%=over.getOVERSEAtitle()%>
+							<br> 
+							찾는 곳 주소: <%=over.getOVERSEA_addr()%>
+							<br> 
+							<br> 
+							<%=over.getOVERSEA_text()%> 
+							<br> 
+							<br>
+
 						</p>
 					</div>
 				</div>
@@ -130,6 +155,7 @@ div.card-container card-container-lg {
 					</div>
 				</nav>
 				</header>
+				<h2 style="margin-left: 370px;">???과 유사한 국내 여행지는?</h2>
 				<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
 				<div class="col-md-12">
 					<div id="myCarousel" class="carousel slide projects-carousel">
@@ -138,11 +164,14 @@ div.card-container card-container-lg {
 							<div class="item active">
 								<div class="row1">
 									<div class="col-sm-4">
-
+										<%-- <%for(int i =0; i<list.size();i++){ %> --%>
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/" alt="" class="img-responsive">
-										<!--한국 유사 여행지 사진이 나올곳이야  -->
+											src="KOREAPLACE/송도센트럴파크.jpg" alt="" class="img-responsive"> <!--한국 유사 여행지 사진이 나올곳이야  -->
 										</a>
+									<%-- 	<%} %> --%>
+										
+										
+										
 										<p>
 											<%-- 여행지의 이름--%>
 										</p>
@@ -150,13 +179,12 @@ div.card-container card-container-lg {
 										<p>
 											<!--간략 설명(?)  -->
 										</p>
-										<a href="./detail.jsp" title="" class="btn btn-default">정보
+										<a href="./detail.jsp" title="" class="btn btn-default" style="margin-left: 150px;">정보
 											보기</a>
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/" alt="" class="img-responsive">
-										<!--한국 유사 여행지 사진이 나올곳이야  -->
+											src="KOREAPLACE/감천마을.jpg" alt="" class="img-responsive" > <!--한국 유사 여행지 사진이 나올곳이야  -->
 										</a>
 										<p>
 											<%-- 여행지의 이름--%>
@@ -165,13 +193,12 @@ div.card-container card-container-lg {
 										<p>
 											<!--간략 설명(?)  -->
 										</p>
-										<a href="./detail.jsp" title="" class="btn btn-default">정보
+										<a href="./detail.jsp" title="" class="btn btn-default" style="margin-left: 150px;">정보
 											보기</a>
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
-											src="SimilarPicture/" alt="" class="img-responsive">
-										<!--한국 유사 여행지 사진이 나올곳이야  -->
+											src="KOREAPLACE/장호항.jpg" alt="" class="img-responsive"> <!--한국 유사 여행지 사진이 나올곳이야  -->
 										</a>
 										<p>
 											<%-- 여행지의 이름--%>
@@ -180,7 +207,7 @@ div.card-container card-container-lg {
 										<p>
 											<!--간략 설명(?)  -->
 										</p>
-										<a href="./detail.jsp" title="" class="btn btn-default">정보
+										<a href="./detail.jsp" title="" class="btn btn-default" style="margin-left: 150px;">정보
 											보기</a>
 									</div>
 								</div>
@@ -211,15 +238,7 @@ div.card-container card-container-lg {
 	</div>
 
 
-	<footer class="footer-container text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<p>여기에도 뭘 쓸깐</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<%@include file="footer.jsp"%>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {

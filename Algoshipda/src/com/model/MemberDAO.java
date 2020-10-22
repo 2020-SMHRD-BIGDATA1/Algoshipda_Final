@@ -109,10 +109,11 @@ public class MemberDAO {
 			if (rs.next()) {
 
 				String member_id = rs.getString(1);
-				String member_tel = rs.getString(2);
+				String member_pw = rs.getString(2);
 				String member_addr = rs.getString(3);
-
-				info = new MemberDTO(member_id, member_addr, member_tel);
+				String member_tel = rs.getString(4);
+				
+				info = new MemberDTO(member_id, member_pw, member_addr, member_tel);
 
 			}
 
