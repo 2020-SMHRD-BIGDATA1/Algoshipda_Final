@@ -31,7 +31,7 @@
 <link href="./main.3f6952e4.css" rel="stylesheet">
 <style>
 .card-container {
-	background-color: #f5f5f5;
+	background-color: whtie;
 	padding: 1rem 1rem;
 	position: relative;
 	width: 80%;
@@ -76,7 +76,7 @@
 					<h1 class="h1" style="font-size: 40px; color: white;">자유게시판</h1>
 					
 					<p>
-						<input class="btn_ej" type="button" value="작성하기"
+						<input class="btn_ej" type="button" value="Write"
 							onClick="location.href='./board_write.jsp'">
 
 					</p>
@@ -87,8 +87,8 @@
 		</div>
 	</div>
 	<div class="section-container" style="margin-right: 150px;">
-		<div class="container">
-			<div class="row">
+		<div class="container" >
+			<div class="row" style="width:1300px; border-top: 1px solid white;">
 
 
 				<!-- Carousel items -->
@@ -110,26 +110,24 @@
 
 
 						<div class="col-sm-4"
-							style="background-color: #f5f5f5; width: 400px; margin: 20px;">
-							<%
-								System.out.print(list.get(i).getBbsImg() + "짠\n");
-							%>
+							style="background-color: white; width: 400px; margin: 20px;">
+							
 							<a href="board_info.jsp?num=<%=num%>" class="image featured">
 								<img src="bbsimage/<%=list.get(i).getBbsImg()%>"
 								class="img-responsive" style="margin-top: 20px">
 							</a>
 
 							<div class="card-container card-container-lg"
-								style="margin-top: 0%">
+								style="margin-top: 0%;width:370px; padding-right:0px;">
 
 								<h4 style="float: right;"><%=list.get(i).getMember_id()%></h4>
 								<h3><%=list.get(i).getBbsTitle()%></h3>
 
-								<div style="float: left; margin-right: 15px">
+								<div style="float: left; margin-right: 10px">
 									<img class="mini_icon" src="assets/images/eyes.png">
 								</div>
 								<div style="float: left;"><%=list.get(i).getBbsHit()%></div>
-								<div style="float: left; margin-left: 145px; margin-right: 10px">
+								<div style="float: left; margin-left: 130px; margin-right: 10px;padding-right:0px;">
 									<img class="mini_icon" src="assets/images/time.png">
 								</div>
 								<div style="float: left; margin-left:;"><%=list.get(i).getBbsDate()%></div>
@@ -137,7 +135,7 @@
 
 							</div>
 							<center>
-								<input class="btn_ej" type="button" value="더보기"
+								<input class="btn_ej" type="button" value="More"
 									onClick="location.href='board_info.jsp?num=<%=num%>'"
 									style="width: 350px; margin-bottom: 20px; margin-top: 20px;'">
 							</center>

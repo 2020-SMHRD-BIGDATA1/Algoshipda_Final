@@ -34,94 +34,135 @@
 .nav navbar-nav {
 	
 }
+
+.btn_ej {
+	width: 100px;
+	background-color: gray;
+	border: none;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px;
+	cursor: pointer;
+	text-decoration: none
+}
+
+.col-lg-4 {
+	background-color: #f5f5f5;
+	padding: 40px;
+	background-color: rgba(255, 255, 255, 0.3);
+	margin-left: 280px;
+	width: 550px;
+	padding-top: 0px;
+	padding-bottom:5px;
+}
+
+tr, td {
+	padding: 5px;
+}
+
 </style>
 </head>
 
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 text-left" style="text-align: center;">
-				<a href="main.jsp"><img src="assets/images/logo.png"></a>
-			</div>
-			<div class="col-sm-12 text-left">
-				<div class="col-sm-3"></div>
 
-				<div class="col-sm-6">
-					<h2 align="center">회원가입</h2>
-					<form action="JoinService" method="post" accept-charset="utf-8">
-						<table class="table table-boardered">
-							<tr>
-								<th>아이디</th>
-								<td><input type="text" class="form-control"
-									name="member_id" id="member_id2" placeholder="id를 넣으세요"></td>
-								<td><input type="button" value="중복확인" onclick="idCheck()">
-									<p id="p1"></p></td>
-							</tr>
-							<tr>
-								<th>패스워드</th>
-								<td><input type="password" class="form-control"
-									name="member_pw" placeholder="비밀번호 입력"></td>
-							</tr>
+<body class="minimal"
+	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
 
-							<tr>
-								<th>주소</th>
-								<td><input type="text" class="form-control"
-									name="member_addr"></td>
-							</tr>
-
-							<tr>
-								<th>연락처</th>
-								<td><input type="tel" class="form-control"
-									name="member_tel"></td>
-							</tr>
-							<tr>
-								<td colspan='2' align='center'><input type="submit"
-									value="회원가입"></td>
-
-								<td colspan='2' align='center'><input type="button"
-									id="button1" onclick="button_click();" value="취소"></td>
-
-							</tr>
-						</table>
-					</form>
-				</div>
-			</div>
-		</div>
+	<div
+		style="width: 100%; text-align: center; margin-top: 50px; margin-bottom: 50px;">
+		<a href="main.jsp"><img src="assets/images/algoicon.png"
+			style="width: 260px; height: 130px;"></a>
 	</div>
 
+	<div class="container">
+	<form method="post" action="JoinService">
+		<div class="col-lg-4" style=" position: relative;">
 
-	<%@include file="footer.jsp"%>
+			<!-- 로그인 정보를 숨기면서 전송post -->
+		
 
-	<script type="text/javascript">
-		function button_click() {
-			location.href = 'main.jsp'
-		}
+				<h3 style="text-align: center; color: white; font-size: 50px;">JOIN</h3>
+				<table  style="width: 500px;">
+					<tr>
+						<td style="text-align: center;"><P style="color: white;">ID</P></td>
+						<td><input type="text" class="form-control" name="member_id"
+							id="member_id2" placeholder="id를 넣으세요" maxlength="20"></td>
+						<td><input type="button"
+							style="width: 60px; font-size: 13px; float: left; margin-left: 20px; margin-botton: 50px; padding: 5px;"
+							class="btn_ej" value="Check" onclick="idCheck()">
+							<p id="p1"></p></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"><p style="color: white;">PW</p></td>
+						<td><input type="password" class="form-control"
+							name="member_pw" placeholder="비밀번호 입력" maxlength="20"></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"><p style="color: white;">ADDR</p></td>
+						<td><input input type="text" class="form-control"
+							name="member_addr" maxlength="20"></td>
 
-		function idCheck() {
-			var id = document.getElementById("member_id2");
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<p style="color: white;">TEL</p>
+						</td>
+						<td><input input type="tel" class="form-control"
+							" name="member_tel" maxlength="20"></td>
+					</tr>
+						
+				</table>
+				
+					<div style="padding:20px;">					
+					<input type="button" class="btn_ej" id="button1"
+							style="margin-left:100px;" onclick="button_click();" value="Cancle">
+							<input type="submit" class="btn_ej" id="button1"
+							style="margin-left:10px;" value="Join">
+							
+				</div>
+				</div>
+					</form>
+					</div>
+					</div>
+					</div>
+					
+							
+					<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 
-			$.ajax({
-				type : "get", //get or post방식
-				//QueryString 방식으로 전송 : ?(시작) member_id(이름값) + member_id.value(실제 변수값)
-				url : "IdCheck?member_id=" + id.value, //서버 페이지의 주소
-				dataType : "text", //주고받을 데이터의 유형
-				success : function(data) {
 
-					p1 = document.getElementById("p1");
+					<script type="text/javascript">
+						function button_click() {
+							location.href = 'main.jsp'
+						}
 
-					if (data == "true") {
-						p1.innerHTML = "사용할 수 없는 아이디입니다.";
-					} else {
-						p1.innerHTML = "사용할 수 있는 아이디입니다.";
-					}
+						function idCheck() {
+							var id = document.getElementById("member_id2");
 
-				},
-				error : function() {
-					//서버와 통신이 실패했을 때 후 처리
-					alert("호출실패");
-				}
-			});
-		}
-	</script>
+							$.ajax({
+								type : "get", //get or post방식
+								//QueryString 방식으로 전송 : ?(시작) member_id(이름값) + member_id.value(실제 변수값)
+								url : "IdCheck?member_id=" + id.value, //서버 페이지의 주소
+								dataType : "text", //주고받을 데이터의 유형
+								success : function(data) {
+
+									p1 = document.getElementById("p1");
+
+									if (data == "true") {
+										alert("사용할 수 없는 아이디 입니다.");
+									} else {
+										alert("사용 가능한 아이디 입니다.");
+									}
+
+								},
+								error : function() {
+									//서버와 통신이 실패했을 때 후 처리
+									alert("호출실패");
+								}
+							});
+						}
+					</script>
 </body>
 </html>

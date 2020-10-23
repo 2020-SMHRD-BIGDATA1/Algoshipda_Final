@@ -97,9 +97,8 @@ th {
 
 								<!-- 게시판시작 -->
 								<section class="blog_area section-padding">
-
 									<div class="container">
-										<div class="row">
+										<div class="row" >
 											<form method="post" action="WriteService"
 												enctype="multipart/form-data"
 												style="width: 100%; padding: 50px;">

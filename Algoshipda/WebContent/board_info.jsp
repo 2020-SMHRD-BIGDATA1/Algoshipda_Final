@@ -70,10 +70,15 @@ img {
 	width: 15px;
 	height: 15px;
 }
+
+.container {
+	
+}
 </style>
 </head>
 
-<body class="">
+<body class=""
+	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
 
 	<%@include file="header.jsp"%>
 
@@ -82,12 +87,12 @@ img {
 		<div class="section-container">
 
 
-			<div class="container" style="margin-left: 250px; margin-top: 100px">
+			<div class="container" style="margin-left: 250px; margin-top: 100px;">
 				<div class="row"
-					style="background-color:; margin-left: 0px; margin-right: 0px; width: 1300px;">
+					style="background-color: white; background-color: rgba(255, 255, 255, 0.3); margin-left: 0px; margin-right: 0px; width: 1300px; margin-bottom:50px; padding-bottom:50px;">
 					<div class="col-sm-8 col-sm-offset-2 section-container-spacer"
 						align="center"
-						style="margin-top: 250px; width: 1300px; margin: 0%">
+						style="margin-top: 250px; width: 1300px; margin: 0%; border-bottom: 1px solid white;">
 						<%
 							String num = request.getParameter("num");
 						%>
@@ -98,30 +103,30 @@ img {
 						%>
 
 						<h1 class="h1" align="center"
-							style="font-size: 40px; color: gray; margin-bottom: 0px;'"><%=infoo.getBbsTitle()%></h1>
+							style="font-size: 40px; color: white; margin-bottom: 0px;'"><%=infoo.getBbsTitle()%></h1>
 
 						<div style="width: 1300px; margin-top: 50px;">
 
-							<div style="float: left; margin-left: 40px; margin-top: 20px">
+							<div style="float: left; margin-left: 40px; margin-top: 20px;">
 								<img style="width: 25px; height: 25px"
-									" src="assets/images/user.png">
+									" src="assets/images/miniuser.png">
 							</div>
 							<div style="float: left; margin-left: 15px;">
-								<h3><%=infoo.getMember_id()%></h3>
+								<h3 style="color: white;"><%=infoo.getMember_id()%></h3>
 							</div>
 
 							<div style="float: left; margin-left: 30px; margin-top: 20px">
-								<img class="mini_icon" src="assets/images/time.png">
+								<img class="mini_icon" src="assets/images/minitime.png">
 							</div>
 							<div style="float: left; margin-left: 15px; margin-top: 20px">
-								<h4><%=infoo.getBbsDate()%></h4>
+								<h4 style="color: white;"><%=infoo.getBbsDate()%></h4>
 							</div>
 
 							<div style="float: left; margin-left: 30px; margin-top: 20px">
-								<img class="mini_icon" src="assets/images/eyes.png">
+								<img class="mini_icon" src="assets/images/minieye.png">
 							</div>
 							<div style="float: left; margin-left: 15px; margin-top: 20px">
-								<h4><%=infoo.getBbsHit()%></h4>
+								<h4 style="color: white;"><%=infoo.getBbsHit()%></h4>
 							</div>
 
 
@@ -140,8 +145,10 @@ img {
 
 							</div>
 						</div>
-						<!-- <span class="blank"></span> -->
-						<hr align="center">
+
+
+						<span class="blank"></span>
+						<!--  <hr align="center">-->
 
 
 					</div>
@@ -149,9 +156,18 @@ img {
 
 
 					<div class="col-md-8 col-md-offset-2 section-container-spacer"
-						align="center">
-						<img src="./bbsimage/<%=infoo.getBbsImg()%>">
-						<h3><%=infoo.getBbsContent()%></h3>
+						style= "margin-top: 50px; margin-left: 200px;">
+						<img src="./bbsimage/<%=infoo.getBbsImg()%>"
+							style="margin-top: 50px;margin-left: 186px; ">
+							
+						<h3 style="color: white; margin-left: 186px;"><%=infoo.getBbsContent()%></h3>
+
+						<center>
+							<input class="btn_ej" type="button" value="목록으로"
+								onClick="location.href='./board_cat.jsp'">
+						</center>
+
+
 
 					</div>
 
@@ -162,10 +178,7 @@ img {
 		</div>
 
 
-		<center>
-			<input class="btn_ej" type="button" value="목록으로"
-				onClick="location.href='./board_cat.jsp'">
-		</center>
+
 		</p>
 
 
@@ -180,9 +193,6 @@ img {
 		document.addEventListener("DOMContentLoaded", function(event) {
 			navActivePage();
 		});
-		
-
-		
 	</script>
 
 	<script type="text/javascript" src="./main.70a66962.js"></script>
