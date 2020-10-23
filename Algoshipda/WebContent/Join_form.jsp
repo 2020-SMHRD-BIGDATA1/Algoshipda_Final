@@ -1,21 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="description" name="description">
 <meta name="google" content="notranslate" />
 <meta content="Mashup templates have been developped by Orson.io team"
-	name="author">
+   name="author">
 
 <!-- Disable tap highlight on IE -->
 <meta name="msapplication-tap-highlight" content="no">
 
 <link rel="apple-touch-icon" sizes="180x180"
-	href="./assets/apple-icon-180x180.png">
+   href="./assets/apple-icon-180x180.png">
 <link href="./assets/favicon.ico" rel="icon">
 <link rel="stylesheet" href="assets/css/JoinCSS.css" />
 <title>Title page</title>
@@ -25,103 +25,144 @@
 
 <style>
 #pp {
-	margin-left: 121px;
-	margin-top: 1px;
-	width: 84px;
-	height: 45px;
+   margin-left: 121px;
+   margin-top: 1px;
+   width: 84px;
+   height: 45px;
 }
 
 .nav navbar-nav {
-	
+   
 }
+
+.btn_ej {
+   width: 100px;
+   background-color: gray;
+   border: none;
+   color: #fff;
+   padding: 10px 0;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 15px;
+   margin: 4px;
+   cursor: pointer;
+   text-decoration: none
+}
+
+.col-lg-4 {
+   background-color: #f5f5f5;
+   padding: 40px;
+   background-color: rgba(255, 255, 255, 0.3);
+   margin-left: 280px;
+   width: 550px;
+   padding-top: 0px;
+   padding-bottom:5px;
+}
+
+tr, td {
+   padding: 5px;
+}
+
 </style>
 </head>
 
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 text-left" style="text-align: center;">
-				<a href="main.jsp"><img src="assets/images/logo.png"></a>
-			</div>
-			<div class="col-sm-12 text-left">
-				<div class="col-sm-3"></div>
 
-				<div class="col-sm-6">
-					<h2 align="center">È¸¿ø°¡ÀÔ</h2>
-					<form action="JoinService" method="post" accept-charset="utf-8">
-						<table class="table table-boardered">
-							<tr>
-								<th>¾ÆÀÌµğ</th>
-								<td><input type="text" class="form-control"
-									name="member_id" id="member_id2" placeholder="id¸¦ ³ÖÀ¸¼¼¿ä"></td>
-								<td><input type="button" value="Áßº¹È®ÀÎ" onclick="idCheck()">
-									<p id="p1"></p></td>
-							</tr>
-							<tr>
-								<th>ÆĞ½º¿öµå</th>
-								<td><input type="password" class="form-control"
-									name="member_pw" placeholder="ºñ¹Ğ¹øÈ£ ÀÔ·Â"></td>
-							</tr>
+<body class="minimal"
+   style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
 
-							<tr>
-								<th>ÁÖ¼Ò</th>
-								<td><input type="text" class="form-control"
-									name="member_addr"></td>
-							</tr>
+   <div
+      style="width: 100%; text-align: center; margin-top: 50px; margin-bottom: 50px;">
+      <a href="main.jsp"><img src="assets/images/algoicon.png"
+         style="width: 260px; height: 130px;"></a>
+   </div>
 
-							<tr>
-								<th>¿¬¶ôÃ³</th>
-								<td><input type="tel" class="form-control"
-									name="member_tel"></td>
-							</tr>
-							<tr>
-								<td colspan='2' align='center'><input type="submit"
-									value="È¸¿ø°¡ÀÔ"></td>
+   <div class="container">
+   <form method="post" action="JoinService">
+      <div class="col-lg-4" style=" position: relative;">
 
-								<td colspan='2' align='center'><input type="button"
-									id="button1" onclick="button_click();" value="Ãë¼Ò"></td>
+         <!-- ë¡œê·¸ì¸ ì •ë³´ë¥¼ ìˆ¨ê¸°ë©´ì„œ ì „ì†¡post -->
+      
 
-							</tr>
-						</table>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+            <h3 style="text-align: center; color: white; font-size: 50px; font-family: 'Jalnan';">JOIN</h3>
+            <table  style="width: 500px;">
+               <tr>
+                  <td style="text-align: center;"><P style="color: white; font-family: 'Jalnan';">ID</P></td>
+                  <td><input type="text" class="form-control" name="member_id"
+                     id="member_id2" placeholder="idë¥¼ ë„£ìœ¼ì„¸ìš”" maxlength="20"></td>
+                  <td><input type="button"
+                     style="width: 60px; font-size: 13px; float: left; margin-left: 20px; margin-botton: 50px; padding: 5px;"
+                     class="btn_ej" value="Check" onclick="idCheck()">
+                     <p id="p1"></p></td>
+               </tr>
+               <tr>
+                  <td style="text-align: center;"><p style="color: white; font-family: 'Jalnan';">PW</p></td>
+                  <td><input type="password" class="form-control"
+                     name="member_pw" placeholder="ë¹„ë°€ë²ˆí˜¸ ì…ë ¥" maxlength="20"></td>
+               </tr>
+               <tr>
+                  <td style="text-align: center;"><p style="color: white; font-family: 'Jalnan';">ADDR</p></td>
+                  <td><input input type="text" class="form-control"
+                     name="member_addr" maxlength="20"></td>
+
+               </tr>
+               <tr>
+                  <td style="text-align: center;">
+                     <p style="color: white; font-family: 'Jalnan';">TEL</p>
+                  </td>
+                  <td><input input type="tel" class="form-control"
+                     " name="member_tel" maxlength="20"></td>
+               </tr>
+                  
+            </table>
+            
+               <div style="padding:20px;">               
+               <input type="button" class="btn_ej" id="button1"
+                     style="margin-left:100px; font-family: 'Jalnan';" onclick="button_click();" value="ì·¨ì†Œ">
+                     <input type="submit" class="btn_ej" id="button1"
+                     style="margin-left:10px; font-family: 'Jalnan';" value="íšŒì›ê°€ì…">
+                     
+            </div>
+            </div>
+               </form>
+               </div>
+               </div>
+               </div>
+               
+                     
+               <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 
 
-	<%@include file="footer.jsp"%>
+               <script type="text/javascript">
+                  function button_click() {
+                     location.href = 'main.jsp'
+                  }
 
-	<script type="text/javascript">
-		function button_click() {
-			location.href = 'main.jsp'
-		}
+                  function idCheck() {
+                     var id = document.getElementById("member_id2");
 
-		function idCheck() {
-			var id = document.getElementById("member_id2");
+                     $.ajax({
+                        type : "get", //get or postë°©ì‹
+                        //QueryString ë°©ì‹ìœ¼ë¡œ ì „ì†¡ : ?(ì‹œì‘) member_id(ì´ë¦„ê°’) + member_id.value(ì‹¤ì œ ë³€ìˆ˜ê°’)
+                        url : "IdCheck?member_id=" + id.value, //ì„œë²„ í˜ì´ì§€ì˜ ì£¼ì†Œ
+                        dataType : "text", //ì£¼ê³ ë°›ì„ ë°ì´í„°ì˜ ìœ í˜•
+                        success : function(data) {
 
-			$.ajax({
-				type : "get", //get or post¹æ½Ä
-				//QueryString ¹æ½ÄÀ¸·Î Àü¼Û : ?(½ÃÀÛ) member_id(ÀÌ¸§°ª) + member_id.value(½ÇÁ¦ º¯¼ö°ª)
-				url : "IdCheck?member_id=" + id.value, //¼­¹ö ÆäÀÌÁöÀÇ ÁÖ¼Ò
-				dataType : "text", //ÁÖ°í¹ŞÀ» µ¥ÀÌÅÍÀÇ À¯Çü
-				success : function(data) {
+                           p1 = document.getElementById("p1");
 
-					p1 = document.getElementById("p1");
+                           if (data == "true") {
+                              alert("ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” ì•„ì´ë”” ì…ë‹ˆë‹¤.");
+                           } else {
+                              alert("ì‚¬ìš© ê°€ëŠ¥í•œ ì•„ì´ë”” ì…ë‹ˆë‹¤.");
+                           }
 
-					if (data == "true") {
-						alert("»ç¿ëÇÒ ¼ö ¾ø´Â ¾ÆÀÌµğ ÀÔ´Ï´Ù.");
-					} else {
-						alert("»ç¿ë °¡´ÉÇÑ ¾ÆÀÌµğ ÀÔ´Ï´Ù.");
-					}
-
-				},
-				error : function() {
-					//¼­¹ö¿Í Åë½ÅÀÌ ½ÇÆĞÇßÀ» ¶§ ÈÄ Ã³¸®
-					alert("È£Ãâ½ÇÆĞ");
-				}
-			});
-		}
-	</script>
+                        },
+                        error : function() {
+                           //ì„œë²„ì™€ í†µì‹ ì´ ì‹¤íŒ¨í–ˆì„ ë•Œ í›„ ì²˜ë¦¬
+                           alert("í˜¸ì¶œì‹¤íŒ¨");
+                        }
+                     });
+                  }
+               </script>
 </body>
 </html>

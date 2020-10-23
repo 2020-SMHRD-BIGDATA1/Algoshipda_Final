@@ -138,7 +138,7 @@ img {
 										<input class="btn btn-default" type="file" id="file"
 											name="file">
 										<center>
-											<input class="btn_ej" type="submit" value="업로드"
+											<input class="btn_ej" type="submit" value="Upload"
 												style="width: 355px; margin-top: 10px; opacity: 0.8;"><br>
 										</center>
 									</form>

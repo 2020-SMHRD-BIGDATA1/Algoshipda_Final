@@ -197,4 +197,10 @@ public class BbsDAO {
 		return cnt;
 	}
 
+	
+	
+	
+	
+	
+	
 }

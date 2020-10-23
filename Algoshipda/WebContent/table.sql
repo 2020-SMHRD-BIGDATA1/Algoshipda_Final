@@ -100,9 +100,3 @@ REFERENCES KOREAPLACE(KOREAtitle) ON DELETE CASCADE
 
 select * from OVERSEAPLACE;
 select * from KOREAPLACE;
-
-
-
-delete from KOREAPLACE where KOREA_INDEX=5;
-
-
