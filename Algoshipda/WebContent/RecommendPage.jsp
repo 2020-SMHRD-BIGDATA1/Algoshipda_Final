@@ -89,7 +89,7 @@ div.card-container card-container-lg {
 		// 해외 지역어딘지 분석해서 넘겨줄 이름	
 		String OVERSEAPLACE = request.getParameter("OVERSEAPLACE");
 		// 한국 지역어딘지 분석해서 넘겨줄 이름
-		//String[] KOREAPLACE = request.getParameterValues("KOREAPLACE");
+		//'String[] KOREAPLACE = request.getParameterValues("KOREAPLACE");
 		ArrayList<String> list = new ArrayList<String>();
 		System.out.print(OVERSEAPLACE);
 		// 테스트 용도로 임의의 데이터 넣기

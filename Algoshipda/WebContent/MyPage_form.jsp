@@ -70,22 +70,22 @@
 					<table class="table table-boardered" style="color: white; ">
 						<th>ID</th>
 						<td><input type="text" class="form-control"
-							name="member_id" placeholder="<%=info.getMember_id()%>"></td>
+							name="member_id" placeholder="<%=info.getMember_id()%>"readonly/></td>
 						</tr>
 						<th>Password</th>
 						<td><input type="password" class="form-control"
-							name="member_pw" placeholder="<%=info.getMember_pw()%>"></td>
+							name="member_pw" placeholder="<%=info.getMember_pw()%>"readonly/></td>
 						</tr>
 
 						<tr>
 							<th>Address</th>
 							<td><input type="text" class="form-control"
-								name="member_addr" placeholder="<%=info.getMember_addr()%>"></td>
+								name="member_addr" placeholder="<%=info.getMember_addr()%>"readonly/></td>
 						</tr>
 						<tr>
 							<th>Telephone</th>
 							<td><input type="tel" class="form-control" name="member_tel"
-								placeholder="<%=info.getMember_tel()%>"></td>
+								placeholder="<%=info.getMember_tel()%>"readonly/></td>
 						</tr>
 					</table>
 					<form action="main.jsp" method="post" accept-charset="utf-8"
@@ -109,18 +109,22 @@
 		style="background-color: white; background-color: rgba(255, 255, 255, 0.2);">
 		<hr style="color: white; width: 100%;">
 		<h2 style="color: white;">MY LIST</h2>
-
-		<div class="jjim">
-			<br> <img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
+		<br>
+		<br>
+		<br><!-- ±¹³» ÀÌ¹ÌÁö for¹®À¸·Î BOOKMARK¼­ºñ½º·Î Æû¾×¼Ç ÁÖ±â!  -->
+				<img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
 				height="250px"
-				style="margin-left: 650px; border-radius: 80%; overflow: hidden;">
-			<img src="KOREAPLACE/ÀÎÃµ¿ù¹ÌµµÅ×¸¶ÆÄÅ©.jpg" width="280px" height="250px"
-				style="margin-left: 175px; border-radius: 80%; overflow: hidden;">
-				<br> 
+				style="margin-left: 110px; border-radius: 80%; overflow: hidden;">
 				<img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
 				height="250px"
 				style="margin-left: 177px; border-radius: 80%; overflow: hidden;">
-		</div>
+				<img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
+				height="250px"
+				style="margin-left: 177px; border-radius: 80%; overflow: hidden;">
+				<img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
+				height="250px"
+				style="margin-left: 177px; border-radius: 80%; overflow: hidden;">
+		
 		
 		<br> <br> <br> <br> <br>
 	</div>

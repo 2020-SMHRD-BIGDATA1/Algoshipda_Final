@@ -8,7 +8,6 @@ drop table INFORMATION
 drop sequence KOREA_index;
 drop sequence OVERSEA_index;
 drop sequence similar_index;
-drop table KOREAPLACE
 drop sequence information_index;
 drop sequence picture_index;
 drop sequence KOREA_index;
