@@ -22,16 +22,11 @@
 <link rel="apple-touch-icon" sizes="180x180"
 	href="./assets/apple-icon-180x180.png">
 <link href="./assets/favicon.ico" rel="icon">
-
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/toplogo.ico">
 <title>Title page</title>
 <script src="jquery-3.5.1.min.js"></script>
-<link href="./main.3f6952e4.css?ver=1" rel="stylesheet">
+<link href="./main.3f6952e4.css?ver=2" rel="stylesheet">
 <style>
-@FONT-FACE {
-	font-family: 'Gmarket';
-	src: ("GmarketSansTTFMedium.ttf");
-}
-
 img {
 	display: inline-block;
 	max-width: 359px;
@@ -89,6 +84,10 @@ img {
 	cursor: pointer;
 	text-decoration: none
 }
+
+* {
+	font-family: 'NanumBarunGothic';
+}
 </style>
 </head>
 
@@ -124,9 +123,8 @@ img {
 
 										<%
 											if (info == null) {
-										%><label for="file"><img
-											class="img_upload" id="image_section2"
-											src="./assets/images/upup.PNG"
+										%><label for="file"><img class="img_upload"
+											id="image_section2" src="./assets/images/upup.PNG"
 											style="max-width: 359px; height: 300px; margin-left: 140px;" /></label>
 										<%
 											} else {

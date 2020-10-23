@@ -19,7 +19,7 @@ public class UploadService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("UTF-8");
 		String directory = request.getSession().getServletContext().getRealPath("/upload");
 
 		int maxSize = 1024 * 1024 * 100;
@@ -35,7 +35,7 @@ public class UploadService extends HttpServlet {
 
 		System.out.println(fileName);
 		if (cnt > 0) {
-			response.sendRedirect("http://172.30.1.51:9000/predict/predict?fileName=" + fileName);
+			response.sendRedirect("http://172.30.1.50:9000/predict/predict?fileName=" + fileName);
 		} else {
 			response.sendRedirect("main.jsp");
 		}

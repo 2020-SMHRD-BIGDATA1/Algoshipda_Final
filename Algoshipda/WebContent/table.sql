@@ -47,6 +47,11 @@ fileName varchar2(200) NOT NULL,
 filetime date ,
 predictlocation varchar2(50)
 );
+create sequence picture_index
+increment by 1
+start with 1; 
+
+
 select * from files;
 
 
@@ -95,4 +100,9 @@ REFERENCES KOREAPLACE(KOREAtitle) ON DELETE CASCADE
 
 select * from OVERSEAPLACE;
 select * from KOREAPLACE;
+
+
+
+delete from KOREAPLACE where KOREA_INDEX=5;
+
 

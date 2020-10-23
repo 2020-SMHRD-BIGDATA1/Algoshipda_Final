@@ -31,21 +31,16 @@
 <link href="./main.3f6952e4.css" rel="stylesheet">
 </head>
 <style>
-@font-face { font-family: 'NanumGothic';
-src: url('/fonts/NanumGothic.eot');
-src: url('/fonts/NanumGothic.eot') format('embedded-opentype'),
-url('/fonts/NanumGothic.woff') format('woff');}
+@font-face {
+	font-family: 'NanumGothic';
+	src: url('/fonts/NanumGothic.eot');
+	src: url('/fonts/NanumGothic.eot') format('embedded-opentype'),
+		url('/fonts/NanumGothic.woff') format('woff');
+}
 
-
-
-
-
-body {font-family: 'NanumGothic', 'serif';}
-
-
-
-
-
+body {
+	font-family: 'NanumGothic', 'serif';
+}
 
 /* img {
 	display: inline-block;
@@ -75,22 +70,25 @@ div.card-container card-container-lg {
 	<div id="site-border-bottom"></div>
 	<!-- Add your content of header -->
 	<header>
-
 		<%
 			// 파이썬에서 넘겨받아야 하는 키워드들
 		// 해외 지역어딘지 분석해서 넘겨줄 이름	
 		String OVERSEAPLACE = request.getParameter("OVERSEAPLACE");
+		//String KOREAPLACE = request.getParameter("KOREAPLACE");
 		// 한국 지역어딘지 분석해서 넘겨줄 이름
-		//String[] KOREAPLACE = request.getParameterValues("KOREAPLACE");
+		String[] KOREAPLACE = request.getParameterValues("KOREAPLACE");
 		ArrayList<String> list = new ArrayList<String>();
-		System.out.print(OVERSEAPLACE);
+		System.out.print("길이!!"+KOREAPLACE.length);
+		for (int i = 0; i < KOREAPLACE.length; i++) {
+			System.out.print(KOREAPLACE[i] + "이잉");
+		}
 		// 테스트 용도로 임의의 데이터 넣기
 		// 해외
 		// OVERSEAPLACE = "산토리니";
 		// 한국
-		String[] KOREAPLACE = new String[2];
-		KOREAPLACE[0] = "독일마을";
-		KOREAPLACE[1] = "가평에델바이스";
+		//String[] KOREAPLACE = new String[2];
+		//KOREAPLACE[0] = "독일마을";
+		//KOREAPLACE[1] = "가평에델바이스";
 		//list.add(KOREAPLACE[0]);
 		//list.add(KOREAPLACE[1]);
 
@@ -125,21 +123,21 @@ div.card-container card-container-lg {
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 					<div class="text-center" style="margin-top: 50px;">
-						<h1 class="h2" >여기가 어디인가유</h1>
-						
-						<div class = "row2"  style="margin-top: 100px; margin-left: 90px;" >
-						<img style="width: 600px;"  src="OVERSEAPLACE/<%=over.getOVERSEAIMGNAME()%>" alt=""
-							class="img-responsive">
-							</div> <br>
+						<h1 class="h2">여기가 어디인가유</h1>
+						<div class="row2" style="margin-top: 100px; margin-left: 90px;">
+							<img style="width: 600px;"
+								src="OVERSEAPLACE/<%=over.getOVERSEAIMGNAME()%>" alt=""
+								class="img-responsive">
+						</div>
+						<br>
 						<p>
-							찾는 곳 이름: <%=over.getOVERSEAtitle()%>
-							<br> 
-							찾는 곳 주소: <%=over.getOVERSEA_addr()%>
-							<br> 
-							<br> 
-							<%=over.getOVERSEA_text()%> 
-							<br> 
-							<br>
+							찾는 곳 이름:
+							<%=over.getOVERSEAtitle()%>
+							<br> 찾는 곳 주소:
+							<%=over.getOVERSEA_addr()%>
+							<br> <br>
+							<%=over.getOVERSEA_text()%>
+							<br> <br>
 
 						</p>
 					</div>
@@ -166,12 +164,13 @@ div.card-container card-container-lg {
 									<div class="col-sm-4">
 										<%-- <%for(int i =0; i<list.size();i++){ %> --%>
 										<a href="./detail.jsp" title=""> <img
-											src="KOREAPLACE/송도센트럴파크.jpg" alt="" class="img-responsive"> <!--한국 유사 여행지 사진이 나올곳이야  -->
+											src="KOREAPLACE/송도센트럴파크.jpg" alt="" class="img-responsive">
+											<!--한국 유사 여행지 사진이 나올곳이야  -->
 										</a>
-									<%-- 	<%} %> --%>
-										
-										
-										
+										<%-- 	<%} %> --%>
+
+
+
 										<p>
 											<%-- 여행지의 이름--%>
 										</p>
@@ -179,12 +178,13 @@ div.card-container card-container-lg {
 										<p>
 											<!--간략 설명(?)  -->
 										</p>
-										<a href="./detail.jsp" title="" class="btn btn-default" style="margin-left: 150px;">정보
-											보기</a>
+										<a href="./detail.jsp" title="" class="btn btn-default"
+											style="margin-left: 150px;">정보 보기</a>
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
-											src="KOREAPLACE/감천마을.jpg" alt="" class="img-responsive" > <!--한국 유사 여행지 사진이 나올곳이야  -->
+											src="KOREAPLACE/감천마을.jpg" alt="" class="img-responsive">
+											<!--한국 유사 여행지 사진이 나올곳이야  -->
 										</a>
 										<p>
 											<%-- 여행지의 이름--%>
@@ -193,12 +193,13 @@ div.card-container card-container-lg {
 										<p>
 											<!--간략 설명(?)  -->
 										</p>
-										<a href="./detail.jsp" title="" class="btn btn-default" style="margin-left: 150px;">정보
-											보기</a>
+										<a href="./detail.jsp" title="" class="btn btn-default"
+											style="margin-left: 150px;">정보 보기</a>
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
-											src="KOREAPLACE/장호항.jpg" alt="" class="img-responsive"> <!--한국 유사 여행지 사진이 나올곳이야  -->
+											src="KOREAPLACE/장호항.jpg" alt="" class="img-responsive">
+											<!--한국 유사 여행지 사진이 나올곳이야  -->
 										</a>
 										<p>
 											<%-- 여행지의 이름--%>
@@ -207,8 +208,8 @@ div.card-container card-container-lg {
 										<p>
 											<!--간략 설명(?)  -->
 										</p>
-										<a href="./detail.jsp" title="" class="btn btn-default" style="margin-left: 150px;">정보
-											보기</a>
+										<a href="./detail.jsp" title="" class="btn btn-default"
+											style="margin-left: 150px;">정보 보기</a>
 									</div>
 								</div>
 							</div>

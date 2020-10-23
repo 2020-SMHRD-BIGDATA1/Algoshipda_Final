@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,27 +18,31 @@ import com.model.MemberDTO;
  */
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-				String member_id = request.getParameter("member_id");
-				String member_pw = request.getParameter("member_pw");
-			
-				MemberDTO dto = new MemberDTO(member_id, member_pw);
-				MemberDAO dao = new MemberDAO();
-				
-				MemberDTO info = dao.login(dto);
-				
-				if (info != null) {
-					// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ sessionï¿½ï¿½ infoï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ infoï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-					HttpSession session = request.getSession();
-					session.setAttribute("info", info);
-					response.sendRedirect("main.jsp");
-				} else {
-					response.sendRedirect("loginForm.jsp");
-				}
-		
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("application/json;charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+
+		String member_id = request.getParameter("member_id");
+		String member_pw = request.getParameter("member_pw");
+
+		MemberDTO dto = new MemberDTO(member_id, member_pw);
+		MemberDAO dao = new MemberDAO();
+
+		MemberDTO info = dao.login(dto);
+		if (info != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("info", info);
+			response.sendRedirect("main.jsp");
+		} else {
+			response.setContentType("text/html; charset=utf-8");
+			PrintWriter writer = response.getWriter();
+			writer.println("<script>alert('·Î±×ÀÎ¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù.'); location.href='Login_form.jsp';</script>");
+			writer.close();
+
+		}
+
 	}
 
 }
