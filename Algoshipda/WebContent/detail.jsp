@@ -31,36 +31,47 @@
 <link href="./main.3f6952e4.css" rel="stylesheet">
 </head>
 <style>
-img {
+/* img {
 	display: inline-block;
 	width: 350px;
 	max-width: 250%;
 	height: auto;
-}
+} */
 
 div.card-container card-container-lg {
 	width: 250px;
 	max-width: 250%;
 	height: 100px;
 }
+.btn_ej {
+	width: 100px;
+	background-color: gray;
+	border: none;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px;
+	cursor: pointer;
+	text-decoration: none
+}
 </style>
-<body class="">
-	<div id="site-border-left"></div>
-	<div id="site-border-right"></div>
-	<div id="site-border-top"></div>
-	<div id="site-border-bottom"></div>
+<body class=""style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
+	
 	<%@include file="header.jsp"%>
 
-	<div class="row">
+	<div class="row" style="margin-top: 250px; width: 1300px; margin: 0%; margin-left:280px;">
 		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 			<div class="text-center">
-				<h1 class="h2">그곳을 알려드림</h1>
+				<h1 class="h1" style="font-size: 40px; color: white; margin-top: 170px;">다랭이마을</h1>
 				<br>
-				<p>클릭해주셔서 감사합니다</p>
+				<br>
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" style="background-color: white; background-color: rgba( 255, 255, 255, 0.3 ); padding-bottom:100px; " >
 		<div class="row">
 			<%
 				FileDAO dao = new FileDAO();
@@ -69,6 +80,7 @@ div.card-container card-container-lg {
 			<%
 				ArrayList<KOREAPLACE> list = dao.rec_select();
 			%>
+		
 			<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
 		</div>
 
@@ -81,30 +93,34 @@ div.card-container card-container-lg {
 				<div class="carousel-inner">
 					<div class="item active">
 						<div class="row" align="center">
-
-							<img align="left"
-								src="SimilarPicture/<%=list.get(0).getKOREAIMGNAME()%>"
-								alt="class="img-responsive">
+							  <img align="left" style="margin-top: 110px;"
+								src="KOREAPLACE/다랭이마을.jpg" 
+								alt="class="img-responsive"> 
 							<!--추천페이지에서 클릭한 여행지의 사진  -->
-
-							<p>
-								이름: <br> <br> 주소: <br> <br> 여행지 설명: <br>
-								<br> 주변 관광지: <br> <br> 웹사이트 : 찾는 곳 이름:
-								<%=list.get(0).getKOREAtitle()%>
-								<br> <br> 찾는 곳 주소:
-								<%=list.get(0).getKOREA_addr()%>
-								<br> <br> 찾는곳 간략한 설명:
-								<%=list.get(0).getKOREA_text()%>
-								<br> <br> 찾는곳 주변 관광지:
-								<%=list.get(0).getKOREA_tour()%>
-								<br> <br> 공식 웹사이트 :
-								<%=list.get(0).getKOREA_URL()%>
+							<p style="color: white; margin-top: 140px; margin-right: 250px;" >
+								location: 
+								<br>
+								<br> 
+								<br> 
+								Nearby tourist: 
+								<br> 
+								<br>
+								<br>
+								Explanation :
+								<br> 
+								<br>
+								<br> 
+								Web site :
 							</p>
 							<!--/row-->
 						</div>
 						<!--/item-->
 						<div class="item">
 							<div class="row"></div>
+							<form action="BookMarkService" method="post" accept-charset="utf-8"m>
+							<input class="btn_ej" type="button" value="BookMark" style="margin-left: 500px;margin-top: 100px; "
+							onClick="location.href='./detail.jsp'">
+							</form>
 						</div>
 						<!--/row-->
 					</div>
@@ -116,7 +132,10 @@ div.card-container card-container-lg {
 	</div>
 
 
-	<%@include file="footer.jsp"%>
+<br>
+<br>
+<br>
+	
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
 			navActivePage();
