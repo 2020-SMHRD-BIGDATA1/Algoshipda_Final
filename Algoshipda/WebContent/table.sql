@@ -46,6 +46,11 @@ fileName varchar2(200) NOT NULL,
 filetime date ,
 predictlocation varchar2(50)
 );
+create sequence picture_index
+increment by 1
+start with 1; 
+
+
 select * from files;
 
 

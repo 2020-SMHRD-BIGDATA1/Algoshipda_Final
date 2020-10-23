@@ -1,6 +1,9 @@
 <%@page import="com.model.MemberDTO"%>
-
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/toplogo.ico">
 <style>
+* {
+	font-family: 'NanumBarunGothic';
+}
 </style>
 <header>
 	<%
@@ -18,7 +21,7 @@
 			<div class="collapse navbar-collapse" id="navbar-collapse"
 				style="padding-top: 40px;">
 
-				<ul class="nav navbar-nav ">
+				<ul class="nav navbar-nav " style="font-size: 100px;">
 					<li><a href="./main.jsp">Home</a></li>
 					<li><a href="./board_cat.jsp" title="">Board</a></li>
 					<%

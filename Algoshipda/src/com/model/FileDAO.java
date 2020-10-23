@@ -14,10 +14,6 @@ public class FileDAO {
 	private ResultSet rs;
 	private PreparedStatement psmt;
 
-	// �����ڸ� ���� db���� ����
-
-	// �����ڸ� ���� db���� ����
-
 	private void getConn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -109,7 +105,6 @@ public class FileDAO {
 		OVERSEAPLACE dto = null;
 
 		getConn();
-		System.out.print("dao");
 		String sql = "select * from OVERSEAPLACE where OVERSEAtitle = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -122,10 +117,8 @@ public class FileDAO {
 				String OVERSEA_text = rs.getString(4);
 				String OVERSEA_URL = rs.getString(5);
 				String OVERSEAIMGNAME = rs.getString(6);
-				System.out.print("���Ӵ�");
 				dto = new OVERSEAPLACE(OVERSEA_index, OVERSEAtitle, OVERSEA_addr, OVERSEA_text, OVERSEA_URL,
 						OVERSEAIMGNAME);
-
 			}
 
 		} catch (SQLException e) {
@@ -161,7 +154,6 @@ public class FileDAO {
 
 				dto = new KOREAPLACE(KOREA_index, KOREAtitle, KOREA_addr, KOREA_text, KOREA_URL, KOREA_tour,
 						KOREAIMGNAME);
-
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

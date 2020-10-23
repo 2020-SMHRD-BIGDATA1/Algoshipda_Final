@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" sizes="180x180"
 	href="./assets/apple-icon-180x180.png">
 <link href="./assets/favicon.ico" rel="icon">
-<link rel="stylesheet" href="assets/css/JoinCSS.css" />
+<link rel="stylesheet" href="assets/css/JoinCSS.css?ver=1" />
 <title>Title page</title>
 
 <link href="./main.3f6952e4.css" rel="stylesheet">
@@ -33,28 +33,28 @@
 .nav navbar-nav {
 	
 }
+
 .btn_ej {
-   width: 100px;
-   background-color: gray;
-   border: none;
-   color: #fff;
-   padding: 10px 0;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 15px;
-   margin: 4px;
-   cursor: pointer;
-   text-decoration: none
+	width: 100px;
+	background-color: gray;
+	border: none;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px;
+	cursor: pointer;
+	text-decoration: none
 }
 
-.col-lg-4{
-	background-color:#f5f5f5;
-	padding:50px;
-	background-color: rgba( 255, 255, 255, 0.3 );
-	margin-left:390px;
+.col-lg-4 {
+	background-color: #f5f5f5;
+	padding: 50px;
+	background-color: rgba(255, 255, 255, 0.3);
+	margin-left: 390px;
 }
-
 </style>
 </head>
 
@@ -66,7 +66,8 @@
 
 	<div
 		style="width: 100%; text-align: center; margin-top: 50px; margin-bottom: 50px;">
-		<a href="main.jsp"><img src="assets/images/algoicon.png" style="width: 260px;height: 130px;"></a>
+		<a href="main.jsp"><img src="assets/images/algoicon.png"
+			style="width: 260px; height: 130px;"></a>
 	</div>
 
 	<div class="container">
@@ -76,7 +77,7 @@
 			<div class="jumbotron" style="padding-top: 20px;">
 				<!-- 로그인 정보를 숨기면서 전송post -->
 				<form method="post" action="LoginService">
-					<h3 style="text-align: center; color:white; font-size: 50px;">LOGIN</h3>
+					<h3 style="text-align: center; color: white; font-size: 50px;">LOGIN</h3>
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="아이디"
 							name="member_id" maxlength="20">
@@ -85,12 +86,13 @@
 						<input type="password" class="form-control" placeholder="비밀번호"
 							name="member_pw" maxlength="20">
 					</div>
+					<center>
+						<input type="submit" value="로그인" class="btn_ej"> <input
+							type="button" value="회원가입" " class="btn_ej"
+							onclick="location.href='Join_form.jsp'">
+					</center>
+				</form>
 			</div>
-			<center>
-			<input type="submit" value="로그인" class="btn_ej"> <input
-				type="button" value="회원가입" " class="btn_ej"
-				onclick="location.href='Join_form.jsp'">
-			</form></center>
 		</div>
 	</div>
 	</div>
