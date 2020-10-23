@@ -20,7 +20,7 @@ public class UploadService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String directory = request.getSession().getServletContext().getRealPath("/upload");
+		String directory = request.getSession().getServletContext().getRealPath("C:\\Users\\SMHRD\\Desktop\\Algo2\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Algo\\upload");
 
 		int maxSize = 1024 * 1024 * 100;
 		String encoding = "UTF-8";

@@ -61,7 +61,7 @@ th {
 </style>
 </head>
 
-<body class="" style="background-image:url('assets/images/back_ground.PNG'); background-repeat:no-repeat;background-size : cover;">
+<body class="" style="background-image:url('assets/images/background.PNG'); background-repeat:no-repeat;background-size : cover;">
 	<%@include file="header.jsp"%>
 	<%
 		if (info == null) {

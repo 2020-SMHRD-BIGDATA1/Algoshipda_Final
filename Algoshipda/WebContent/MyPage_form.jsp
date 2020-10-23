@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="description" name="description">
@@ -49,18 +49,25 @@
 	cursor: pointer;
 	text-decoration: none
 }
+td{
+	font-size:18px;
+	font-family: 'Jalnan'
+}
+th{
+	font-size:15px;
+}
 </style>
 </head>
 
 <body
-	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
+	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="header.jsp"%>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-left">
 				<div class="col-sm-3"></div>
 				<h1 class="h1"
-					style="font-size: 30px; color: white; margin-top: 100px; text-align: center;">Profile</h1>
+					style="font-size: 30px; color: white; margin-top: 100px; text-align: center; font-family: 'Jalnan';">Profile</h1>
 				<div class="col-sm-6"
 					style="margin-top: 50px; background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 20px;margin-left:290px;">
 
@@ -69,23 +76,17 @@
 
 					<table class="table table-boardered" style="color: white; ">
 						<th>ID</th>
-						<td><input type="text" class="form-control"
-							name="member_id" placeholder="<%=info.getMember_id()%>"></td>
+						<td><%=info.getMember_id()%></td>
 						</tr>
-						<th>Password</th>
-						<td><input type="password" class="form-control"
-							name="member_pw" placeholder="<%=info.getMember_pw()%>"></td>
-						</tr>
+						
 
 						<tr>
-							<th>Address</th>
-							<td><input type="text" class="form-control"
-								name="member_addr" placeholder="<%=info.getMember_addr()%>"></td>
+							<th>ADDR</th>
+							<td><%=info.getMember_addr()%></td>
 						</tr>
 						<tr>
-							<th>Telephone</th>
-							<td><input type="tel" class="form-control" name="member_tel"
-								placeholder="<%=info.getMember_tel()%>"></td>
+							<th>TEL</th>
+							<td><%=info.getMember_tel()%></td>
 						</tr>
 					</table>
 					<form action="main.jsp" method="post" accept-charset="utf-8"
@@ -93,7 +94,7 @@
 						<tr>
 							<td style="color: white;" colspan='2' align='center'>
 								<center>
-									<input class="btn_ej" type="submit" value="µ¹¾Æ°¡±â">
+									<input class="btn_ej" type="submit"  style="font-family: 'Jalnan'; font-size:20px;" value="ëŒì•„ê°€ê¸°">
 								</center>
 							</td>
 						</tr>
@@ -108,16 +109,16 @@
 	<div class="hihi"
 		style="background-color: white; background-color: rgba(255, 255, 255, 0.2);">
 		<hr style="color: white; width: 100%;">
-		<h2 style="color: white;">MY LIST</h2>
+		<h2 style="color: white;font-family: 'Jalnan';">MY LIST</h2>
 
 		<div class="jjim">
-			<br> <img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
+			<br> <img src="KOREAPLACE/ì˜ë í”„ëž‘ìŠ¤.jpg" width="280px"
 				height="250px"
 				style="margin-left: 650px; border-radius: 80%; overflow: hidden;">
-			<img src="KOREAPLACE/ÀÎÃµ¿ù¹ÌµµÅ×¸¶ÆÄÅ©.jpg" width="280px" height="250px"
+			<img src="KOREAPLACE/ì¸ì²œì›”ë¯¸ë„í…Œë§ˆíŒŒí¬.jpg" width="280px" height="250px"
 				style="margin-left: 175px; border-radius: 80%; overflow: hidden;">
 				<br> 
-				<img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
+				<img src="KOREAPLACE/ì˜ë í”„ëž‘ìŠ¤.jpg" width="280px"
 				height="250px"
 				style="margin-left: 177px; border-radius: 80%; overflow: hidden;">
 		</div>

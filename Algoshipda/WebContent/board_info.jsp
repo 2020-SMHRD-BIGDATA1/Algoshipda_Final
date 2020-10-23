@@ -31,7 +31,7 @@
 <link href="./main.3f6952e4.css" rel="stylesheet">
 <style>
 img {
-	max-width: 500px;
+	width: 500px;
 	height: 400px;
 }
 
@@ -78,7 +78,7 @@ img {
 </head>
 
 <body class=""
-	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
+	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
 
 	<%@include file="header.jsp"%>
 
@@ -89,7 +89,7 @@ img {
 
 			<div class="container" style="margin-left: 250px; margin-top: 100px;">
 				<div class="row"
-					style="background-color: white; background-color: rgba(255, 255, 255, 0.3); margin-left: 0px; margin-right: 0px; width: 1300px; margin-bottom:50px; padding-bottom:50px;">
+					style="background-color: white; background-color: rgba(255, 255, 255, 0.1); margin-left: 0px; margin-right: 0px; width: 1300px; margin-bottom: 50px; padding-bottom: 50px;">
 					<div class="col-sm-8 col-sm-offset-2 section-container-spacer"
 						align="center"
 						style="margin-top: 250px; width: 1300px; margin: 0%; border-bottom: 1px solid white;">
@@ -103,7 +103,7 @@ img {
 						%>
 
 						<h1 class="h1" align="center"
-							style="font-size: 40px; color: white; margin-bottom: 0px;'"><%=infoo.getBbsTitle()%></h1>
+							style="font-size: 40px; color: white; margin-bottom: 0px; font-family: 'Jalnan';"><%=infoo.getBbsTitle()%></h1>
 
 						<div style="width: 1300px; margin-top: 50px;">
 
@@ -112,7 +112,7 @@ img {
 									" src="assets/images/miniuser.png">
 							</div>
 							<div style="float: left; margin-left: 15px;">
-								<h3 style="color: white;"><%=infoo.getMember_id()%></h3>
+								<h3 style="color: white; font-family: 'Jalnan';"><%=infoo.getMember_id()%></h3>
 							</div>
 
 							<div style="float: left; margin-left: 30px; margin-top: 20px">
@@ -129,21 +129,23 @@ img {
 								<h4 style="color: white;"><%=infoo.getBbsHit()%></h4>
 							</div>
 
-
+							<%
+								if (info.getMember_id().equals(infoo.getMember_id())) {
+							%>
 							<div style="margin-left: 950px;">
-								<%
-									if (info.getMember_id().equals(infoo.getMember_id())) {
-								%>
+
 								<input class="btn_ej" type="button" value="삭제"
+									style="font-family: 'Jalnan'"
 									onClick="location.href='DeleteService?bbsTitlef=<%=infoo.getBbsTitle()%>'">
 								<input class="btn_ej" type="button" value="수정"
+									style="font-family: 'Jalnan'"
 									onClick="location.href='UpdateService?bbsId=<%=infoo.getBbsId()%>'">
 
-								<%
-									}
-								%>
-
 							</div>
+							<%
+								}
+							%>
+
 						</div>
 
 
@@ -156,14 +158,15 @@ img {
 
 
 					<div class="col-md-8 col-md-offset-2 section-container-spacer"
-						style= "margin-top: 50px; margin-left: 200px;">
+						style="margin-top: 50px; margin-left: 200px;">
 						<img src="./bbsimage/<%=infoo.getBbsImg()%>"
-							style="margin-top: 50px;margin-left: 186px; ">
-							
+							style="margin-top: 50px; margin-left: 186px;">
+
 						<h3 style="color: white; margin-left: 186px;"><%=infoo.getBbsContent()%></h3>
 
 						<center>
 							<input class="btn_ej" type="button" value="목록으로"
+								style="font-family: 'Jalnan'; font-size: 18px;"
 								onClick="location.href='./board_cat.jsp'">
 						</center>
 

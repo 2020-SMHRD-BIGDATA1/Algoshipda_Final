@@ -25,16 +25,21 @@
 
 <title>Title page</title>
 <script src="jquery-3.5.1.min.js"></script>
-<link href="./main.3f6952e4.css?ver=1" rel="stylesheet">
+<link href="./main.3f6952e4.css?ver=2" rel="stylesheet">
 <style>
-@FONT-FACE {
-	font-family: 'Gmarket';
-	src: ("GmarketSansTTFMedium.ttf");
+
+@font-face {
+	src: url("assets/css/fonts/Jalnan.ttf");
+	font-family: "Jalnan";
 }
 
+:root {
+	font-size: 16px;
+	font-family: "Jalnan";
+}
 img {
 	display: inline-block;
-	max-width: 359px;
+	width: 359px;
 	height: 300px;
 }
 
@@ -93,7 +98,7 @@ img {
 </head>
 
 <body class="minimal"
-	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
+	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
 
 	<!-- Add your content of header -->
 	<%@include file="header.jsp"%>
@@ -124,14 +129,12 @@ img {
 
 										<%
 											if (info == null) {
-										%><label for="file"><img
-											class="img_upload" id="image_section2"
-											src="./assets/images/upup.PNG"
+										%><label for="file"><img class="img_upload"
+											id="image_section2" src="./assets/images/upup.PNG"
 											style="max-width: 359px; height: 300px; margin-left: 140px;" /></label>
 										<%
 											} else {
-										%>
-										<label for="file"><img class="img_upload"
+										%><label for="file"><img class="img_upload"
 											id="image_section" src="./assets/images/upup.PNG"
 											style="max-width: 359px; height: 300px; margin-left: 140px;" /></label>
 										<%
@@ -165,6 +168,7 @@ img {
 			type();
 			movingBackgroundImage();
 		});
+		
 		function readURL(input) {
 			if (input.files && input.files[0]) {
 				var reader = new FileReader();

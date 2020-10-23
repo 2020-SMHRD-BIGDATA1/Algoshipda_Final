@@ -1,71 +1,97 @@
 *
- 
-Bootstrap
- 
-v3
-.3
-.7
- 
-(
-http
-:
-//getbootstrap
-.com
-)
 
  
+
+Bootstrap
+
+ 
+
+v3
+
+
+.3
+
+
+.7
+
+ 
+
+(
+http
+
+
+:
+//getbootstrap
+
+
+.com
+
+
+)
 *
+
  
+
 Copyright
+
  
+
 2011-2016
 Twitter
 ,
 Inc
+
+
 .
+*
 
  
-*
- 
+
 Licensed
+
  
+
 under
+
  
+
 MIT
+
  
+
 (
 https
+
+
 :
 //github
+
+
 .com
 /twbs/bootstrap/blob/master/LICENSE)
 
+
  
+
 *
 /
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 
 
- 
-@font-face {
-	font-family: "ng";
-	src: url("NANUMBARUNGOTHICBOLD_0.TTF");
-	src: local() . url(NANUMBARUNGOTHICBOLD_0.TTF) format("truetype");
-	font-size: normal;
-	font-weight: normal;
-}
 
-html { <<<<<<<
-	HEAD font-family: GmarketSansTTFMedium.ttf; =======
-	font-family: '�굹�닎怨좊뵓', 'NANUMBARUNGOTHICBOLD_0', ng; >>>>>>> branch
-	'master' of https :// github.com/ 2020-SMHRD-BIGDATA1/
-	Algoshipda_Final.git -ms-text-size-adjust : 100%;
+ 
+
+
+
+
+html {
+	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
 }
 
 body {
-	margin: 0 font-family: '�굹�닎怨좊뵓', 'NANUMBARUNGOTHICBOLD_0.TTF', ng;
+	margin: 0 ;
 	font-size: 15px;
 }
 
@@ -309,10 +335,8 @@ html {
 	-webkit-tap-highlight-color: transparent
 }
 
-body { <<<<<<<
-	HEAD font-family: GmarketSansTTFMedium.ttf; =======
-	font-family:; >>>>>>> branch 'master' of https :// github.com/
-	2020-SMHRD-BIGDATA1/ Algoshipda_Final.git font-size : 11px;
+body { 
+	font-size : 11px;
 	line-height: 1.78;
 	color: #000;
 	background-color: #fff
@@ -4859,7 +4883,7 @@ body.minimal {
 	height: 100vh
 }
 
-.hero-full-container h1 { 
+.hero-full-container h1 {
 	HEAD font-family: GmarketSansTTFMedium.ttf;
 	font-family:;
 	font-weight: 900;

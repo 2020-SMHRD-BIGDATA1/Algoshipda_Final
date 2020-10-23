@@ -1,6 +1,9 @@
 <%@page import="com.model.MemberDTO"%>
 
 <style>
+li {
+	 font-family: 'Jalnan';
+}
 </style>
 <header>
 	<%
@@ -20,7 +23,7 @@
 
 				<ul class="nav navbar-nav ">
 					<li><a href="./main.jsp">Home</a></li>
-					<li><a href="./board_cat.jsp" title="">Board</a></li>
+					<li> <a href="./board_cat.jsp" title="">Board</a></li>
 					<%
 						if (info == null) {
 					%>

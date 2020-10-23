@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="description" name="description">
@@ -69,7 +69,7 @@ tr, td {
 
 
 <body class="minimal"
-	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
+	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
 
 	<div
 		style="width: 100%; text-align: center; margin-top: 50px; margin-bottom: 50px;">
@@ -81,34 +81,34 @@ tr, td {
 	<form method="post" action="JoinService">
 		<div class="col-lg-4" style=" position: relative;">
 
-			<!-- ·Î±×ÀÎ Á¤º¸¸¦ ¼û±â¸é¼­ Àü¼Ûpost -->
+			<!-- ë¡œê·¸ì¸ ì •ë³´ë¥¼ ìˆ¨ê¸°ë©´ì„œ ì „ì†¡post -->
 		
 
-				<h3 style="text-align: center; color: white; font-size: 50px;">JOIN</h3>
+				<h3 style="text-align: center; color: white; font-size: 50px; font-family: 'Jalnan';">JOIN</h3>
 				<table  style="width: 500px;">
 					<tr>
-						<td style="text-align: center;"><P style="color: white;">ID</P></td>
+						<td style="text-align: center;"><P style="color: white; font-family: 'Jalnan';">ID</P></td>
 						<td><input type="text" class="form-control" name="member_id"
-							id="member_id2" placeholder="id¸¦ ³ÖÀ¸¼¼¿ä" maxlength="20"></td>
+							id="member_id2" placeholder="idë¥¼ ë„£ìœ¼ì„¸ìš”" maxlength="20"></td>
 						<td><input type="button"
 							style="width: 60px; font-size: 13px; float: left; margin-left: 20px; margin-botton: 50px; padding: 5px;"
 							class="btn_ej" value="Check" onclick="idCheck()">
 							<p id="p1"></p></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;"><p style="color: white;">PW</p></td>
+						<td style="text-align: center;"><p style="color: white; font-family: 'Jalnan';">PW</p></td>
 						<td><input type="password" class="form-control"
-							name="member_pw" placeholder="ºñ¹Ğ¹øÈ£ ÀÔ·Â" maxlength="20"></td>
+							name="member_pw" placeholder="ë¹„ë°€ë²ˆí˜¸ ì…ë ¥" maxlength="20"></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;"><p style="color: white;">ADDR</p></td>
+						<td style="text-align: center;"><p style="color: white; font-family: 'Jalnan';">ADDR</p></td>
 						<td><input input type="text" class="form-control"
 							name="member_addr" maxlength="20"></td>
 
 					</tr>
 					<tr>
 						<td style="text-align: center;">
-							<p style="color: white;">TEL</p>
+							<p style="color: white; font-family: 'Jalnan';">TEL</p>
 						</td>
 						<td><input input type="tel" class="form-control"
 							" name="member_tel" maxlength="20"></td>
@@ -118,9 +118,9 @@ tr, td {
 				
 					<div style="padding:20px;">					
 					<input type="button" class="btn_ej" id="button1"
-							style="margin-left:100px;" onclick="button_click();" value="Cancle">
+							style="margin-left:100px; font-family: 'Jalnan';" onclick="button_click();" value="ì·¨ì†Œ">
 							<input type="submit" class="btn_ej" id="button1"
-							style="margin-left:10px;" value="Join">
+							style="margin-left:10px; font-family: 'Jalnan';" value="íšŒì›ê°€ì…">
 							
 				</div>
 				</div>
@@ -142,24 +142,24 @@ tr, td {
 							var id = document.getElementById("member_id2");
 
 							$.ajax({
-								type : "get", //get or post¹æ½Ä
-								//QueryString ¹æ½ÄÀ¸·Î Àü¼Û : ?(½ÃÀÛ) member_id(ÀÌ¸§°ª) + member_id.value(½ÇÁ¦ º¯¼ö°ª)
-								url : "IdCheck?member_id=" + id.value, //¼­¹ö ÆäÀÌÁöÀÇ ÁÖ¼Ò
-								dataType : "text", //ÁÖ°í¹ŞÀ» µ¥ÀÌÅÍÀÇ À¯Çü
+								type : "get", //get or postë°©ì‹
+								//QueryString ë°©ì‹ìœ¼ë¡œ ì „ì†¡ : ?(ì‹œì‘) member_id(ì´ë¦„ê°’) + member_id.value(ì‹¤ì œ ë³€ìˆ˜ê°’)
+								url : "IdCheck?member_id=" + id.value, //ì„œë²„ í˜ì´ì§€ì˜ ì£¼ì†Œ
+								dataType : "text", //ì£¼ê³ ë°›ì„ ë°ì´í„°ì˜ ìœ í˜•
 								success : function(data) {
 
 									p1 = document.getElementById("p1");
 
 									if (data == "true") {
-										alert("»ç¿ëÇÒ ¼ö ¾ø´Â ¾ÆÀÌµğ ÀÔ´Ï´Ù.");
+										alert("ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” ì•„ì´ë”” ì…ë‹ˆë‹¤.");
 									} else {
-										alert("»ç¿ë °¡´ÉÇÑ ¾ÆÀÌµğ ÀÔ´Ï´Ù.");
+										alert("ì‚¬ìš© ê°€ëŠ¥í•œ ì•„ì´ë”” ì…ë‹ˆë‹¤.");
 									}
 
 								},
 								error : function() {
-									//¼­¹ö¿Í Åë½ÅÀÌ ½ÇÆĞÇßÀ» ¶§ ÈÄ Ã³¸®
-									alert("È£Ãâ½ÇÆĞ");
+									//ì„œë²„ì™€ í†µì‹ ì´ ì‹¤íŒ¨í–ˆì„ ë•Œ í›„ ì²˜ë¦¬
+									alert("í˜¸ì¶œì‹¤íŒ¨");
 								}
 							});
 						}
