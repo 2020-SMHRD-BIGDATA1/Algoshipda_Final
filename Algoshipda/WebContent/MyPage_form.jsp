@@ -24,7 +24,6 @@
 <script src="jquery-3.5.1.min.js"></script>
 
 <style>
-
 #pp {
 	margin-left: 121px;
 	margin-top: 1px;
@@ -35,60 +34,96 @@
 .nav navbar-nav {
 	
 }
+
+.btn_ej {
+	width: 100px;
+	background-color: gray;
+	border: none;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px;
+	cursor: pointer;
+	text-decoration: none
+}
 </style>
 </head>
 
-<body>
+<body
+	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="header.jsp"%>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-left">
 				<div class="col-sm-3"></div>
+				<h1 class="h1"
+					style="font-size: 30px; color: white; margin-top: 100px; text-align: center;">Profile</h1>
+				<div class="col-sm-6"
+					style="margin-top: 50px; background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 20px;margin-left:290px;">
 
-				<div class="col-sm-6" style="margin-top: 100px;">
-					<h2 align="center">마이페이지</h2>
-					
-						<table class="table table-boardered">
-							<th>패스워드</th>
-							<td><input type="password" class="form-control"
-								name="member_pw" placeholder="<%=info.getMember_pw()%>"></td>
-							</tr>
+					<br> <br>
 
-							<tr>
-								<th>주소</th>
-								<td><input type="text" class="form-control"
-									name="member_addr"placeholder="<%=info.getMember_addr()%>"></td>
-							</tr>
 
-							<tr>
-								<th>연락처</th>
-								<td><input type="tel" class="form-control"
-									name="member_tel"placeholder="<%=info.getMember_tel()%>"></td>
-							</tr>
-						</table>
-					
+					<table class="table table-boardered" style="color: white; ">
+						<th>ID</th>
+						<td><input type="text" class="form-control"
+							name="member_id" placeholder="<%=info.getMember_id()%>"></td>
+						</tr>
+						<th>Password</th>
+						<td><input type="password" class="form-control"
+							name="member_pw" placeholder="<%=info.getMember_pw()%>"></td>
+						</tr>
+
+						<tr>
+							<th>Address</th>
+							<td><input type="text" class="form-control"
+								name="member_addr" placeholder="<%=info.getMember_addr()%>"></td>
+						</tr>
+						<tr>
+							<th>Telephone</th>
+							<td><input type="tel" class="form-control" name="member_tel"
+								placeholder="<%=info.getMember_tel()%>"></td>
+						</tr>
+					</table>
+					<form action="main.jsp" method="post" accept-charset="utf-8"
+						style="color: white;">
+						<tr>
+							<td style="color: white;" colspan='2' align='center'>
+								<center>
+									<input class="btn_ej" type="submit" value="돌아가기">
+								</center>
+							</td>
+						</tr>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	<form action="main.jsp" method="post" accept-charset="utf-8">
-							<tr>
-								<td colspan='2' align='center'><input type="submit"
-									value="돌아가기"></td>
-							</tr>
-							</form>
-							<h2> MY LIST</h2>
-		
-		
-		<div class = "jjim">
-		<img src = "KOREAPLACE/쁘띠프랑스.jpg" width="200px" height="250px" align="middle" >
-	
-		
-	
-	
-	  </div>
 
-	<%@include file="footer.jsp"%>
+	<br>
+	<br>
+	<div class="hihi"
+		style="background-color: white; background-color: rgba(255, 255, 255, 0.2);">
+		<hr style="color: white; width: 100%;">
+		<h2 style="color: white;">MY LIST</h2>
+
+		<div class="jjim">
+			<br> <img src="KOREAPLACE/쁘띠프랑스.jpg" width="280px"
+				height="250px"
+				style="margin-left: 650px; border-radius: 80%; overflow: hidden;">
+			<img src="KOREAPLACE/인천월미도테마파크.jpg" width="280px" height="250px"
+				style="margin-left: 175px; border-radius: 80%; overflow: hidden;">
+				<br> 
+				<img src="KOREAPLACE/쁘띠프랑스.jpg" width="280px"
+				height="250px"
+				style="margin-left: 177px; border-radius: 80%; overflow: hidden;">
+		</div>
+		
+		<br> <br> <br> <br> <br>
+	</div>
 
 	<script type="text/javascript">
 		

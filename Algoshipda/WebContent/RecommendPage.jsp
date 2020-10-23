@@ -31,16 +31,13 @@
 <link href="./main.3f6952e4.css" rel="stylesheet">
 </head>
 <style>
-@font-face { font-family: 'NanumGothic';
-src: url('/fonts/NanumGothic.eot');
-src: url('/fonts/NanumGothic.eot') format('embedded-opentype'),
-url('/fonts/NanumGothic.woff') format('woff');}
 
 
 
 
+body {color: white;}
 
-body {font-family: 'NanumGothic', 'serif';}
+
 
 
 
@@ -67,12 +64,23 @@ div.card-container card-container-lg {
 #pad {
 	margin-right: 100px;
 }
+.btn_ej {
+	width: 100px;
+	background-color: gray;
+	border: none;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px;
+	cursor: pointer;
+	text-decoration: none
+}
 </style>
-<body class="">
-	<div id="site-border-left"></div>
-	<div id="site-border-right"></div>
-	<div id="site-border-top"></div>
-	<div id="site-border-bottom"></div>
+<body class=""style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
+	
 	<!-- Add your content of header -->
 	<header>
 
@@ -125,22 +133,21 @@ div.card-container card-container-lg {
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 					<div class="text-center" style="margin-top: 50px;">
-						<h1 class="h2" >여기가 어디인가유</h1>
-						
-						<div class = "row2"  style="margin-top: 100px; margin-left: 90px;" >
+					<br>
+						<h1 class="h1" style="font-size: 40px; color: white; margin-top:70px"><%=over.getOVERSEAtitle()%></h1>
+						<div class = "row2"  style="margin-top: 50px; margin-left: 90px;" >
 						<img style="width: 600px;"  src="OVERSEAPLACE/<%=over.getOVERSEAIMGNAME()%>" alt=""
 							class="img-responsive">
-							</div> <br>
+							</div>
 						<p>
-							찾는 곳 이름: <%=over.getOVERSEAtitle()%>
-							<br> 
-							찾는 곳 주소: <%=over.getOVERSEA_addr()%>
+							<br>
+							<br>
+							 <%=over.getOVERSEA_addr()%>
 							<br> 
 							<br> 
 							<%=over.getOVERSEA_text()%> 
 							<br> 
 							<br>
-
 						</p>
 					</div>
 				</div>
@@ -154,13 +161,13 @@ div.card-container card-container-lg {
 						</button>
 					</div>
 				</nav>
-				</header>
-				<h2 style="margin-left: 370px;">???과 유사한 국내 여행지는?</h2>
+				<hr style="color:white; width:100%;">
+				<h1 class="h1" style="font-size: 40px; color: white; margin-left: 450px;">Recommend Place</h1>
 				<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
 				<div class="col-md-12">
 					<div id="myCarousel" class="carousel slide projects-carousel">
 						<!-- Carousel items -->
-						<div class="carousel-inner">
+						<div class="carousel-inner" style="background-color: #f5f5f5; background-color: rgba( 255, 255, 255, 0.2 );padding-bottom:50px;">
 							<div class="item active">
 								<div class="row1">
 									<div class="col-sm-4">
@@ -179,8 +186,9 @@ div.card-container card-container-lg {
 										<p>
 											<!--간략 설명(?)  -->
 										</p>
-										<a href="./detail.jsp" title="" class="btn btn-default" style="margin-left: 150px;">정보
-											보기</a>
+										<input class="btn_ej" type="button" value="View" style="margin-left: 150px;"
+							onClick="location.href='./detail.jsp'">
+										
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
@@ -193,8 +201,9 @@ div.card-container card-container-lg {
 										<p>
 											<!--간략 설명(?)  -->
 										</p>
-										<a href="./detail.jsp" title="" class="btn btn-default" style="margin-left: 150px;">정보
-											보기</a>
+										<input class="btn_ej" type="button" value="View" style="margin-left: 150px;"
+							onClick="location.href='./detail.jsp'">
+										
 									</div>
 									<div class="col-sm-4">
 										<a href="./detail.jsp" title=""> <img
@@ -207,8 +216,8 @@ div.card-container card-container-lg {
 										<p>
 											<!--간략 설명(?)  -->
 										</p>
-										<a href="./detail.jsp" title="" class="btn btn-default" style="margin-left: 150px;">정보
-											보기</a>
+										<input class="btn_ej" type="button" value="View" style="margin-left: 150px;"
+							onClick="location.href='./detail.jsp'">
 									</div>
 								</div>
 							</div>
@@ -229,15 +238,14 @@ div.card-container card-container-lg {
 	<!--/item-->
 	</div>
 	<!--/carousel-inner-->
-
 	</div>
 	<!--/myCarousel-->
 	</div>
 	</div>
 	</div>
 	</div>
-
-
+	<br>
+	<br>
 	<%@include file="footer.jsp"%>
 
 	<script>
