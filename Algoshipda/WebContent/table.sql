@@ -71,6 +71,7 @@ select * from OVERSEAPLACE;
 
 
 
+
 create table KOREAPLACE(
 KOREA_index number,
 KOREAtitle varchar2(200) ,
@@ -87,15 +88,14 @@ start with 1;
 
 
 
-
 create table JJIM(
 JJIM_title varchar2(200),
 CONSTRAINT JJIM_title_fk FOREIGN KEY(JJIM_title)
 REFERENCES KOREAPLACE(KOREAtitle) ON DELETE CASCADE
 );
 
-
-
+drop table jjim;
+select * from jjim;
 
 select * from OVERSEAPLACE;
 select * from KOREAPLACE;

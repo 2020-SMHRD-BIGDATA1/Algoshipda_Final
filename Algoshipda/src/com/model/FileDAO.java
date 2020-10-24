@@ -17,7 +17,7 @@ public class FileDAO {
 	private void getConn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String db_url = "jdbc:oracle:thin:@localhost:1521:hr";
 			String db_id = "hr";
 			String db_pw = "hr";
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
@@ -117,10 +117,12 @@ public class FileDAO {
 				String OVERSEA_text = rs.getString(4);
 				String OVERSEA_URL = rs.getString(5);
 				String OVERSEAIMGNAME = rs.getString(6);
+				
 				dto = new OVERSEAPLACE(OVERSEA_index, OVERSEAtitle, OVERSEA_addr, OVERSEA_text, OVERSEA_URL,
 						OVERSEAIMGNAME);
+				System.out.println(dto.getOVERSEAtitle());
 			}
-
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -155,8 +157,8 @@ public class FileDAO {
 				dto = new KOREAPLACE(KOREA_index, KOREAtitle, KOREA_addr, KOREA_text, KOREA_URL, KOREA_tour,
 						KOREAIMGNAME);
 			}
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close();
@@ -164,7 +166,7 @@ public class FileDAO {
 
 		return dto;
 	}
-
+}
 //   private void getConn() {
 //         try {
 //            Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -255,4 +257,3 @@ public class FileDAO {
 //
 //   }
 
-}

@@ -32,12 +32,12 @@ public class UpdateService extends HttpServlet {
 		final String encoding = "UTF-8"; 
 		final int maxSize = 10*350*350; //10mb
 		
-			//ÆÄÀÏÀÌ ¼­¹ö¿¡ ¾÷·ÎµåµÇ´Â ½ÃÁ¡Àº MultipartRequest °´Ã¼ »ý¼º ¼ø°£ÀÌ´Ù.
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MultipartRequest ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´
 			MultipartRequest multi = new MultipartRequest(request, saveFolder, maxSize, encoding, new DefaultFileRenamePolicy());
-			//request°¡ µÇ´Â ¼ø°£ null·Î º¯ÇÑ´Ù.
+			//requestï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ nullï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½.
 			String bbsImg = multi.getFilesystemName("bbsImg"); 
 			String original = multi.getOriginalFileName("uploadFile"); 
-			//filenameÀº Áßº¹ÀÌ¸§ÀÌ µé¾î¿Ã °æ¿ì ÀÚµ¿À¸·Î index°¡ ºÙ´Âµ¥, indexµÇ±â ÀüÀÇ ¿øº»¸í		
+			//filenameï¿½ï¿½ ï¿½ßºï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ indexï¿½ï¿½ ï¿½Ù´Âµï¿½, indexï¿½Ç±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		
 			String type = multi.getContentType("uploadFile"); 
 			File f = multi.getFile("uploadFile");			
 				
@@ -47,7 +47,7 @@ public class UpdateService extends HttpServlet {
 		String bbsContent = multi.getParameter("bbsContent");
 		
 		
-		System.out.println(bbsId+"³ª¿È");
+		System.out.println(bbsId+"ï¿½ï¿½ï¿½ï¿½");
 //		System.out.println(bbsTitle+"slfkd");
 		
 //		

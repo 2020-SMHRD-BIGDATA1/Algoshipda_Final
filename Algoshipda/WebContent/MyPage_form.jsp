@@ -1,9 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.jjimDAO"%>
+<%@page import="jdk.internal.misc.FileSystemOption"%>
+<%@page import="com.model.KOREAPLACE"%>
+<%@page import="com.model.FileDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="description" name="description">
@@ -52,6 +57,17 @@
 </style>
 </head>
 
+
+
+<%
+	FileDAO dao = new FileDAO();
+String titledetail = request.getParameter("titledetail");
+
+KOREAPLACE korea_detail = dao.searchKorea(titledetail);
+
+jjimDAO jdao = new jjimDAO();
+System.out.print(jdao.jjimlist().get(0) + "ê¾¸");
+%>
 <body
 	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="header.jsp"%>
@@ -62,30 +78,31 @@
 				<h1 class="h1"
 					style="font-size: 30px; color: white; margin-top: 100px; text-align: center;">Profile</h1>
 				<div class="col-sm-6"
-					style="margin-top: 50px; background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 20px;margin-left:290px;">
+					style="margin-top: 50px; background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 20px; margin-left: 290px;">
 
 					<br> <br>
 
 
-					<table class="table table-boardered" style="color: white; ">
+					<table class="table table-boardered" style="color: white;">
 						<th>ID</th>
-						<td><input type="text" class="form-control"
-							name="member_id" placeholder="<%=info.getMember_id()%>"readonly/></td>
+						<td><input type="text" class="form-control" name="member_id"
+							placeholder="<%=info.getMember_id()%>" readonly /></td>
 						</tr>
 						<th>Password</th>
 						<td><input type="password" class="form-control"
-							name="member_pw" placeholder="<%=info.getMember_pw()%>"readonly/></td>
+							name="member_pw" placeholder="<%=info.getMember_pw()%>" readonly /></td>
 						</tr>
 
 						<tr>
 							<th>Address</th>
 							<td><input type="text" class="form-control"
-								name="member_addr" placeholder="<%=info.getMember_addr()%>"readonly/></td>
+								name="member_addr" placeholder="<%=info.getMember_addr()%>"
+								readonly /></td>
 						</tr>
 						<tr>
 							<th>Telephone</th>
 							<td><input type="tel" class="form-control" name="member_tel"
-								placeholder="<%=info.getMember_tel()%>"readonly/></td>
+								placeholder="<%=info.getMember_tel()%>" readonly /></td>
 						</tr>
 					</table>
 					<form action="main.jsp" method="post" accept-charset="utf-8"
@@ -93,7 +110,7 @@
 						<tr>
 							<td style="color: white;" colspan='2' align='center'>
 								<center>
-									<input class="btn_ej" type="submit" value="µ¹¾Æ°¡±â">
+									<input class="btn_ej" type="submit" value="ëŒì•„ê°€ê¸°">
 								</center>
 							</td>
 						</tr>
@@ -109,24 +126,27 @@
 		style="background-color: white; background-color: rgba(255, 255, 255, 0.2);">
 		<hr style="color: white; width: 100%;">
 		<h2 style="color: white;">MY LIST</h2>
-		<br>
-		<br>
-		<br><!-- ±¹³» ÀÌ¹ÌÁö for¹®À¸·Î BOOKMARK¼­ºñ½º·Î Æû¾×¼Ç ÁÖ±â!  -->
-				<img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
+		<br> <br> <br>
+		<!-- êµ­ë‚´ ì´ë¯¸ì§€ forë¬¸ìœ¼ë¡œ BOOKMARKì„œë¹„ìŠ¤ë¡œ í¼ì•¡ì…˜ ì£¼ê¸°!  -->
+		<%
+			for (int i = 0; i < jdao.jjimlist().size(); i++) {
+			System.out.print(jdao.jjimlist().get(i) + "ë­ëƒ!!\n");
+		%>
+		<div class="col-sm-4" style="width: 400px; margin: 20px;">
+			<a href="javascript:return false;"
+				onclick="location.href='jjim_detail.jsp?jjimdetail=<%=jdao.jjimlist().get(i)%>';"><img
+				src="KOREAPLACE/<%=jdao.jjimlist().get(i) + ".jpg"%>" width="280px"
 				height="250px"
-				style="margin-left: 110px; border-radius: 80%; overflow: hidden;">
-				<img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
-				height="250px"
-				style="margin-left: 177px; border-radius: 80%; overflow: hidden;">
-				<img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
-				height="250px"
-				style="margin-left: 177px; border-radius: 80%; overflow: hidden;">
-				<img src="KOREAPLACE/»Ú¶ìÇÁ¶û½º.jpg" width="280px"
-				height="250px"
-				style="margin-left: 177px; border-radius: 80%; overflow: hidden;">
-		
-		
-		<br> <br> <br> <br> <br>
+				style="cursor: pointer; margin-left: 110px; border-radius: 80%; overflow: hidden;"></a>
+
+
+			<br> <br> <br> <br> <br>
+		</div>
+
+		<%
+			}
+		%>
+
 	</div>
 
 	<script type="text/javascript">

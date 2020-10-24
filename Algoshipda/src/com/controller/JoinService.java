@@ -26,15 +26,15 @@ public class JoinService extends HttpServlet {
 		int cnt = dao.join(dto);
 		
 		if(cnt > 0) {
-			System.out.println("È¸¿ø°¡ÀÔ ¼º°ø");
+			System.out.println("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			System.out.println(member_id);
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("member_id", member_id);
 			response.sendRedirect("main.jsp");
 		}else {
-			System.out.println("È¸¿ø°¡ÀÔ ½ÇÆÐ");
-			// join.jsp·Î ÀÌµ¿
+			System.out.println("ë‹¤ì‹œ");
+			// join.jspï¿½ï¿½ ï¿½Ìµï¿½
 			response.sendRedirect("joinForm.jsp");
 		}
 		

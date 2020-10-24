@@ -787,6 +787,7 @@ pre code {
 	margin-right: -15px
 }
 
+
 .row:after, .row:before {
 	content: " ";
 	display: table
@@ -4231,12 +4232,14 @@ button.close {
 }
 
 .carousel, .carousel-inner {
-	position: relative
+	position: relative;
+	
 }
 
 .carousel-inner {
 	overflow: hidden;
 	width: 100%
+	
 }
 
 .carousel-inner>.item {
@@ -4245,13 +4248,16 @@ button.close {
 	-webkit-transition: left .6s ease-in-out;
 	-o-transition: .6s ease-in-out left;
 	transition: left .6s ease-in-out
+	
+	
 }
 
 .carousel-inner>.item>a>img, .carousel-inner>.item>img {
 	display: block;
 	max-width: 359px;
 	height: 300px;
-	line-height: 1
+	line-height: 1;
+	
 }
 
 @media ( -webkit-transform-3d ) , ( transform-3d ) {
