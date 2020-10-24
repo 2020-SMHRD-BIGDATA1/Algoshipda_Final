@@ -124,11 +124,17 @@
 								<h4 style="float: right; font-family: 'Jalnan'"><%=list.get(i).getMember_id()%></h4>
 								<h3 style="font-family: 'Jalnan'"><%=list.get(i).getBbsTitle()%></h3>
 
-								<div style="float: left; margin-right: 10px">
+								<div style="float: left; margin-right: 10px;">
 									<img class="mini_icon" src="assets/images/eyes.png">
 								</div>
 								<div style="float: left;"><%=list.get(i).getBbsHit()%></div>
-								<div style="float: left; margin-left: 130px; margin-right: 10px;padding-right:0px;">
+								
+								<div style="float: left; margin-left: 10px;">
+								<img class="mini_icon" src="assets/images/minilike.png">
+							</div>
+							<div style="float: left; margin-left: 10px;"><%=list.get(i).getLikes()%></div>
+								
+								<div style="float: left; margin-left: 10px; margin-right: 10px;padding-right:0px;">
 									<img class="mini_icon" src="assets/images/time.png">
 								</div>
 								<div style="float: left; margin-left:;"><%=list.get(i).getBbsDate()%></div>

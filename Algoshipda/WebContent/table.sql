@@ -47,6 +47,11 @@ fileName varchar2(200) NOT NULL,
 filetime date ,
 predictlocation varchar2(50)
 );
+
+alter table bbs add  likes number;
+
+UPDATE bbs SET likes = likes + 1 WHERE bbsId = 3;
+
 select * from files;
 
 
@@ -91,7 +96,7 @@ REFERENCES KOREAPLACE(KOREAtitle) ON DELETE CASCADE
 );
 
 
-
+UPDATE BBS SET bbsTitle = '가장', bbsContent = '하핳', bbsImg = '강릉1.PNG' WHERE bbsId = 6
 
 select * from OVERSEAPLACE;
 select * from KOREAPLACE;

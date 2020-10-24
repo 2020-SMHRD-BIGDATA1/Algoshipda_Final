@@ -69,8 +69,8 @@ public class BbsDAO {
 		getConn();
 		StringBuffer query = new StringBuffer();
 		query.append("INSERT INTO bbs ");
-		query.append("(bbsId, bbsTitle, bbsContent, bbsDate, bbsHit, member_id, bbsImg) ");
-		query.append("VALUES (?, ?, ?, sysdate, 0, ?,?)");
+		query.append("(bbsId, bbsTitle, bbsContent, bbsDate, bbsHit, member_id, bbsImg,likes) ");
+		query.append("VALUES (?, ?, ?, sysdate, 0, ?,?,0)");
 		try {
 			psmt = conn.prepareStatement(query.toString());
 			psmt.setInt(1, bbsDto.getBbsId());
@@ -105,6 +105,7 @@ public class BbsDAO {
 				bbsDto.setBbsHit(rs.getInt("bbsHit"));
 				bbsDto.setMember_id(rs.getString("member_id"));
 				bbsDto.setBbsImg(rs.getString("bbsImg"));
+				bbsDto.setLikes(rs.getInt("likes"));
 				list.add(bbsDto);
 			}
 
@@ -150,6 +151,7 @@ public class BbsDAO {
 				bbsDto.setBbsHit(rs.getInt("bbshit"));
 				bbsDto.setMember_id(rs.getString("member_id"));
 				bbsDto.setBbsImg(rs.getString("bbsImg"));
+				bbsDto.setLikes(rs.getInt("likes"));
 
 			}
 
@@ -167,17 +169,21 @@ public class BbsDAO {
 		String SQL = "UPDATE BBS SET bbsTitle = ?, bbsContent = ?, bbsImg = ? WHERE bbsId = ?";
 
 		try {
-
 			PreparedStatement psmt = conn.prepareStatement(SQL);
 			psmt.setString(1, bbsDto.getBbsTitle());
 			psmt.setString(2, bbsDto.getBbsContent());
 			psmt.setString(3, bbsDto.getBbsImg());
 			psmt.setInt(4, bbsDto.getBbsId());
-			return psmt.executeUpdate();
+			System.out.print("ぞぞぞぞ\n"+bbsDto.getBbsTitle());
+			System.out.print("ぞぞぞぞぞぞぞぞぞぞぞ\n"+bbsDto.getBbsContent());
+			System.out.print("ぞぞぞぞぞぞぞぞぞぞぞ\n"+bbsDto.getBbsImg());
+			System.out.print("ぞぞぞぞぞぞぞぞぞぞぞ\n"+bbsDto.getBbsId());
+			result = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // 汽戚斗今戚什 神嫌
+		System.out.print("ぞぞぞぞぞぞぞぞぞぞぞ\n");
+		return result; // 汽戚斗今戚什 神嫌
 	}
 
 	public int del(String bbsTitle) {
@@ -198,7 +204,22 @@ public class BbsDAO {
 	}
 
 	
-	
+	public int likesUpdate(String bbsId) {
+		getConn();
+		int cnt = 0;
+		String sql = "UPDATE bbs SET likes = likes + 1 WHERE bbsId = ?";
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, bbsId);
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 	
 	
 	
