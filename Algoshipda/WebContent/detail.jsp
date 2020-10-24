@@ -60,29 +60,29 @@ div.card-container card-container-lg {
 }
 </style>
 <body class=""
-	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
-	
+	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
+
 	<%@include file="header.jsp"%>
 
-			<%
-				FileDAO dao = new FileDAO();
-			%>
+	<%
+		FileDAO dao = new FileDAO();
+	%>
 
-			<%
-			String titledetail = request.getParameter("titledetail");
+	<%
+		String titledetail = request.getParameter("titledetail");
 
-			KOREAPLACE korea_detail = dao.searchKorea(titledetail);
-			System.out.print(korea_detail.getKOREAtitle()+"뭘까");
-			// dao를 통해 분석한 외국 정보 dto를 받아오는 부분
+	KOREAPLACE korea_detail = dao.searchKorea(titledetail);
+	System.out.print(korea_detail.getKOREAtitle() + "뭘까");
+	// dao를 통해 분석한 외국 정보 dto를 받아오는 부분
 
-			// dao를 통해 분석한 한국 정보 dto를 받아오는 부분
-			%>
+	// dao를 통해 분석한 한국 정보 dto를 받아오는 부분
+	%>
 	<div class="row"
 		style="margin-top: 250px; width: 1300px; margin: 0%; margin-left: 280px;">
 		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 			<div class="text-center">
 				<h1 class="h1"
-					style="font-size: 40px; color: white; margin-top: 170px;"><%=korea_detail.getKOREAtitle() %></h1>
+					style="font-size: 40px; color: white; margin-top: 170px;"><%=korea_detail.getKOREAtitle()%></h1>
 				<br> <br>
 			</div>
 		</div>
@@ -90,7 +90,7 @@ div.card-container card-container-lg {
 	<div class="container"
 		style="background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 100px;">
 		<div class="row">
-			
+
 
 
 
@@ -106,17 +106,25 @@ div.card-container card-container-lg {
 				<div class="carousel-inner">
 					<div class="item active">
 						<div class="row" align="center">
-							<img align="left" style="margin-top: 150px; margin-left: 260px; width: 600px; height: 400px; "
+							<img align="left"
+								style="margin-top: 150px; margin-left: 260px; width: 600px; height: 400px;"
 								src="KOREAPLACE/<%=korea_detail.getKOREAIMGNAME()%>" alt=""
 								class="img-responsive">
 							<!--추천페이지에서 클릭한 여행지의 사진  -->
 							<div style="display: inline-block;">
-							<p style="color: white; margin-top: 110px; margin-right: 100px; font-size: 18px; margin-left: 110px; ">
-								 <%=korea_detail.getKOREA_text()%><br> <br> <br>
-								location: <%=korea_detail.getKOREA_addr()%>
-								<br> <br> <br> Nearby tourist: <%=korea_detail.getKOREA_tour()%>
-								<br> <br> <br> <%korea_detail.getKOREA_URL();%>Web site : <%=korea_detail.getKOREA_URL()%>
-							</p>
+								<p
+									style="color: white; margin-top: 110px; margin-right: 100px; font-size: 18px; margin-left: 110px;">
+									<%=korea_detail.getKOREA_text()%><br> <br> <br>
+									location:
+									<%=korea_detail.getKOREA_addr()%>
+									<br> <br> <br> Nearby tourist:
+									<%=korea_detail.getKOREA_tour()%>
+									<br> <br> <br>
+									<%
+										korea_detail.getKOREA_URL();
+									%>Web site :
+									<%=korea_detail.getKOREA_URL()%>
+								</p>
 							</div>
 							<!--/row-->
 						</div>
@@ -127,7 +135,7 @@ div.card-container card-container-lg {
 								accept-charset="utf-8">
 								<button class="btn_ej" name='bookmark' type='submit'
 									value=<%=korea_detail.getKOREAtitle()%>
-									style="margin-left: 500px; margin-top: 100px;">> ♡ < </button>
+									style="margin-left: 500px; margin-top: 100px;">> ♡ <</button>
 							</form>
 						</div>
 						<!--/row-->

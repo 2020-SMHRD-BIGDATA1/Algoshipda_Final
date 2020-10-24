@@ -46,6 +46,11 @@ fileName varchar2(200) NOT NULL,
 filetime date ,
 predictlocation varchar2(50)
 );
+<<<<<<< HEAD
+
+alter table bbs add  likes number;
+
+UPDATE bbs SET likes = likes + 1 WHERE bbsId = 3;
 create sequence picture_index
 increment by 1
 start with 1; 
@@ -97,5 +102,8 @@ REFERENCES KOREAPLACE(KOREAtitle) ON DELETE CASCADE
 drop table jjim;
 select * from jjim;
 
+
 select * from OVERSEAPLACE;
 select * from KOREAPLACE;
+
+update KOREAPLACE set koreaimgname='가평_쁘띠프랑스.jpg' where korea_index=9

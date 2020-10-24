@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="com.model.MemberDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="description" name="description">
@@ -59,7 +59,7 @@
 </head>
 
 <body class="minimal"
-	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
+	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
@@ -73,26 +73,28 @@
 	<div class="container">
 
 		<div class="col-lg-4">
-			<!-- Á¡º¸Æ®·Ð -->
+			<!-- ì ë³´íŠ¸ë¡  -->
 			<div class="jumbotron" style="padding-top: 20px;">
-				<!-- ·Î±×ÀÎ Á¤º¸¸¦ ¼û±â¸é¼­ Àü¼Ûpost -->
+				<!-- ë¡œê·¸ì¸ ì •ë³´ë¥¼ ìˆ¨ê¸°ë©´ì„œ ì „ì†¡post -->
 				<form method="post" action="LoginService">
-					<h3 style="text-align: center; color: white; font-size: 50px;">LOGIN</h3>
+					<h3
+						style="text-align: center; font-family: 'Jalnan'; color: white; font-size: 50px;">LOGIN</h3>
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="¾ÆÀÌµð"
+						<input type="text" class="form-control" placeholder="ì•„ì´ë””"
 							name="member_id" maxlength="20">
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control" placeholder="ºñ¹Ð¹øÈ£"
+						<input type="password" class="form-control" placeholder="ë¹„ë°€ë²ˆí˜¸"
 							name="member_pw" maxlength="20">
 					</div>
-					<center>
-						<input type="submit" value="·Î±×ÀÎ" class="btn_ej"> <input
-							type="button" value="È¸¿ø°¡ÀÔ" " class="btn_ej"
-							onclick="location.href='Join_form.jsp'">
-					</center>
-				</form>
 			</div>
+			<center>
+				<input type="submit" value="ë¡œê·¸ì¸" class="btn_ej"
+					style="font-family: 'Jalnan';"> <input type="button"
+					value="íšŒì›ê°€ìž…" " class="btn_ej" style="font-family: 'Jalnan';"
+					onclick="location.href='Join_form.jsp'">
+				</form>
+			</center>
 		</div>
 	</div>
 	</div>

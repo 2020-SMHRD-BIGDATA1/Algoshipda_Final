@@ -119,7 +119,6 @@ System.out.print(jdao.jjimlist().get(0) + "꾸");
 			</div>
 		</div>
 	</div>
-
 	<br>
 	<br>
 	<div class="hihi"
@@ -148,6 +147,8 @@ System.out.print(jdao.jjimlist().get(0) + "꾸");
 		%>
 
 	</div>
+
+
 
 	<script type="text/javascript">
 		

@@ -28,8 +28,9 @@
 
 <title>Title page</title>
 
-<link href="./main.3f6952e4.css" rel="stylesheet">
+<link href="./main.3f6952e4.css?ver=3" rel="stylesheet">
 <style>
+
 .card-container {
 	background-color: whtie;
 	padding: 1rem 1rem;
@@ -62,7 +63,7 @@
 </head>
 
 <body class=""
-	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
+	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
 	<div style="background-color:">
 		<%
 			BbsDAO bbsDao = new BbsDAO();
@@ -73,10 +74,10 @@
 		<div class="container" style="margin-top: 150px;">
 			<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 				<div class="text-center">
-					<h1 class="h1" style="font-size: 40px; color: white;">자유게시판</h1>
+					<h1 class="h1" style="font-size: 40px; color: white; font-family: 'Jalnan'">자유게시판</h1>
 					
 					<p>
-						<input class="btn_ej" type="button" value="Write"
+						<input class="btn_ej" type="button" value="Write" style="font-family: 'Jalnan'"
 							onClick="location.href='./board_write.jsp'">
 
 					</p>
@@ -120,26 +121,33 @@
 							<div class="card-container card-container-lg"
 								style="margin-top: 0%;width:370px; padding-right:0px;">
 
-								<h4 style="float: right;"><%=list.get(i).getMember_id()%></h4>
-								<h3><%=list.get(i).getBbsTitle()%></h3>
+								<h4 style="float: right; font-family: 'Jalnan'"><%=list.get(i).getMember_id()%></h4>
+								<h3 style="font-family: 'Jalnan'"><%=list.get(i).getBbsTitle()%></h3>
 
-								<div style="float: left; margin-right: 10px">
+								<div style="float: left; margin-right: 10px;">
 									<img class="mini_icon" src="assets/images/eyes.png">
 								</div>
 								<div style="float: left;"><%=list.get(i).getBbsHit()%></div>
-								<div style="float: left; margin-left: 130px; margin-right: 10px;padding-right:0px;">
+								
+								<div style="float: left; margin-left: 10px;">
+								<img class="mini_icon" src="assets/images/minilike.png">
+							</div>
+							<div style="float: left; margin-left: 10px;"><%=list.get(i).getLikes()%></div>
+								
+								<div style="float: left; margin-left: 10px; margin-right: 10px;padding-right:0px;">
 									<img class="mini_icon" src="assets/images/time.png">
 								</div>
 								<div style="float: left; margin-left:;"><%=list.get(i).getBbsDate()%></div>
 
 
 							</div>
-							<center>
-								<input class="btn_ej" type="button" value="More"
+							
+								<input class="btn_ej" type="button" value="More"  id="more"
 									onClick="location.href='board_info.jsp?num=<%=num%>'"
-									style="width: 350px; margin-bottom: 20px; margin-top: 20px;'">
-							</center>
+									style="width: 350px; margin-bottom: 20px; margin-top: 20px; font-family: 'Jalnan'">
+						
 						</div>
+						
 						<%
 							}
 						%>
@@ -166,6 +174,9 @@
 		document.addEventListener("DOMContentLoaded", function(event) {
 			navActivePage();
 		});
+		
+
+		
 	</script>
 
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 

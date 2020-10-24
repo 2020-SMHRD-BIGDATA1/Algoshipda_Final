@@ -1,9 +1,10 @@
 <%@page import="com.model.MemberDTO"%>
 <link rel="shortcut icon" type="image/x-icon" href="assets/images/toplogo.ico">
 <style>
-* {
-	font-family: 'NanumBarunGothic';
-}
+li {
+	 font-family: 'Jalnan';
+}	
+
 </style>
 <header>
 	<%
@@ -21,19 +22,19 @@
 			<div class="collapse navbar-collapse" id="navbar-collapse"
 				style="padding-top: 40px;">
 
-				<ul class="nav navbar-nav " style="font-size: 100px;">
-					<li><a href="./main.jsp">Home</a></li>
-					<li><a href="./board_cat.jsp" title="">Board</a></li>
+				<ul class="nav navbar-nav " style="margin-top:15px">
+					<li><a href="./main.jsp" style="font-size:20px">Home</a></li>
+					<li> <a href="./board_cat.jsp" style="font-size:20px">Board</a></li>
 					<%
 						if (info == null) {
 					%>
-					<li><a href="./Login_form.jsp" title="">Login</a></li>
-					<li><a href="./Join_form.jsp" title="">Join</a></li>
+					<li><a href="./Login_form.jsp" style="font-size:20px">Login</a></li>
+					<li><a href="./Join_form.jsp" style="font-size:20px" >Join</a></li>
 					<%
 						} else {
 					%>
-					<li><a href="LogoutService">Logout</a></li>
-					<li><a href="MyPage_form.jsp">MyPage</a></li>
+					<li><a href="LogoutService" style="font-size:20px">Logout</a></li>
+					<li><a href="MyPage_form.jsp" style="font-size:20px">MyPage</a></li>
 
 					<%
 						}

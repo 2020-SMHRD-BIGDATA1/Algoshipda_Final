@@ -1,3 +1,5 @@
+<%@page import="com.model.BbsDTO"%>
+<%@page import="com.model.BbsDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="javax.print.URIException"%>
@@ -26,7 +28,6 @@
 <script src="jquery-3.5.1.min.js"></script>
 <link href="./main.3f6952e4.css" rel="stylesheet">
 <style>
-
 .form-con {
 	width: 520px;
 	padding: 8px 14px;
@@ -61,7 +62,8 @@ th {
 </style>
 </head>
 
-<body class="" style="background-image:url('assets/images/background.PNG'); background-repeat:no-repeat;background-size : cover;">
+<body class=""
+	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="header.jsp"%>
 	<%
 		if (info == null) {
@@ -74,16 +76,30 @@ th {
 	%>
 
 
+	<%
+		String num = request.getParameter("num");
+	String bbsId = request.getParameter("bbsId");
+	%>
 
-	<div class="section-container" style="padding:100px;">
+
+	<%
+		BbsDAO bbsDao = new BbsDAO();
+	BbsDTO bbsDto = new BbsDTO();
+	bbsDao.hitUpdate(num);
+	BbsDTO infoo = bbsDao.selectById(bbsId);
+	%>
+
+
+	<div class="section-container" style="padding: 100px;">
 		<div class="container">
 			<div class="row">
 
 				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-					<div class="text-center" >
-						<h1 class="h1" style="font-size: 40px; color: white;margin-bottom:30px;">자유게시판</h1>
-						<hr style=";border: solid 1px white; width: 100%;">
-						
+					<div class="text-center">
+						<h1 class="h1"
+							style="font-size: 40px; color: white; margin-bottom: 30px;">자유게시판</h1>
+						<hr style="border: solid 1px white; width: 100%;">
+
 					</div>
 				</div>
 
@@ -98,10 +114,10 @@ th {
 								<!-- 게시판시작 -->
 								<section class="blog_area section-padding">
 									<div class="container">
-										<div class="row" >
-											<form method="post" action="WriteService"
-												enctype="multipart/form-data"
-												style="width: 100%; padding: 50px;">
+										<div class="row">
+											<form method="post"
+												action="UpdateService?bbsId=<%=bbsId%>"
+												enctype="multipart/form-data" style="width: 100%; padding: 50px;">
 												<table class="table_con"
 													style="text-align: center; border: 10px solid #f5f5f5; width: 100%;">
 													<tbody>
@@ -131,12 +147,16 @@ th {
 													</tbody>
 
 												</table>
-												<center style="background-color: #f5f5f5; padding-bottom:20px;">
+												<center
+													style="background-color: #f5f5f5; padding-bottom: 20px;">
 
-													<input class="btn_ej" type="submit" value="글쓰기">
 
-												</center>
+													<input class="btn_ej" type="submit" value="수정"
+														style="font-family: 'Jalnan'; float: left;">
 											</form>
+											</center>
+
+
 
 										</div>
 									</div>

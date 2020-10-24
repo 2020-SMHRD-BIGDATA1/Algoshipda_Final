@@ -10,8 +10,18 @@ public class BbsDTO {
 	private String member_id;
 	private Timestamp bbsDate;
 	private String bbsImg;
-	
+	private int likes = 0; 
 
+	
+	
+	
+	
+	public int getLikes() {
+		return likes;
+	}
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
 	public int getBbsId() {
 		return bbsId;
 	}

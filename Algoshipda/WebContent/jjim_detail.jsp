@@ -61,29 +61,29 @@ div.card-container card-container-lg {
 </style>
 <body class=""
 	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
-	
+
 	<%@include file="header.jsp"%>
 
-			<%
-				FileDAO dao = new FileDAO();
-			%>
+	<%
+		FileDAO dao = new FileDAO();
+	%>
 
-			<%
-			request.setCharacterEncoding("UTF-8");
-			String jjimdetail = request.getParameter("jjimdetail");
-			System.out.print("\n이건?"+jjimdetail);
-			KOREAPLACE jjim_detail = dao.searchKorea(jjimdetail);
-			System.out.print("\n이건뭘까"+jjim_detail.getKOREAtitle());
-			// dao를 통해 분석한 외국 정보 dto를 받아오는 부분
+	<%
+		request.setCharacterEncoding("UTF-8");
+	String jjimdetail = request.getParameter("jjimdetail");
+	System.out.print("\n이건?" + jjimdetail);
+	KOREAPLACE jjim_detail = dao.searchKorea(jjimdetail);
+	System.out.print("\n이건뭘까" + jjim_detail.getKOREAIMGNAME());
+	// dao를 통해 분석한 외국 정보 dto를 받아오는 부분
 
-			// dao를 통해 분석한 한국 정보 dto를 받아오는 부분
-			%>
+	// dao를 통해 분석한 한국 정보 dto를 받아오는 부분
+	%>
 	<div class="row"
 		style="margin-top: 250px; width: 1300px; margin: 0%; margin-left: 280px;">
 		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 			<div class="text-center">
 				<h1 class="h1"
-					style="font-size: 40px; color: white; margin-top: 170px;"><%=jjim_detail.getKOREAtitle() %></h1>
+					style="font-size: 40px; color: white; margin-top: 170px;"><%=jjim_detail.getKOREAtitle()%></h1>
 				<br> <br>
 			</div>
 		</div>
@@ -91,7 +91,7 @@ div.card-container card-container-lg {
 	<div class="container"
 		style="background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 100px;">
 		<div class="row">
-			
+
 
 
 
@@ -107,22 +107,28 @@ div.card-container card-container-lg {
 				<div class="carousel-inner">
 					<div class="item active">
 						<div class="row" align="center">
-							<img align="left" style="margin-top: 150px; margin-left: 260px; width: 600px; height: 400px; "
+							<img align="left"
+								style="margin-top: 150px; margin-left: 260px; width: 600px; height: 400px;"
 								src="KOREAPLACE/<%=jjim_detail.getKOREAIMGNAME()%>" alt=""
 								class="img-responsive">
 							<!--추천페이지에서 클릭한 여행지의 사진  -->
 							<div style="display: inline-block;">
-							<p style="color: white; margin-top: 110px; margin-right: 100px; font-size: 18px; margin-left: 110px; ">
-								 <%=jjim_detail.getKOREA_text()%><br> <br> <br>
-								location: <%=jjim_detail.getKOREA_addr()%>
-								<br> <br> <br> Nearby tourist: <%=jjim_detail.getKOREA_tour()%>
-								<br> <br> <br> <%=jjim_detail.getKOREA_URL()%>Web site : <%=jjim_detail.getKOREA_URL()%>
-							</p>
+								<p
+									style="color: white; margin-top: 110px; margin-right: 100px; font-size: 18px; margin-left: 110px;">
+									<%=jjim_detail.getKOREA_text()%><br> <br> <br>
+									location:
+									<%=jjim_detail.getKOREA_addr()%>
+									<br> <br> <br> Nearby tourist:
+									<%=jjim_detail.getKOREA_tour()%>
+									<br> <br> <br>
+									<%=jjim_detail.getKOREA_URL()%>Web site :
+									<%=jjim_detail.getKOREA_URL()%>
+								</p>
 							</div>
 							<!--/row-->
 						</div>
 						<!--/item-->
-						
+
 						<!--/row-->
 					</div>
 					<!--/item-->
