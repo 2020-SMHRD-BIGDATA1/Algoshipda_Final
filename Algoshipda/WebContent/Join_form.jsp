@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,19 +56,18 @@
 	margin-left: 280px;
 	width: 550px;
 	padding-top: 0px;
-	padding-bottom:5px;
+	padding-bottom: 5px;
 }
 
 tr, td {
 	padding: 5px;
 }
-
 </style>
 </head>
 
 
 <body class="minimal"
-	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
+	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
 
 	<div
 		style="width: 100%; text-align: center; margin-top: 50px; margin-bottom: 50px;">
@@ -78,16 +76,18 @@ tr, td {
 	</div>
 
 	<div class="container">
-	<form method="post" action="JoinService">
-		<div class="col-lg-4" style=" position: relative;">
+		<form method="post" action="JoinService">
+			<div class="col-lg-4" style="position: relative;">
 
-			<!-- 로그인 정보를 숨기면서 전송post -->
-		
+				<!-- 로그인 정보를 숨기면서 전송post -->
 
-				<h3 style="text-align: center; color: white; font-size: 50px; font-family: 'Jalnan';">JOIN</h3>
-				<table  style="width: 500px;">
+
+				<h3
+					style="text-align: center; color: white; font-size: 50px; font-family: 'Jalnan';">JOIN</h3>
+				<table style="width: 500px;">
 					<tr>
-						<td style="text-align: center;"><P style="color: white; font-family: 'Jalnan';">ID</P></td>
+						<td style="text-align: center;"><P
+								style="color: white; font-family: 'Jalnan';">ID</P></td>
 						<td><input type="text" class="form-control" name="member_id"
 							id="member_id2" placeholder="id를 넣으세요" maxlength="20"></td>
 						<td><input type="button"
@@ -96,14 +96,16 @@ tr, td {
 							<p id="p1"></p></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;"><p style="color: white; font-family: 'Jalnan';">PW</p></td>
+						<td style="text-align: center;"><p
+								style="color: white; font-family: 'Jalnan';">PW</p></td>
 						<td><input type="password" class="form-control"
 							name="member_pw" placeholder="비밀번호 입력" maxlength="20"></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;"><p style="color: white; font-family: 'Jalnan';">ADDR</p></td>
+						<td style="text-align: center;"><p
+								style="color: white; font-family: 'Jalnan';">ADDR</p></td>
 						<td><input input type="text" class="form-control"
-							name="member_addr" maxlength="20"></td>
+							name="member_addr" maxlength="20"></td> 
 
 					</tr>
 					<tr>
@@ -113,56 +115,61 @@ tr, td {
 						<td><input input type="tel" class="form-control"
 							" name="member_tel" maxlength="20"></td>
 					</tr>
-						
+
 				</table>
-				
-					<div style="padding:20px;">					
+
+				<div style="padding: 20px;">
 					<input type="button" class="btn_ej" id="button1"
-							style="margin-left:100px; font-family: 'Jalnan';" onclick="button_click();" value="취소">
-							<input type="submit" class="btn_ej" id="button1"
-							style="margin-left:10px; font-family: 'Jalnan';" value="회원가입">
-							
+						style="margin-left: 100px; font-family: 'Jalnan';"
+						onclick="button_click();" value="취소"> <input type="submit"
+						class="btn_ej" id="button1"
+						style="margin-left: 10px; font-family: 'Jalnan';" value="회원가입">
+
 				</div>
-				</div>
-					</form>
-					</div>
-					</div>
-					</div>
-					
-							
-					<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+			</div>
+		</form>
+	</div>
+	</div>
+	</div>
 
 
-					<script type="text/javascript">
-						function button_click() {
-							location.href = 'main.jsp'
-						}
+	<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+	>>>>>>> branch 'master' of
+	https://github.com/2020-SMHRD-BIGDATA1/Algoshipda_Final.git
 
-						function idCheck() {
-							var id = document.getElementById("member_id2");
 
-							$.ajax({
-								type : "get", //get or post방식
-								//QueryString 방식으로 전송 : ?(시작) member_id(이름값) + member_id.value(실제 변수값)
-								url : "IdCheck?member_id=" + id.value, //서버 페이지의 주소
-								dataType : "text", //주고받을 데이터의 유형
-								success : function(data) {
+	<script type="text/javascript">
+		function button_click() {
+			location.href = 'main.jsp'
+		}
 
-									p1 = document.getElementById("p1");
+		function idCheck() {
+			var id = document.getElementById("member_id2");
 
-									if (data == "true") {
-										alert("사용할 수 없는 아이디 입니다.");
-									} else {
-										alert("사용 가능한 아이디 입니다.");
-									}
+			$.ajax({
+				type : "get", //get or post방식
+				//QueryString 방식으로 전송 : ?(시작) member_id(이름값) + member_id.value(실제 변수값)
+				url : "IdCheck?member_id=" + id.value, //서버 페이지의 주소
+				dataType : "text", //주고받을 데이터의 유형
+				success : function(data) {
 
-								},
-								error : function() {
-									//서버와 통신이 실패했을 때 후 처리
-									alert("호출실패");
-								}
-							});
-						}
-					</script>
+					p1 = document.getElementById("p1");
+
+					if (data == "true") {
+						alert("사용할 수 없는 아이디 입니다.");
+					} else {
+						alert("사용 가능한 아이디 입니다.");
+					}
+
+				},
+				error : function() {
+					//서버와 통신이 실패했을 때 후 처리
+					alert("호출실패");
+				}
+			});
+		}
+	</script>
+	>>>>>>> branch 'master' of
+	https://github.com/2020-SMHRD-BIGDATA1/Algoshipda_Final.git
 </body>
 </html>

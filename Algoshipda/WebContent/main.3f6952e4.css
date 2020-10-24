@@ -1,3 +1,4 @@
+
 *
 
  
@@ -88,11 +89,13 @@ https
 html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
-}
+	}
+
 
 body {
-	margin: 0 ;
+	margin: 0;
 	font-size: 15px;
+	font-family: "NanumBarunGothic";
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup,
@@ -185,8 +188,7 @@ pre {
 }
 
 code, kbd, pre, samp {
-	font-family: GmarketSansTTFMedium.ttf;
-	font-size: 1em
+	font-size: 1em;
 }
 
 button, input, optgroup, select, textarea {
@@ -335,8 +337,7 @@ html {
 	-webkit-tap-highlight-color: transparent
 }
 
-body { 
-	font-size : 11px;
+body {
 	line-height: 1.78;
 	color: #000;
 	background-color: #fff
@@ -430,10 +431,7 @@ hr {
 	cursor: pointer
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { <<<<<<<
-	HEAD font-family: GmarketSansTTFMedium.ttf; =======
-	font-family:; >>>>>>> branch 'master' of https :// github.com/
-	2020-SMHRD-BIGDATA1/ Algoshipda_Final.git font-weight : 700;
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
 	line-height: 1.1;
 	color: #000
 }
@@ -758,7 +756,7 @@ address {
 }
 
 code, kbd, pre, samp {
-	font-family: GmarketSansTTFMedium.ttf;
+	
 }
 
 code {
@@ -4473,7 +4471,6 @@ button.close {
 	width: 20px;
 	height: 20px;
 	line-height: 1;
-	font-family: GmarketSansTTFMedium.ttf
 }
 
 .carousel-control .icon-prev:before {
@@ -4884,8 +4881,6 @@ body.minimal {
 }
 
 .hero-full-container h1 {
-	HEAD font-family: GmarketSansTTFMedium.ttf;
-	font-family:;
 	font-weight: 900;
 }
 
@@ -4906,6 +4901,7 @@ body.minimal {
 	.white-text-container h5, .white-text-container p {
 	text-shadow: 0 1px 3px black;
 	color: white;
+	font-family: 'NanumBarunGothic';
 }
 
 .white-text-container a {
@@ -5041,10 +5037,7 @@ p {
 	margin-bottom: 20px
 }
 
-blockquote { <<<<<<<
-	HEAD font-family: GmarketSansTTFMedium.ttf; =======
-	font-family:; >>>>>>> branch 'master' of https :// github.com/
-	2020-SMHRD-BIGDATA1/ Algoshipda_Final.git border : none;
+blockquote {
 	padding-left: 0;
 	padding-right: 0;
 	font-size: 2.81em

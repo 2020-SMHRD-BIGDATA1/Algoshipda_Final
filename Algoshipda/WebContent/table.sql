@@ -8,7 +8,6 @@ drop table INFORMATION
 drop sequence KOREA_index;
 drop sequence OVERSEA_index;
 drop sequence similar_index;
-drop table KOREAPLACE
 drop sequence information_index;
 drop sequence picture_index;
 drop sequence KOREA_index;
@@ -47,10 +46,15 @@ fileName varchar2(200) NOT NULL,
 filetime date ,
 predictlocation varchar2(50)
 );
+<<<<<<< HEAD
 
 alter table bbs add  likes number;
 
 UPDATE bbs SET likes = likes + 1 WHERE bbsId = 3;
+create sequence picture_index
+increment by 1
+start with 1; 
+
 
 select * from files;
 

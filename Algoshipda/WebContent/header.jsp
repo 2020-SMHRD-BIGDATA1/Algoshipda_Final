@@ -1,5 +1,5 @@
 <%@page import="com.model.MemberDTO"%>
-
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/toplogo.ico">
 <style>
 li {
 	 font-family: 'Jalnan';

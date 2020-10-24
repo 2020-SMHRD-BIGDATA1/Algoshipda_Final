@@ -22,7 +22,7 @@
 <link rel="apple-touch-icon" sizes="180x180"
 	href="./assets/apple-icon-180x180.png">
 <link href="./assets/favicon.ico" rel="icon">
-
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/toplogo.ico">
 <title>Title page</title>
 <script src="jquery-3.5.1.min.js"></script>
 <link href="./main.3f6952e4.css?ver=2" rel="stylesheet">
@@ -93,6 +93,10 @@ img {
 	margin: 4px;
 	cursor: pointer;
 	text-decoration: none
+}
+
+* {
+	font-family: 'NanumBarunGothic';
 }
 </style>
 </head>
