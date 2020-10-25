@@ -38,7 +38,7 @@ public class LoginService extends HttpServlet {
 		} else {
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter writer = response.getWriter();
-			writer.println("<script>alert('·Î±×ÀÎ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.'); location.href='Login_form.jsp';</script>");
+			writer.println("<script>alert('ë¡œê·¸ì¸ì„ í•´ì£¼ì„¸ìš”.'); location.href='Login_form.jsp';</script>");
 			writer.close();
 
 		}

@@ -25,7 +25,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="assets/images/toplogo.ico">
 <title>Title page</title>
 <script src="jquery-3.5.1.min.js"></script>
-<link href="./main.3f6952e4.css?ver=2" rel="stylesheet">
+<link href="./main.3f6952e4.css" rel="stylesheet">
 <style>
 
 @font-face {
@@ -60,10 +60,7 @@ img {
 	margin: 9%;
 	background-color: rgba(255, 255, 255, 0.5);
 }
-/* .img_upload{
-   opacity:0.5;
-}
- */
+
 #file {
 	display: none;
 }
@@ -94,10 +91,6 @@ img {
 	cursor: pointer;
 	text-decoration: none
 }
-
-* {
-	font-family: 'NanumBarunGothic';
-}
 </style>
 </head>
 
@@ -116,8 +109,8 @@ img {
 						<div class="col-xs-12 col-md-6">
 							<div class="hero-full-wrapper">
 								<div class="text-content">
-									<h1>
-										<span id="typed-strings"> <span>그 곳이 알고 싶다.</span>
+									<h1 style="font-family: 'Jalnan'">
+										<span id="typed-strings"  > <span>그 곳이 알고 싶다.</span>
 										</span> <span id="typed"></span><br>
 									</h1>
 
@@ -148,7 +141,7 @@ img {
 											name="file">
 										<center>
 											<input class="btn_ej" type="submit" value="Upload"
-												style="width: 355px; margin-top: 10px; opacity: 0.8;"><br>
+												style="width: 355px; margin-top: 10px; opacity: 0.8;font-family: 'Jalnan'"><br>
 										</center>
 									</form>
 

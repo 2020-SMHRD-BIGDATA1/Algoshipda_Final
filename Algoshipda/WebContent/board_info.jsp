@@ -200,7 +200,7 @@ img {
 							style="margin-top: 50px; margin-left: 50px; folat:left;">
 						</td>
 						<td style="width: 500px; text-align: center; ">
-						<h3 style="color: white; margin-left: 20px; folat:left;padding-bottom:280px;"><%=infoo.getBbsContent()%></h3>
+						<h3 style="color: white; margin-left: 20px; folat:left;padding-bottom:280px; font-family: 'Jalnan'"><%=infoo.getBbsContent()%></h3>
 						</td>
 						</tr>
 						

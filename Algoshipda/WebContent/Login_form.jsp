@@ -65,7 +65,7 @@
 	%>
 
 	<div
-		style="width: 100%; text-align: center; margin-top: 50px; margin-bottom: 50px;">
+		style="width: 100%; text-align: center; margin-top: 50px; margin-bottom: 50px;margin-left:10px;">
 		<a href="main.jsp"><img src="assets/images/algoicon.png"
 			style="width: 260px; height: 130px;"></a>
 	</div>
@@ -74,7 +74,7 @@
 
 		<div class="col-lg-4">
 			<!-- 점보트론 -->
-			<div class="jumbotron" style="padding-top: 20px;">
+			<div class="jumbotron" style="padding-top: 0px;">
 				<!-- 로그인 정보를 숨기면서 전송post -->
 				<form method="post" action="LoginService">
 					<h3

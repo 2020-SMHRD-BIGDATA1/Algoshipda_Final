@@ -74,7 +74,7 @@
 		<div class="container" style="margin-top: 150px;">
 			<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 				<div class="text-center">
-					<h1 class="h1" style="font-size: 40px; color: white; font-family: 'Jalnan'">자유게시판</h1>
+					<h1 class="h1" style="font-size: 40px; color: white; font-family: 'Jalnan'">ALGO 게시판</h1>
 					
 					<p>
 						<input class="btn_ej" type="button" value="Write" style="font-family: 'Jalnan'"

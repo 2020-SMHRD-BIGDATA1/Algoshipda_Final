@@ -38,11 +38,7 @@ body {
 
 #imgg { 
 	HEAD display: inline-block;
-	max-width: 359px;
-	height: 300px;
-	text-align: center;
-	display: inline-block;
-	max-width: 359px;
+	width: 359px;
 	height: 300px;
 	text-align: center;
 }
@@ -81,6 +77,9 @@ div.card-container card-container-lg {
 	margin: 4px;
 	cursor: pointer;
 	text-decoration: none
+}
+.backk{
+	width: 1600px;
 }
 </style>
 <body class=""
@@ -130,6 +129,7 @@ div.card-container card-container-lg {
 					<span class="sr-only"> </span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
+				
 			</div>
 		</nav>
 	</header>
@@ -141,17 +141,22 @@ div.card-container card-container-lg {
 					<div class="text-center" style="margin-top: 50px;">
 						<br>
 						<h1 class="h1"
-							style="font-size: 40px; color: white; margin-top: 70px"><%=over.getOVERSEAtitle()%></h1>
+							style="font-size: 40px; color: white; margin-top: 70px; font-family: 'Jalnan'"><%=over.getOVERSEAtitle()%></h1>
 						<div class="row2" style="margin-top: 50px; margin-left: 90px;">
-							<img style="width: 600px;"
+							<img style="width: 600px; font-family: 'Jalnan'" 
 								src="OVERSEAPLACE/<%=over.getOVERSEAIMGNAME()%>" alt=""
 								class="img-responsive">
 						</div>
-						<p>
+						<p s>
 							<br> <br>
-							<%=over.getOVERSEA_addr()%>
+						
+							
+							<p style="font-family:'Jalnan';font-size:25px;">주소&nbsp;:&nbsp;&nbsp;<%=over.getOVERSEA_addr()%></p>					
+						
 							<br> <br>
-							<%=over.getOVERSEA_text()%>
+						
+							<p style="font-family:'';font-size:20px;"><%=over.getOVERSEA_text()%></p>
+							
 							<br> <br>
 						</p>
 					</div>
@@ -168,57 +173,47 @@ div.card-container card-container-lg {
 				</nav>
 				<hr style="color: white; width: 100%;">
 				<h1 class="h1"
-					style="font-size: 40px; color: white; margin-left: 450px;">Recommend
+					style="font-size: 40px;font-family:'Jalnan';color: white; margin-left: 400px;margin-top:50px; margin-bottom:50px;">Recommend
 					Place</h1>
-				<div class="col-md-12"
-					style="display: block; margin-left: auto; margin-right: auto;">
-					<div id="myCarousel" class="carousel slide projects-carousel">
+				
+					
+				
+			</div>
+			
+			
+		</div>
+		
+		
+		<div id="" class="backk">
 						<!-- Carousel items -->
 						<div class="carousel-inner"
-							style="background-color: #f5f5f5; background-color: rgba(255, 255, 255, 0.2); padding-bottom: 50px;">
-							<div class="item active">
+							style="background-color: #f5f5f5; background-color: rgba(255, 255, 255, 0.2); padding-bottom: 10px; width: 1500px; align-content: center;margin-left:300px">
+							<div class="">
 								<div class="">
 									<%
 										for (int i = 0; i < list.size(); i++) {
 									%>
-									<div class="col-sm-4" style="width: 400px; margin: 20px;">
+									<div class="col-sm-4" style="width: 400px; margin: 20px; margin-left:60px;margin-top:80px;">
 										<img id="imgg" src="KOREAPLACE/<%=list.get(i)%>" alt=""
-											class=""> <br> <br> <input class="btn_ej"
-											type="button" value="View" style="margin-left: 150px;"
+											class=""><p style="font-family: 'Jalnan'; margin-top:20px;margin-bottom:5px; text-align: center;font-size:20px;"><%=ko_list.get(i) %></p> <br> <br> <input class="btn_ej"
+											type="button" value="더보기" style="margin-left: 120px; font-family:'Jalnan';font-size:20px;"
 											onClick="location.href='./detail.jsp?titledetail=<%=ko_list.get(i)%>'">
 
 									</div>
 									<%
 										}
 									%>
-									<!--  <div class="col-sm-4">
-                              <a href="./detail.jsp" title=""> <img
-                                 src="KOREAPLACE/" alt="" class="img-responsive" > 
-                              </a>
-                            <br>
-                             <br>
-                              <input class="btn_ej" type="button" value="View" style="margin-left: 150px;"
-                     onClick="location.href='./detail.jsp'">
-                              
-                           </div>
-                           <div class="col-sm-4">
-                              <a href="./detail.jsp" title=""> <img
-                                 src="KOREAPLACE/" alt="" class="img-responsive"> 
-                              </a>
-                              <br>
-                             <br>
-                              <input class="btn_ej" type="button" value="View" style="margin-left: 150px;"
-                     onClick="location.href='./detail.jsp'">
-                     
-                           </div> -->
+								
 								</div>
 							</div>
-							<%--    <img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
+							
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+		
+		
+		
+		
+		
 		<!--/row-->
 	</div>
 	<!--/item-->

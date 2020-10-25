@@ -97,7 +97,7 @@ th {
 				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 					<div class="text-center">
 						<h1 class="h1"
-							style="font-size: 40px; color: white; margin-bottom: 30px;">자유게시판</h1>
+							style="font-size: 40px; color: white; margin-bottom: 30px; font-family: 'Jalnan'">자유게시판</h1>
 						<hr style="border: solid 1px white; width: 100%;">
 
 					</div>
@@ -147,14 +147,13 @@ th {
 													</tbody>
 
 												</table>
-												<center
-													style="background-color: #f5f5f5; padding-bottom: 20px;">
+												<center style="background-color: #f5f5f5; padding-bottom:20px;">
 
+													<input style="font-family: 'Jalnan'" class="btn_ej" type="submit" value="Upload">
 
-													<input class="btn_ej" type="submit" value="수정"
-														style="font-family: 'Jalnan'; float: left;">
+												</center>
 											</form>
-											</center>
+											
 
 
 

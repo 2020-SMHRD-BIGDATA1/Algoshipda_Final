@@ -58,6 +58,10 @@ div.card-container card-container-lg {
 	cursor: pointer;
 	text-decoration: none
 }
+td{
+	font-size:20px;
+	padding:6px;
+}
 </style>
 <body class=""
 	style="background-image: url('assets/images/background.PNG'); background-repeat: no-repeat; background-size: cover;">
@@ -78,17 +82,17 @@ div.card-container card-container-lg {
 	// dao를 통해 분석한 한국 정보 dto를 받아오는 부분
 	%>
 	<div class="row"
-		style="margin-top: 250px; width: 1300px; margin: 0%; margin-left: 280px;">
+		style="margin-top: 250px; width: 1300px; margin: 0%; margin-left: 300px;">
 		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 			<div class="text-center">
 				<h1 class="h1"
-					style="font-size: 40px; color: white; margin-top: 170px;"><%=korea_detail.getKOREAtitle()%></h1>
+					style="font-size: 40px; font-family:'Jalnan'; color: white; margin-top: 170px;"><%=korea_detail.getKOREAtitle()%></h1>
 				<br> <br>
 			</div>
 		</div>
 	</div>
 	<div class="container"
-		style="background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 100px;">
+		style="background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 50px;">
 		<div class="row">
 
 
@@ -107,24 +111,42 @@ div.card-container card-container-lg {
 					<div class="item active">
 						<div class="row" align="center">
 							<img align="left"
-								style="margin-top: 150px; margin-left: 260px; width: 600px; height: 400px;"
+								style="margin-top: 50px; margin-left: 260px; width: 600px; height: 400px;"
 								src="KOREAPLACE/<%=korea_detail.getKOREAIMGNAME()%>" alt=""
 								class="img-responsive">
 							<!--추천페이지에서 클릭한 여행지의 사진  -->
 							<div style="display: inline-block;">
-								<p
-									style="color: white; margin-top: 110px; margin-right: 100px; font-size: 18px; margin-left: 110px;">
-									<%=korea_detail.getKOREA_text()%><br> <br> <br>
-									location:
-									<%=korea_detail.getKOREA_addr()%>
-									<br> <br> <br> Nearby tourist:
-									<%=korea_detail.getKOREA_tour()%>
-									<br> <br> <br>
-									<%
-										korea_detail.getKOREA_URL();
-									%>Web site :
-									<%=korea_detail.getKOREA_URL()%>
-								</p>
+								<!-- <p
+									style="color: white; margin-top: 110px; font-family:'Jalnan'; margin-right: 100px; font-size: 18px; margin-left: 110px;"> -->
+								
+								<table style="color: white; font-family: 'Jalnan';width: 1000px; margin-top:30px;">
+								<tr >
+								<td colspan="2" style="font-size:22px;">
+										<%=korea_detail.getKOREA_text()%>														
+								</td>
+								</tr>								
+								
+								<tr>
+								<td colspan="2">
+								<br><br>
+								</td>
+								</tr>
+								<td>Location</td>
+								<td>
+								:&nbsp;&nbsp;<%=korea_detail.getKOREA_addr()%>
+								</td>							
+								</tr>
+								<tr>
+								<td>Nearby tourist</td>
+								<td>:&nbsp;&nbsp;<%=korea_detail.getKOREA_tour()%></td>
+								</tr>
+								<tr>
+								<td>Web site</td>
+								<td>:&nbsp;&nbsp;<%=korea_detail.getKOREA_URL()%></td>
+								</tr>
+								</table>
+								
+								
 							</div>
 							<!--/row-->
 						</div>
@@ -135,7 +157,7 @@ div.card-container card-container-lg {
 								accept-charset="utf-8">
 								<button class="btn_ej" name='bookmark' type='submit'
 									value=<%=korea_detail.getKOREAtitle()%>
-									style="margin-left: 500px; margin-top: 100px;">> ♡ <</button>
+									style="font-family:'Jalnan'; font-size:20px;margin-left: 500px; margin-top: 100px;"> 찜</button>
 							</form>
 						</div>
 						<!--/row-->

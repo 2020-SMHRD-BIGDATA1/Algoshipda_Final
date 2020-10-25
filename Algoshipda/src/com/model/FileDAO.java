@@ -49,14 +49,13 @@ public class FileDAO {
 		getConn();
 		int cnt = 0;
 		String SQL = "INSERT INTO FILES VALUES (picture_index.NEXTVAL,?,sysdate,1)";
-
 		try {
 
 			PreparedStatement psmt = conn.prepareStatement(SQL);
 
 			psmt.setString(1, fileName);
 
-			return psmt.executeUpdate();
+			cnt = psmt.executeUpdate();
 
 		} catch (Exception e) {
 
@@ -117,12 +116,12 @@ public class FileDAO {
 				String OVERSEA_text = rs.getString(4);
 				String OVERSEA_URL = rs.getString(5);
 				String OVERSEAIMGNAME = rs.getString(6);
-				
+
 				dto = new OVERSEAPLACE(OVERSEA_index, OVERSEAtitle, OVERSEA_addr, OVERSEA_text, OVERSEA_URL,
 						OVERSEAIMGNAME);
 				System.out.println(dto.getOVERSEAtitle());
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -157,7 +156,7 @@ public class FileDAO {
 				dto = new KOREAPLACE(KOREA_index, KOREAtitle, KOREA_addr, KOREA_text, KOREA_URL, KOREA_tour,
 						KOREAIMGNAME);
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -256,4 +255,3 @@ public class FileDAO {
 //      return list;
 //
 //   }
-

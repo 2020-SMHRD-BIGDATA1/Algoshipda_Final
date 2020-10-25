@@ -58,6 +58,14 @@ div.card-container card-container-lg {
 	cursor: pointer;
 	text-decoration: none
 }
+}
+td,tr{
+	font-size:22px;
+	padding:6px;
+}
+table{
+
+}
 </style>
 <body class=""
 	style="background-image: url('assets/images/back_ground.PNG'); background-repeat: no-repeat; background-size: cover;">
@@ -83,23 +91,17 @@ div.card-container card-container-lg {
 		<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
 			<div class="text-center">
 				<h1 class="h1"
-					style="font-size: 40px; color: white; margin-top: 170px;"><%=jjim_detail.getKOREAtitle()%></h1>
+					style="font-size: 40px; font-family:'Jalnan'; color: white; margin-top: 170px;"><%=jjim_detail.getKOREAtitle()%></h1>
 				<br> <br>
 			</div>
 		</div>
 	</div>
 	<div class="container"
-		style="background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 100px;">
+		style="background-color: white; background-color: rgba(255, 255, 255, 0.3); padding-bottom: 50px;">
 		<div class="row">
-
-
-
 
 			<%-- 	<img src="SimilarPicture/<%= list.get(0).getFileName()%>">  --%>
 		</div>
-
-
-
 		<div class="col-md-12">
 
 			<div id="myCarousel" class="carousel slide projects-carousel">
@@ -108,22 +110,37 @@ div.card-container card-container-lg {
 					<div class="item active">
 						<div class="row" align="center">
 							<img align="left"
-								style="margin-top: 150px; margin-left: 260px; width: 600px; height: 400px;"
+								style="margin-top: 80px; margin-bottom : 30px;  margin-left: 260px; width: 600px; height: 400px;"
 								src="KOREAPLACE/<%=jjim_detail.getKOREAIMGNAME()%>" alt=""
 								class="img-responsive">
 							<!--추천페이지에서 클릭한 여행지의 사진  -->
 							<div style="display: inline-block;">
-								<p
-									style="color: white; margin-top: 110px; margin-right: 100px; font-size: 18px; margin-left: 110px;">
-									<%=jjim_detail.getKOREA_text()%><br> <br> <br>
-									location:
-									<%=jjim_detail.getKOREA_addr()%>
-									<br> <br> <br> Nearby tourist:
-									<%=jjim_detail.getKOREA_tour()%>
-									<br> <br> <br>
-									<%=jjim_detail.getKOREA_URL()%>Web site :
-									<%=jjim_detail.getKOREA_URL()%>
-								</p>
+							<table style="color: white; font-family: 'Jalnan';width: 1100px; margin-top:30px;">
+								<tr >
+								<td colspan="2" style="font-size:22px;">
+										&nbsp;<%=jjim_detail.getKOREA_text()%>													
+								</td>
+								</tr>
+								<tr>
+								<td colspan="2">
+								<br><br>
+								</td>
+								</tr>
+								<td style="font-size:20px; padding:6px;">Location</td>
+								<td style="font-size:20px; padding:6px;">
+								:&nbsp;&nbsp;<%=jjim_detail.getKOREA_addr()%>
+								</td>							
+								</tr>
+								<tr>
+								<td style="font-size:20px; padding:6px;">Nearby</td>
+								<td style="font-size:20px; padding:6px;">:&nbsp;&nbsp;<%=jjim_detail.getKOREA_tour()%></td>
+								</tr>
+								<tr>
+								<td style="font-size:20px; padding:6px;">Web site</td>
+								<td style="font-size:20px; padding:6px;">:&nbsp;&nbsp;<%=jjim_detail.getKOREA_URL()%></td>
+								</tr>
+								</table>
+								
 							</div>
 							<!--/row-->
 						</div>

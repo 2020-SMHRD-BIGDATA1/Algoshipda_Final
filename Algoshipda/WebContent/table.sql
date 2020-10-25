@@ -29,6 +29,7 @@ create table BBS(
    bbsHit number,
    member_id varchar2(20),
    bbsImg varchar2(100),
+   likes number,
    constraint bbsid_pk primary key(bbsID),
    CONSTRAINT bbsmember_id_fk FOREIGN KEY(member_id)
     REFERENCES Members(member_id) ON DELETE CASCADE
@@ -46,9 +47,9 @@ fileName varchar2(200) NOT NULL,
 filetime date ,
 predictlocation varchar2(50)
 );
-<<<<<<< HEAD
 
-alter table bbs add  likes number;
+select * from files;
+
 
 UPDATE bbs SET likes = likes + 1 WHERE bbsId = 3;
 create sequence picture_index
@@ -107,3 +108,5 @@ select * from OVERSEAPLACE;
 select * from KOREAPLACE;
 
 update KOREAPLACE set koreaimgname='가평_쁘띠프랑스.jpg' where korea_index=9
+
+
